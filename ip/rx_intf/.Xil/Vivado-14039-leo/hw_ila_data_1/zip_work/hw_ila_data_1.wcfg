@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/leo/Documents/openwifi/openwifi-hw/boards/zc706_fmcs2/openwifi_zc706_fmcs2/openwifi_zc706_fmcs2.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="8192001fs"></ZoomEndTime>
+      <Cursor1Time time="2095000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="668"></NameColumnWidth>
+      <ValueColumnWidth column_width="225"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="34" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="logic" fp_name="u_ila_0_ant_data_full_n">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">u_ila_0_ant_data_full_n</obj_property>
+      <obj_property name="ObjectShortName">u_ila_0_ant_data_full_n</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/duc_bank_core_i/ant_data_wr_data">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/duc_bank_core_i/ant_data_wr_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ant_data_wr_data[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/duc_bank_core_i/ant_data_wr_en">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/duc_bank_core_i/ant_data_wr_en</obj_property>
+      <obj_property name="ObjectShortName">ant_data_wr_en</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/duc_bank_core_i/bw20_data_tdata">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/duc_bank_core_i/bw20_data_tdata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bw20_data_tdata[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/tx_iq_intf_i/tx_iq_fifo_rden">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/tx_iq_intf_i/tx_iq_fifo_rden</obj_property>
+      <obj_property name="ObjectShortName">tx_iq_fifo_rden</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/tx_iq_intf_i/tx_iq_fifo_wren">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/tx_iq_intf_i/tx_iq_fifo_wren</obj_property>
+      <obj_property name="ObjectShortName">tx_iq_fifo_wren</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/high_tx_allowed1">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/high_tx_allowed1</obj_property>
+      <obj_property name="ObjectShortName">high_tx_allowed1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/high_tx_allowed2">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/high_tx_allowed2</obj_property>
+      <obj_property name="ObjectShortName">high_tx_allowed2</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/high_tx_allowed3">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/high_tx_allowed3</obj_property>
+      <obj_property name="ObjectShortName">high_tx_allowed3</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/s00_axis_tlast_beacon">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/s00_axis_tlast_beacon</obj_property>
+      <obj_property name="ObjectShortName">s00_axis_tlast_beacon</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/slice_en0">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/slice_en0</obj_property>
+      <obj_property name="ObjectShortName">slice_en0</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/read_beacon">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/read_beacon</obj_property>
+      <obj_property name="ObjectShortName">read_beacon</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/read_response">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/read_response</obj_property>
+      <obj_property name="ObjectShortName">read_response</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/receive_beacon">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/receive_beacon</obj_property>
+      <obj_property name="ObjectShortName">receive_beacon</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/receive_response">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/receive_response</obj_property>
+      <obj_property name="ObjectShortName">receive_response</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/reset_tsf">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/reset_tsf</obj_property>
+      <obj_property name="ObjectShortName">reset_tsf</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/tsf_cyctime_val">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/tsf_cyctime_val[63:0]</obj_property>
+      <obj_property name="ObjectShortName">tsf_cyctime_val[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/write_response">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/write_response</obj_property>
+      <obj_property name="ObjectShortName">write_response</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tx_on_detection_i/tx_bb_is_ongoing_internal0_reg_0">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tx_on_detection_i/tx_bb_is_ongoing_internal0_reg_0</obj_property>
+      <obj_property name="ObjectShortName">tx_bb_is_ongoing_internal0_reg_0</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tx_on_detection_i/tx_bb_is_ongoing_internal1">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tx_on_detection_i/tx_bb_is_ongoing_internal1</obj_property>
+      <obj_property name="ObjectShortName">tx_bb_is_ongoing_internal1</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tx_on_detection_i/tx_bb_is_ongoing_internal2">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tx_on_detection_i/tx_bb_is_ongoing_internal2</obj_property>
+      <obj_property name="ObjectShortName">tx_bb_is_ongoing_internal2</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tx_on_detection_i/tx_bb_is_ongoing_internal3">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tx_on_detection_i/tx_bb_is_ongoing_internal3</obj_property>
+      <obj_property name="ObjectShortName">tx_bb_is_ongoing_internal3</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/high_tx_allowed0">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/high_tx_allowed0</obj_property>
+      <obj_property name="ObjectShortName">high_tx_allowed0</obj_property>
+      <obj_property name="label">T_Read</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/time_slice_gen_i/tsf_load_val">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/time_slice_gen_i/tsf_load_val[63:0]</obj_property>
+      <obj_property name="ObjectShortName">tsf_load_val[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/time_slice_gen_i/tsf_runtime_val_internal">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/time_slice_gen_i/tsf_runtime_val_internal[63:0]</obj_property>
+      <obj_property name="ObjectShortName">tsf_runtime_val_internal[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_runtime_val">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_runtime_val[63:0]</obj_property>
+      <obj_property name="ObjectShortName">tsf_runtime_val[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/read_beacon_val">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/read_beacon_val[63:0]</obj_property>
+      <obj_property name="ObjectShortName">read_beacon_val[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/read_response_val">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/read_response_val[63:0]</obj_property>
+      <obj_property name="ObjectShortName">read_response_val[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/receive_beacon_val">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/receive_beacon_val[63:0]</obj_property>
+      <obj_property name="ObjectShortName">receive_beacon_val[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/receive_response_val">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/receive_response_val[63:0]</obj_property>
+      <obj_property name="ObjectShortName">receive_response_val[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/write_beacon_val">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/write_beacon_val[63:0]</obj_property>
+      <obj_property name="ObjectShortName">write_beacon_val[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/write_response_val">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tsf_timer_i/write_response_val[63:0]</obj_property>
+      <obj_property name="ObjectShortName">write_response_val[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tx_queue_idx">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/xpu_0/inst/tx_queue_idx[1:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_queue_idx[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/dac_intf_i/wr_data_count">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">i_system_wrapper/system_i/openwifi_ip/tx_intf_0/inst/dac_intf_i/wr_data_count[4:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_data_count[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>
