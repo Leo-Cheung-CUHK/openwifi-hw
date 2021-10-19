@@ -87,10 +87,6 @@ module system_xpu_0_0 (
   tx_try_complete,
   tx_iq_fifo_empty,
   tx_iq_fifo_rden,
-  high_tx_allowed0,
-  high_tx_allowed1,
-  high_tx_allowed2,
-  high_tx_allowed3,
   tx_bb_is_ongoing,
   ack_tx_flag,
   wea,
@@ -126,10 +122,7 @@ module system_xpu_0_0 (
   s00_axi_rdata,
   s00_axi_rresp,
   s00_axi_rvalid,
-  s00_axi_rready,
-  tx_queue_idx,
-  s00_axis_tlast_beacon,
-  s00_axis_tlast_response
+  s00_axi_rready
 );
 
 input wire [7 : 0] gpio_status;
@@ -164,10 +157,6 @@ output wire start_retrans;
 output wire tx_try_complete;
 input wire tx_iq_fifo_empty;
 input wire tx_iq_fifo_rden;
-output wire high_tx_allowed0;
-output wire high_tx_allowed1;
-output wire high_tx_allowed2;
-output wire high_tx_allowed3;
 output wire tx_bb_is_ongoing;
 output wire ack_tx_flag;
 output wire wea;
@@ -229,9 +218,6 @@ output wire s00_axi_rvalid;
 _THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 s00_axi RREADY" *)
 input wire s00_axi_rready;
-input wire [1 : 0] tx_queue_idx;
-input wire s00_axis_tlast_beacon;
-input wire s00_axis_tlast_response;
 
   xpu #(
     .GPIO_STATUS_WIDTH(8),
@@ -277,10 +263,6 @@ input wire s00_axis_tlast_response;
     .tx_try_complete(tx_try_complete),
     .tx_iq_fifo_empty(tx_iq_fifo_empty),
     .tx_iq_fifo_rden(tx_iq_fifo_rden),
-    .high_tx_allowed0(high_tx_allowed0),
-    .high_tx_allowed1(high_tx_allowed1),
-    .high_tx_allowed2(high_tx_allowed2),
-    .high_tx_allowed3(high_tx_allowed3),
     .tx_bb_is_ongoing(tx_bb_is_ongoing),
     .ack_tx_flag(ack_tx_flag),
     .wea(wea),
@@ -316,9 +298,6 @@ input wire s00_axis_tlast_response;
     .s00_axi_rdata(s00_axi_rdata),
     .s00_axi_rresp(s00_axi_rresp),
     .s00_axi_rvalid(s00_axi_rvalid),
-    .s00_axi_rready(s00_axi_rready),
-    .tx_queue_idx(tx_queue_idx),
-    .s00_axis_tlast_beacon(s00_axis_tlast_beacon),
-    .s00_axis_tlast_response(s00_axis_tlast_response)
+    .s00_axi_rready(s00_axi_rready)
   );
 endmodule

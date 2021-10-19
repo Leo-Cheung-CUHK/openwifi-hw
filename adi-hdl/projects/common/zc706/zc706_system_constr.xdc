@@ -80,3 +80,7 @@ create_clock -period 40.000 -name spi1_clk [get_pins -hier */EMIOSPI1SCLKO]
 
 
 
+
+
+
+

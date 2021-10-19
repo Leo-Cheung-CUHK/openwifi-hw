@@ -142,7 +142,7 @@ ARCHITECTURE system_axi_spdif_tx_core_0_arch OF system_axi_spdif_tx_core_0 IS
     );
   END COMPONENT axi_spdif_tx;
   ATTRIBUTE X_CORE_INFO : STRING;
-  ATTRIBUTE X_CORE_INFO OF system_axi_spdif_tx_core_0_arch: ARCHITECTURE IS "axi_spdif_tx,Vivado 2018.3";
+  ATTRIBUTE X_CORE_INFO OF system_axi_spdif_tx_core_0_arch: ARCHITECTURE IS "axi_spdif_tx,Vivado 2019.1";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF system_axi_spdif_tx_core_0_arch : ARCHITECTURE IS "system_axi_spdif_tx_core_0,axi_spdif_tx,{}";
   ATTRIBUTE IP_DEFINITION_SOURCE : STRING;

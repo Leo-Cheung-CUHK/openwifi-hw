@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:cmpy:6.0
--- IP Revision: 16
+-- IP Revision: 17
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY cmpy_v6_0_16;
-USE cmpy_v6_0_16.cmpy_v6_0_16;
+LIBRARY cmpy_v6_0_17;
+USE cmpy_v6_0_17.cmpy_v6_0_17;
 
 ENTITY complex_multiplier IS
   PORT (
@@ -71,7 +71,7 @@ END complex_multiplier;
 ARCHITECTURE complex_multiplier_arch OF complex_multiplier IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF complex_multiplier_arch: ARCHITECTURE IS "yes";
-  COMPONENT cmpy_v6_0_16 IS
+  COMPONENT cmpy_v6_0_17 IS
     GENERIC (
       C_VERBOSITY : INTEGER;
       C_XDEVICEFAMILY : STRING;
@@ -130,7 +130,7 @@ ARCHITECTURE complex_multiplier_arch OF complex_multiplier IS
       m_axis_dout_tlast : OUT STD_LOGIC;
       m_axis_dout_tdata : OUT STD_LOGIC_VECTOR(63 DOWNTO 0)
     );
-  END COMPONENT cmpy_v6_0_16;
+  END COMPONENT cmpy_v6_0_17;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_dout_tdata: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_DOUT TDATA";
@@ -145,7 +145,7 @@ ARCHITECTURE complex_multiplier_arch OF complex_multiplier IS
   ATTRIBUTE X_INTERFACE_PARAMETER OF aclk: SIGNAL IS "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF S_AXIS_CTRL:S_AXIS_B:S_AXIS_A:M_AXIS_DOUT, ASSOCIATED_RESET aresetn, ASSOCIATED_CLKEN aclken, FREQ_HZ 10000000, PHASE 0.000, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 aclk_intf CLK";
 BEGIN
-  U0 : cmpy_v6_0_16
+  U0 : cmpy_v6_0_17
     GENERIC MAP (
       C_VERBOSITY => 0,
       C_XDEVICEFAMILY => "zynq",

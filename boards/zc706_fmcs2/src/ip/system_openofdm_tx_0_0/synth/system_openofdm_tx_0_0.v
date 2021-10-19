@@ -50,7 +50,7 @@
 // IP VLNV: user.org:user:openofdm_tx:1.0
 // IP Revision: 2
 
-(* X_CORE_INFO = "openofdm_tx,Vivado 2018.3" *)
+(* X_CORE_INFO = "openofdm_tx,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "system_openofdm_tx_0_0,openofdm_tx,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

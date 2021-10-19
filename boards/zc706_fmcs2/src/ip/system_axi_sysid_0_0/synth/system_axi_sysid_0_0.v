@@ -50,7 +50,7 @@
 // IP VLNV: analog.com:user:axi_sysid:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "sys_id,Vivado 2018.3" *)
+(* X_CORE_INFO = "sys_id,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "system_axi_sysid_0_0,sys_id,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

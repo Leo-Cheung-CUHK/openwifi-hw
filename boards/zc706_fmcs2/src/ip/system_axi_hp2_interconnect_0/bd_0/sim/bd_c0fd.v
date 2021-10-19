@@ -1,4 +1,4 @@
-//Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+//Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Command: generate_target bd_c0fd.bd
 //Design : bd_c0fd
@@ -698,6 +698,7 @@ module s00_entry_pipeline_imp_A6NOOV
   wire [2:0]s00_transaction_regulator_M_AXI_ARPROT;
   wire [3:0]s00_transaction_regulator_M_AXI_ARQOS;
   wire s00_transaction_regulator_M_AXI_ARREADY;
+  wire [2:0]s00_transaction_regulator_M_AXI_ARSIZE;
   wire [1023:0]s00_transaction_regulator_M_AXI_ARUSER;
   wire s00_transaction_regulator_M_AXI_ARVALID;
   wire [63:0]s00_transaction_regulator_M_AXI_RDATA;
@@ -820,6 +821,7 @@ module s00_entry_pipeline_imp_A6NOOV
         .s_axi_arprot(s00_transaction_regulator_M_AXI_ARPROT),
         .s_axi_arqos(s00_transaction_regulator_M_AXI_ARQOS),
         .s_axi_arready(s00_transaction_regulator_M_AXI_ARREADY),
+        .s_axi_arsize(s00_transaction_regulator_M_AXI_ARSIZE),
         .s_axi_aruser(s00_transaction_regulator_M_AXI_ARUSER),
         .s_axi_arvalid(s00_transaction_regulator_M_AXI_ARVALID),
         .s_axi_rdata(s00_transaction_regulator_M_AXI_RDATA),
@@ -840,6 +842,7 @@ module s00_entry_pipeline_imp_A6NOOV
         .m_axi_arprot(s00_transaction_regulator_M_AXI_ARPROT),
         .m_axi_arqos(s00_transaction_regulator_M_AXI_ARQOS),
         .m_axi_arready(s00_transaction_regulator_M_AXI_ARREADY),
+        .m_axi_arsize(s00_transaction_regulator_M_AXI_ARSIZE),
         .m_axi_aruser(s00_transaction_regulator_M_AXI_ARUSER),
         .m_axi_arvalid(s00_transaction_regulator_M_AXI_ARVALID),
         .m_axi_rdata(s00_transaction_regulator_M_AXI_RDATA),

@@ -50,7 +50,7 @@
 // IP VLNV: analog.com:user:axi_hdmi_tx:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "axi_hdmi_tx,Vivado 2018.3" *)
+(* X_CORE_INFO = "axi_hdmi_tx,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "system_axi_hdmi_core_0,axi_hdmi_tx,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

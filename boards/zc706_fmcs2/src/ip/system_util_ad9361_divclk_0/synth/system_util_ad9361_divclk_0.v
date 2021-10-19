@@ -50,7 +50,7 @@
 // IP VLNV: analog.com:user:util_clkdiv:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "util_clkdiv,Vivado 2018.3" *)
+(* X_CORE_INFO = "util_clkdiv,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "system_util_ad9361_divclk_0,util_clkdiv,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

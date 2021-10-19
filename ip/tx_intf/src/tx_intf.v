@@ -17,7 +17,9 @@
 		parameter integer C_M00_AXIS_TDATA_WIDTH	= 64,
 		
         parameter integer WAIT_COUNT_BITS = 5,
-		parameter integer MAX_NUM_DMA_SYMBOL = 8192
+		parameter integer MAX_NUM_DMA_SYMBOL = 8192,
+
+        parameter integer TSF_TIMER_WIDTH = 64 // according to 802.11 standard
 	)
 	(
 	    input wire dac_rst,
@@ -52,19 +54,9 @@
         input wire [4:0] tx_status,
         input wire [47:0] mac_addr,
         output wire [(WIFI_TX_BRAM_DATA_WIDTH-1):0] douta,//for changing some bits to indicate it is the 1st pkt or retransmitted pkt
-        // output wire [(IQ_DATA_WIDTH-1):0] i0,
-        // output wire [(IQ_DATA_WIDTH-1):0] q0,
-        // output wire [(IQ_DATA_WIDTH-1):0] i1,
-        // output wire [(IQ_DATA_WIDTH-1):0] q1,
-        // output wire iq_valid,
-        //output wire [31:0] mixer_cfg,
         output wire tx_iq_fifo_empty,
         output wire tx_iq_fifo_rden,
-        //output wire [13:0] tx_iq_fifo_data_count,
-        input wire high_tx_allowed0, // when this is valid, driver takes over tx, other wise xpu takes over tx
-        input wire high_tx_allowed1, // for another queue
-        input wire high_tx_allowed2,
-        input wire high_tx_allowed3,
+
         input wire tx_bb_is_ongoing,
         input wire ack_tx_flag,
         input wire wea_from_xpu,
@@ -112,8 +104,6 @@
 		input wire [(C_S00_AXIS_TDATA_WIDTH/8)-1 : 0] s00_axis_tstrb,
 		input wire  s00_axis_tlast,
 		input wire  s00_axis_tvalid,
-        output wire s00_axis_tlast_beacon,
-        output wire s00_axis_tlast_response,
 
 		// Ports of Axi Master Bus Interface M00_AXIS to PS
 		input wire  m00_axis_aclk,
@@ -121,11 +111,11 @@
 		output wire  m00_axis_tvalid,
 		output wire [C_M00_AXIS_TDATA_WIDTH-1 : 0] m00_axis_tdata,
 		output wire [(C_M00_AXIS_TDATA_WIDTH/8)-1 : 0] m00_axis_tstrb,
-		output wire  m00_axis_tlast,
+		output wire m00_axis_tlast,
 		input wire  m00_axis_tready,
-        output wire dac_data_nn,
-        output wire [1:0] tx_queue_idx
-	);
+
+        input wire [(TSF_TIMER_WIDTH-1):0] tsf_runtime_val
+    );
 
 	function integer clogb2 (input integer bit_depth);                                   
       begin                                                                              
@@ -155,8 +145,8 @@
     wire [(C_S00_AXI_DATA_WIDTH-1):0] slv_reg14; // 
     wire [(C_S00_AXI_DATA_WIDTH-1):0] slv_reg15; // 
     wire [(C_S00_AXI_DATA_WIDTH-1):0] slv_reg16; 
-    //wire [(C_S00_AXI_DATA_WIDTH-1):0] slv_reg17; // 
-    //wire [(C_S00_AXI_DATA_WIDTH-1):0] slv_reg18; 
+    wire [(C_S00_AXI_DATA_WIDTH-1):0] slv_reg17; // 
+    wire [(C_S00_AXI_DATA_WIDTH-1):0] slv_reg18; 
     //wire [(C_S00_AXI_DATA_WIDTH-1):0] slv_reg19;
     // wire [(C_S00_AXI_DATA_WIDTH-1):0] slv_reg20; // 
     wire [(C_S00_AXI_DATA_WIDTH-1):0] slv_reg21; // 
@@ -175,29 +165,29 @@
     wire ant_data_valid;
     
     wire fulln_from_dac_to_duc;
-    wire fulln_from_dac_to_duc_1;
 
     wire [(2*IQ_DATA_WIDTH-1) : 0] wifi_iq_pack;
     wire wifi_iq_valid;
     
     wire [(C_S00_AXIS_TDATA_WIDTH-1):0] s_axis_data_to_acc;
+    wire [(C_S00_AXIS_TDATA_WIDTH-1):0] s_axis_dmg_to_acc;
+    wire [(C_S00_AXIS_TDATA_WIDTH-1):0] s_axis_tsf_to_acc;
+
     wire tx_bit_intf_acc_ask_data_from_s_axis;
+    wire tx_bit_intf_acc_ask_dmg_from_s_axis;
+    wire tx_bit_intf_acc_ask_tsf_from_s_axis;
     wire tx_iq_intf_acc_ask_data_from_s_axis;
     wire acc_ask_data_from_s_axis;
     wire s_axis_emptyn_to_acc;
-    wire [(MAX_BIT_NUM_DMA_SYMBOL-1) : 0] s_axis_fifo_data_count0;
-    wire [(MAX_BIT_NUM_DMA_SYMBOL-1) : 0] s_axis_fifo_data_count1;
-    wire [(MAX_BIT_NUM_DMA_SYMBOL-1) : 0] s_axis_fifo_data_count2;
-    wire [(MAX_BIT_NUM_DMA_SYMBOL-1) : 0] s_axis_fifo_data_count3;
-    //(* mark_debug = "true" *) wire [1:0] tx_queue_idx;
+    wire empty_dmg_from_s_axis;
+    wire empty_tsf_from_s_axis;
+
+    wire [(MAX_BIT_NUM_DMA_SYMBOL-1) : 0] s_axis_fifo_data_count;
     wire [1:0] linux_prio;
     wire [9:0] tx_pkt_sn;
     // wire [15:0] tx_pkt_num_dma_byte;
 
-    wire [6:0] num_dma_symbol_fifo_data_count0;
-    wire [6:0] num_dma_symbol_fifo_data_count1;
-    wire [6:0] num_dma_symbol_fifo_data_count2;
-    wire [6:0] num_dma_symbol_fifo_data_count3;
+    wire [6:0] num_dma_symbol_fifo_data_count;
 
     wire [(C_M00_AXIS_TDATA_WIDTH-1):0] data_loopback;
     wire data_loopback_valid;
@@ -217,9 +207,7 @@
     
     wire phy_tx_auto_start_mode;
     wire [9:0] phy_tx_auto_start_num_dma_symbol_th;
-    
-    wire s_axis_recv_data_from_high;
-    
+        
     wire src_indication;
 
     wire tx_itrpt0_internal;
@@ -237,30 +225,16 @@
 	assign phy_tx_auto_start_mode = slv_reg2[3];
 	assign phy_tx_auto_start_num_dma_symbol_th = slv_reg2[13:4];
 
-    assign slv_reg21[0] = (s_axis_fifo_data_count0>slv_reg11[(MAX_BIT_NUM_DMA_SYMBOL-1):0]?1:0);
-    assign slv_reg21[1] = (s_axis_fifo_data_count1>slv_reg11[(MAX_BIT_NUM_DMA_SYMBOL-1):0]?1:0);
-    assign slv_reg21[2] = (s_axis_fifo_data_count2>slv_reg11[(MAX_BIT_NUM_DMA_SYMBOL-1):0]?1:0);
-    assign slv_reg21[3] = (s_axis_fifo_data_count3>slv_reg11[(MAX_BIT_NUM_DMA_SYMBOL-1):0]?1:0);
+    assign slv_reg21[0] = (s_axis_fifo_data_count>slv_reg11[(MAX_BIT_NUM_DMA_SYMBOL-1):0]?1:0);
 
     assign acc_ask_data_from_s_axis=(src_indication==1?tx_iq_intf_acc_ask_data_from_s_axis:tx_bit_intf_acc_ask_data_from_s_axis);  //The ack-data flag can be from acc or loopback
 
+    // The intertupt to driver
     assign tx_itrpt0 = (slv_reg14[16]==0?tx_itrpt0_internal:0); // slv_reg14[16] = 1 --> tx_itrpt0 = tx_itrpt0_internal
     assign tx_itrpt1 = (slv_reg14[17]==0?(slv_reg14[8]?tx_itrpt1_internal: (tx_itrpt1_internal&(~ack_tx_flag)) ):0); // slv_reg14[17] = 1 slv_reg14[8] = 1 --> tx_itrpt1 = tx_itrpt1_internal&(~ack_tx_flag) //the ack is not return
 
-    // assign slv_reg22[29:0] = {linux_prio,tx_queue_idx,tx_pkt_sn,tx_pkt_num_dma_byte};
-
-    // assign slv_reg24[1:0] = tx_queue_idx;
     // assign slv_reg24[13:2] = tx_pkt_sn;
-    assign slv_reg24[6:0]   = num_dma_symbol_fifo_data_count0;
-    assign slv_reg24[14:8]  = num_dma_symbol_fifo_data_count1;
-    assign slv_reg24[22:16] = num_dma_symbol_fifo_data_count2;
-    assign slv_reg24[30:24] = num_dma_symbol_fifo_data_count3;
-
-    reg dac_data_state;
-    reg dac_data_state0;
-
-    assign dac_data_nn = (dac_data != 0) ? 1:0;
-    assign fulln_from_dac_to_duc_1 = (wr_data_count <= slv_reg15[4:0]) ? 1 : 0;
+    assign slv_reg24[6:0]   = num_dma_symbol_fifo_data_count;
     
     dac_intf # (
         .IQ_DATA_WIDTH(IQ_DATA_WIDTH),
@@ -309,6 +283,129 @@
         .bw20_data_tvalid(wifi_iq_valid)
     );
     
+    tx_iq_intf # (
+        .C_S00_AXIS_TDATA_WIDTH(C_S00_AXIS_TDATA_WIDTH),
+        .IQ_DATA_WIDTH(IQ_DATA_WIDTH)
+    ) tx_iq_intf_i (
+        .rstn(s00_axis_aresetn&(~slv_reg0[3])),
+        .clk(s00_axis_aclk),
+        // to duc
+        .wifi_iq_pack(wifi_iq_pack),
+        .wifi_iq_ready(wifi_iq_ready),
+        .wifi_iq_valid(wifi_iq_valid),
+        // receive iq samples from s_axis for debug purpose
+        .data_from_s_axis(s_axis_data_to_acc),
+        .emptyn_from_s_axis(s_axis_emptyn_to_acc),
+        .ask_data_from_s_axis(tx_iq_intf_acc_ask_data_from_s_axis),// acc_ask_data_from_s_axis=(tx_iq_intf_acc_ask_data_from_s_axis|tx_bit_intf_acc_ask_data_from_s_axis)
+
+        .tx_hold_threshold(slv_reg12[10:0]),
+        .bb_gain(slv_reg13[9:0]),
+        // iq generated by outside wifi tx module
+        .rf_i(rf_i_from_acc),
+        .rf_q(rf_q_from_acc),
+        .rf_iq_valid(rf_iq_valid_from_acc),
+        // some selection and enable signal
+//        .ch_sel(slv_reg3[2]),
+        .src_sel(src_indication), //0-acc; 1-s_axis
+        .loopback_sel(slv_reg3[1]), //0-always loopback s_axis; 1-loopback from src_sel result
+        // selected data also looped back to m_axis
+        .data_loopback(data_loopback),
+        .data_loopback_valid(data_loopback_valid),
+
+        .tx_iq_fifo_empty(tx_iq_fifo_empty),
+        .tx_iq_fifo_rden(tx_iq_fifo_rden),
+        .tx_hold(tx_hold)
+    );
+
+    tx_bit_intf # (
+        .C_S00_AXIS_TDATA_WIDTH(C_S00_AXIS_TDATA_WIDTH),
+        .WIFI_TX_BRAM_ADDR_WIDTH(WIFI_TX_BRAM_ADDR_WIDTH),
+        .WIFI_TX_BRAM_DATA_WIDTH(WIFI_TX_BRAM_DATA_WIDTH),
+        .WIFI_TX_BRAM_WEN_WIDTH(WIFI_TX_BRAM_WEN_WIDTH)
+    ) tx_bit_intf_i (
+        .rstn(s00_axis_aresetn&(~slv_reg0[6])),
+        .clk(s00_axis_aclk),
+        
+        // recv bits from s_axis
+        .linux_prio(linux_prio),
+        .data_from_s_axis(s_axis_data_to_acc),
+        .dmg_from_s_axis(s_axis_dmg_to_acc),
+        .tsf_from_s_axis(s_axis_tsf_to_acc),
+
+        .ask_data_from_s_axis(tx_bit_intf_acc_ask_data_from_s_axis),
+        .ask_dmg_from_s_axis(tx_bit_intf_acc_ask_dmg_from_s_axis),
+        .ask_tsf_from_s_axis(tx_bit_intf_acc_ask_tsf_from_s_axis),
+
+        .emptyn_data_from_s_axis(s_axis_emptyn_to_acc),
+        .empty_dmg_from_s_axis(empty_dmg_from_s_axis),
+        
+        // src indication
+        .auto_start_mode(phy_tx_auto_start_mode),
+        .num_dma_symbol_th(phy_tx_auto_start_num_dma_symbol_th),
+        .start(phy_tx_start),
+
+        .tx_iq_fifo_empty(tx_iq_fifo_empty),
+        .cts_toself_config(slv_reg4),
+        .send_cts_toself_wait_sifs_top(send_cts_toself_wait_sifs_top),
+        .mac_addr(mac_addr),
+        .tx_try_complete(tx_try_complete),
+        .retrans_in_progress(retrans_in_progress),
+        .start_retrans(start_retrans),
+
+        .tsf_runtime_val(tsf_runtime_val),
+
+        .tx_bb_is_ongoing(tx_bb_is_ongoing),
+        .ack_tx_flag(ack_tx_flag),
+        .wea_from_xpu(wea_from_xpu),
+        .addra_from_xpu(addra_from_xpu),
+        .dina_from_xpu(dina_from_xpu),
+        .tx_pkt_need_ack(tx_pkt_need_ack),
+        .tx_pkt_retrans_limit(tx_pkt_retrans_limit),
+        .tx_pkt_sn(tx_pkt_sn),
+        // .tx_pkt_num_dma_byte(tx_pkt_num_dma_byte),
+        .douta(douta),
+        .cts_toself_bb_is_ongoing(cts_toself_bb_is_ongoing),
+        .cts_toself_rf_is_ongoing(cts_toself_rf_is_ongoing),
+         
+         // to send out to wifi tx module
+        .tx_end_from_acc(tx_end_from_acc),
+        .bram_data_to_acc(data_to_acc),
+        .bram_addr(bram_addr)
+    );
+
+    tx_interrupt_selection tx_interrupt_selection_i (
+        // selection  (input)
+        .src_sel0(slv_reg14[2:0]),
+        .src_sel1(slv_reg14[6:4]),
+        // src 
+        .s00_axis_tlast(s00_axis_tlast),
+        .phy_tx_start(phy_tx_start),
+        .tx_start_from_acc(tx_start_from_acc),
+        .tx_end_from_acc(tx_end_from_acc),
+        .tx_try_complete(tx_try_complete),
+        
+	    // to ps interrupt (output)
+	    .tx_itrpt0(tx_itrpt0_internal),
+        .tx_itrpt1(tx_itrpt1_internal)
+	);
+
+    tx_status_fifo tx_status_fifo_i ( // hooked to slv_reg22!
+        // input
+        .rstn(s00_axis_aresetn&(~slv_reg0[7])),
+        .clk(s00_axis_aclk),
+            
+        .slv_reg_rden(slv_reg_rden),
+        .axi_araddr_core(axi_araddr_core),
+
+        .tx_try_complete(tx_try_complete),
+        .tx_status(tx_status),
+        .linux_prio(linux_prio),
+        .tx_pkt_sn(tx_pkt_sn),
+
+        // output
+        .tx_status_out(slv_reg22[18:0])
+    );
+
 // Instantiation of Axi Bus Interface S00_AXI
 	tx_intf_s_axi # ( 
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
@@ -356,8 +453,8 @@
         .SLV_REG14(slv_reg14),
         .SLV_REG15(slv_reg15),
 		.SLV_REG16(slv_reg16),
-        //.SLV_REG17(slv_reg17),
-        //.SLV_REG18(slv_reg18),
+        .SLV_REG17(slv_reg17),
+        .SLV_REG18(slv_reg18),
         //.SLV_REG19(slv_reg19),
         // .SLV_REG20(slv_reg20),
         .SLV_REG21(slv_reg21),
@@ -373,26 +470,6 @@
         .SLV_REG31(slv_reg31)*/
 	);
 
-    tx_status_fifo tx_status_fifo_i ( // hooked to slv_reg22!
-        .rstn(s00_axis_aresetn&(~slv_reg0[7])),
-        .clk(s00_axis_aclk),
-            
-        .slv_reg_rden(slv_reg_rden),
-        .axi_araddr_core(axi_araddr_core),
-
-        .tx_try_complete(tx_try_complete),
-        .tx_status(tx_status),
-        .linux_prio(linux_prio),
-        .tx_queue_idx(tx_queue_idx),
-        .tx_pkt_sn(tx_pkt_sn),
-        // .s_axis_fifo_data_count0(s_axis_fifo_data_count0),
-        // .s_axis_fifo_data_count1(s_axis_fifo_data_count1),
-        // .s_axis_fifo_data_count2(s_axis_fifo_data_count2),
-        // .s_axis_fifo_data_count3(s_axis_fifo_data_count3),
-        
-        .tx_status_out(slv_reg22[18:0])
-    );
-
 // Instantiation of Axi Bus Interface S00_AXIS
 	tx_intf_s_axis # ( 
 		.C_S_AXIS_TDATA_WIDTH(C_S00_AXIS_TDATA_WIDTH),
@@ -406,149 +483,30 @@
 		.S_AXIS_TSTRB(s00_axis_tstrb),
 		.S_AXIS_TLAST(s00_axis_tlast),
 		.S_AXIS_TVALID(s00_axis_tvalid),
-        .S_AXIS_TLAST_BEACON(s00_axis_tlast_beacon),
-        .S_AXIS_TLAST_RESPONSE(s00_axis_tlast_response),
-		.S_AXIS_NUM_DMA_SYMBOL(slv_reg8[12:0]-1'b1),
-		
-		.s_axis_recv_data_from_high(s_axis_recv_data_from_high),
-		
-		.tx_queue_idx_indication_from_ps(slv_reg8[19:18]),
-		.tx_queue_idx(tx_queue_idx),
-		.endless_mode(slv_reg5[8]),
-		.data_count0(s_axis_fifo_data_count0),
-		.data_count1(s_axis_fifo_data_count1),
-		.data_count2(s_axis_fifo_data_count2),
-		.data_count3(s_axis_fifo_data_count3),
-        .DATA_TO_ACC(s_axis_data_to_acc), // output 
-        .EMPTYN_TO_ACC(s_axis_emptyn_to_acc), // FIFO empty indicator 
-        .ACC_ASK_DATA(acc_ask_data_from_s_axis&(~slv_reg10[0]))
-	);
-
-    // Two interruption sources
-    // slv_reg14 = 110000000001001111
-    // slv_reg14[2:0] = 111
-    // slv_reg14[6:4] = 100
-    // slv_reg14[17]  = 1
-    // slv_reg14[16]  = 1
-    // slv_reg14[8]   = 0
-
-
-    tx_interrupt_selection tx_interrupt_selection_i (
-        // selection
-        .src_sel0(slv_reg14[2:0]),
-        .src_sel1(slv_reg14[6:4]),
-        // src
-        .s00_axis_tlast(s00_axis_tlast),
-        .phy_tx_start(phy_tx_start),
-        .tx_start_from_acc(tx_start_from_acc),
-        .tx_end_from_acc(tx_end_from_acc),
-        .tx_try_complete(tx_try_complete),
-
-        .high_tx_allowed0(high_tx_allowed0),
-        .high_tx_allowed1(high_tx_allowed1),
-        .high_tx_allowed2(high_tx_allowed2),
-        .high_tx_allowed3(high_tx_allowed3),
-        
-	    // to ps interrupt
-	    .tx_itrpt0(tx_itrpt0_internal),
-        .tx_itrpt1(tx_itrpt1_internal)
-	);
-
-    tx_bit_intf # (
-        .C_S00_AXIS_TDATA_WIDTH(C_S00_AXIS_TDATA_WIDTH),
-        .WIFI_TX_BRAM_ADDR_WIDTH(WIFI_TX_BRAM_ADDR_WIDTH),
-        .WIFI_TX_BRAM_DATA_WIDTH(WIFI_TX_BRAM_DATA_WIDTH),
-        .WIFI_TX_BRAM_WEN_WIDTH(WIFI_TX_BRAM_WEN_WIDTH)
-    ) tx_bit_intf_i (
-        .rstn(s00_axis_aresetn&(~slv_reg0[6])),
-        .clk(s00_axis_aclk),
-        
-        // recv bits from s_axis
-        .tx_queue_idx(tx_queue_idx),
-        .linux_prio(linux_prio),
-        .data_from_s_axis(s_axis_data_to_acc),
-        .ask_data_from_s_axis(tx_bit_intf_acc_ask_data_from_s_axis),
-        .emptyn_from_s_axis(s_axis_emptyn_to_acc),
-        
-        // src indication
-        .auto_start_mode(phy_tx_auto_start_mode),
-        .num_dma_symbol_th(phy_tx_auto_start_num_dma_symbol_th),
-        .num_dma_symbol_total(slv_reg8[31:0]), // high two bits to indicate whether tx should be disable after certain type of tx (for waiting ack)
-        .tx_queue_idx_indication_from_ps(slv_reg8[19:18]),
-        .s_axis_recv_data_from_high(s_axis_recv_data_from_high),
-        .start(phy_tx_start),
-
-        .num_dma_symbol_fifo_data_count0(num_dma_symbol_fifo_data_count0), 
-        .num_dma_symbol_fifo_data_count1(num_dma_symbol_fifo_data_count1),
-        .num_dma_symbol_fifo_data_count2(num_dma_symbol_fifo_data_count2), 
-        .num_dma_symbol_fifo_data_count3(num_dma_symbol_fifo_data_count3),
-
-        .tx_iq_fifo_empty(tx_iq_fifo_empty),
+		.S_AXIS_NUM_DMA_SYMBOL(slv_reg8[12:0]-1'b1),  //num_dma_symbol
+				
         .cts_toself_config(slv_reg4),
-        .send_cts_toself_wait_sifs_top(send_cts_toself_wait_sifs_top),
-        .mac_addr(mac_addr),
-        .tx_try_complete(tx_try_complete),
-        .retrans_in_progress(retrans_in_progress),
-        .start_retrans(start_retrans),
-        .high_tx_allowed0(high_tx_allowed0),
-        .high_tx_allowed1(high_tx_allowed1),
-        .high_tx_allowed2(high_tx_allowed2),
-        .high_tx_allowed3(high_tx_allowed3),
-        .tx_bb_is_ongoing(tx_bb_is_ongoing),
-        .ack_tx_flag(ack_tx_flag),
-        .wea_from_xpu(wea_from_xpu),
-        .addra_from_xpu(addra_from_xpu),
-        .dina_from_xpu(dina_from_xpu),
-        .tx_pkt_need_ack(tx_pkt_need_ack),
-        .tx_pkt_retrans_limit(tx_pkt_retrans_limit),
-        .tx_pkt_sn(tx_pkt_sn),
-        // .tx_pkt_num_dma_byte(tx_pkt_num_dma_byte),
-        .douta(douta),
-        .cts_toself_bb_is_ongoing(cts_toself_bb_is_ongoing),
-        .cts_toself_rf_is_ongoing(cts_toself_rf_is_ongoing),
-         
-         // to send out to wifi tx module
-        .tx_end_from_acc(tx_end_from_acc),
-        .bram_data_to_acc(data_to_acc),
-        .bram_addr(bram_addr),
+        .num_dma_symbol_total(slv_reg8),
+        .tsf_config({slv_reg17,slv_reg18}),
 
-        .tsf_pulse_1M(tsf_pulse_1M)
-    );
+        .num_dma_symbol_fifo_data_count(num_dma_symbol_fifo_data_count), 
 
-    tx_iq_intf # (
-        .C_S00_AXIS_TDATA_WIDTH(C_S00_AXIS_TDATA_WIDTH),
-        .IQ_DATA_WIDTH(IQ_DATA_WIDTH)
-    ) tx_iq_intf_i (
-        .rstn(s00_axis_aresetn&(~slv_reg0[3])),
-        .clk(s00_axis_aclk),
-        // to duc
-        .wifi_iq_pack(wifi_iq_pack),
-        .wifi_iq_ready(wifi_iq_ready),
-        .wifi_iq_valid(wifi_iq_valid),
-        // receive iq samples from s_axis for debug purpose
-        .data_from_s_axis(s_axis_data_to_acc),
-        .emptyn_from_s_axis(s_axis_emptyn_to_acc),
-        .ask_data_from_s_axis(tx_iq_intf_acc_ask_data_from_s_axis),// acc_ask_data_from_s_axis=(tx_iq_intf_acc_ask_data_from_s_axis|tx_bit_intf_acc_ask_data_from_s_axis)
+		.endless_mode(slv_reg5[8]),
+		.data_count(s_axis_fifo_data_count),
 
-        .tx_hold_threshold(slv_reg12[10:0]),
-        .bb_gain(slv_reg13[9:0]),
-        // iq generated by outside wifi tx module
-        .rf_i(rf_i_from_acc),
-        .rf_q(rf_q_from_acc),
-        .rf_iq_valid(rf_iq_valid_from_acc),
-        // some selection and enable signal
-//        .ch_sel(slv_reg3[2]),
-        .src_sel(src_indication), //0-acc; 1-s_axis
-        .loopback_sel(slv_reg3[1]), //0-always loopback s_axis; 1-loopback from src_sel result
-        // selected data also looped back to m_axis
-        .data_loopback(data_loopback),
-        .data_loopback_valid(data_loopback_valid),
+        .DATA_TO_ACC(s_axis_data_to_acc), // output
+        .DMG_TO_ACC(s_axis_dmg_to_acc),
+        .TSF_TO_ACC(s_axis_tsf_to_acc), 
 
-        .tx_iq_fifo_empty(tx_iq_fifo_empty),
-        .tx_iq_fifo_rden(tx_iq_fifo_rden),
-        .tx_hold(tx_hold)
-    );
-    
+        .EMPTYN_TO_ACC(s_axis_emptyn_to_acc), // FIFO empty indicator 
+        .EMPTY_DMG_TO_ACC(empty_dmg_from_s_axis), 
+        .EMPTY_TSF_TO_ACC(empty_tsf_from_s_axis), 
+
+        .ACC_ASK_DATA(acc_ask_data_from_s_axis&(~slv_reg10[0])),
+        .ACC_ASK_DMG(tx_bit_intf_acc_ask_dmg_from_s_axis),
+        .ACC_ASK_TSF(tx_bit_intf_acc_ask_tsf_from_s_axis)
+	);
+
     tx_intf_pl_to_m_axis # ( 
         .C_M00_AXIS_TDATA_WIDTH(C_M00_AXIS_TDATA_WIDTH)
     ) tx_intf_pl_to_m_axis_i (
@@ -557,7 +515,7 @@
 
         .data_to_m_axis(data_from_pl_to_m_axis),
         .data_ready_to_m_axis(data_ready_from_pl_to_m_axis),
-//        .fulln_from_m_axis(fulln_from_m_axis_to_pl),
+//        .fulln_from_m_axis(fulln_from_m_axis_to_pl), 
         
         .start_1trans_mode(slv_reg5[1:0]),
         .start_1trans_ext_trigger(slv_reg6[31]),

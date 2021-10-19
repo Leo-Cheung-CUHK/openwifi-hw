@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon May 10 14:59:41 2021" VIVADOVERSION="2018.3">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Oct 16 21:40:49 2021" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc706:part0:1.2" DEVICE="7z045" NAME="system" PACKAGE="ffg900" SPEEDGRADE="-2"/>
 
@@ -239,6 +239,66 @@
         <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="gpio_status"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="I" NAME="iic_main_scl_i" SIGIS="undef" SIGNAME="axi_iic_main_scl_i">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_iic_main" PORT="scl_i"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="iic_main_scl_o" SIGIS="undef" SIGNAME="axi_iic_main_scl_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_iic_main" PORT="scl_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="iic_main_scl_t" SIGIS="undef" SIGNAME="axi_iic_main_scl_t">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_iic_main" PORT="scl_t"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="iic_main_sda_i" SIGIS="undef" SIGNAME="axi_iic_main_sda_i">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_iic_main" PORT="sda_i"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="iic_main_sda_o" SIGIS="undef" SIGNAME="axi_iic_main_sda_o">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_iic_main" PORT="sda_o"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="iic_main_sda_t" SIGIS="undef" SIGNAME="axi_iic_main_sda_t">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axi_iic_main" PORT="sda_t"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="53" NAME="fixed_io_mio" RIGHT="0" SIGIS="undef" SIGNAME="sys_ps7_MIO">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sys_ps7" PORT="MIO"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="fixed_io_ddr_vrn" SIGIS="undef" SIGNAME="sys_ps7_DDR_VRN">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sys_ps7" PORT="DDR_VRN"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="fixed_io_ddr_vrp" SIGIS="undef" SIGNAME="sys_ps7_DDR_VRP">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sys_ps7" PORT="DDR_VRP"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="fixed_io_ps_srstb" SIGIS="undef" SIGNAME="sys_ps7_PS_SRSTB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sys_ps7" PORT="PS_SRSTB"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="fixed_io_ps_clk" SIGIS="undef" SIGNAME="sys_ps7_PS_CLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sys_ps7" PORT="PS_CLK"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" NAME="fixed_io_ps_porb" SIGIS="undef" SIGNAME="sys_ps7_PS_PORB">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="sys_ps7" PORT="PS_PORB"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="IO" NAME="ddr_cas_n" SIGIS="undef" SIGNAME="sys_ps7_DDR_CAS_n">
       <CONNECTIONS>
         <CONNECTION INSTANCE="sys_ps7" PORT="DDR_CAS_n"/>
@@ -314,66 +374,6 @@
         <CONNECTION INSTANCE="sys_ps7" PORT="DDR_DQS"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="IO" LEFT="53" NAME="fixed_io_mio" RIGHT="0" SIGIS="undef" SIGNAME="sys_ps7_MIO">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sys_ps7" PORT="MIO"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="fixed_io_ddr_vrn" SIGIS="undef" SIGNAME="sys_ps7_DDR_VRN">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sys_ps7" PORT="DDR_VRN"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="fixed_io_ddr_vrp" SIGIS="undef" SIGNAME="sys_ps7_DDR_VRP">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sys_ps7" PORT="DDR_VRP"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="fixed_io_ps_srstb" SIGIS="undef" SIGNAME="sys_ps7_PS_SRSTB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sys_ps7" PORT="PS_SRSTB"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="fixed_io_ps_clk" SIGIS="undef" SIGNAME="sys_ps7_PS_CLK">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sys_ps7" PORT="PS_CLK"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="IO" NAME="fixed_io_ps_porb" SIGIS="undef" SIGNAME="sys_ps7_PS_PORB">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="sys_ps7" PORT="PS_PORB"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="iic_main_scl_i" SIGIS="undef" SIGNAME="axi_iic_main_scl_i">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_iic_main" PORT="scl_i"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="iic_main_scl_o" SIGIS="undef" SIGNAME="axi_iic_main_scl_o">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_iic_main" PORT="scl_o"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="iic_main_scl_t" SIGIS="undef" SIGNAME="axi_iic_main_scl_t">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_iic_main" PORT="scl_t"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="I" NAME="iic_main_sda_i" SIGIS="undef" SIGNAME="axi_iic_main_sda_i">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_iic_main" PORT="sda_i"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="iic_main_sda_o" SIGIS="undef" SIGNAME="axi_iic_main_sda_o">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_iic_main" PORT="sda_o"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="iic_main_sda_t" SIGIS="undef" SIGNAME="axi_iic_main_sda_t">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="axi_iic_main" PORT="sda_t"/>
-      </CONNECTIONS>
-    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -434,7 +434,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="5" FULLNAME="/GND_1" HWVERSION="1.1" INSTANCE="GND_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+    <MODULE COREREVISION="6" FULLNAME="/GND_1" HWVERSION="1.1" INSTANCE="GND_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
@@ -1874,7 +1874,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="19" FULLNAME="/axi_cpu_interconnect" HWVERSION="2.1" INSTANCE="axi_cpu_interconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
+    <MODULE COREREVISION="20" FULLNAME="/axi_cpu_interconnect" HWVERSION="2.1" INSTANCE="axi_cpu_interconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_interconnect;v=v2_1;d=pg059-axi-interconnect.pdf"/>
       </DOCUMENTS>
@@ -2307,291 +2307,6 @@
             <CONNECTION INSTANCE="sys_rstgen" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M07_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M07_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_awprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_awprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_awvalid" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_awready" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M07_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M07_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_wvalid" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_wready" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M07_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_bvalid" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_bready" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M07_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M07_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_arprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_arprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_arvalid" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_arready" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M07_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M07_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M07_AXI_rvalid" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M07_AXI_rready" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M06_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_awprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_awprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M06_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_arprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_arprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M02_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_awprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_awprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M02_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_arprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_arprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M02_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M02_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="31" NAME="M08_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_dac_dma_s_axi_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_ad9361_dac_dma" PORT="s_axi_awaddr"/>
@@ -2687,99 +2402,281 @@
             <CONNECTION INSTANCE="axi_ad9361_dac_dma" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_awaddr"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_awprot">
+        <PORT DIR="O" LEFT="2" NAME="M05_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_awprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_awprot"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_awvalid">
+        <PORT DIR="O" LEFT="0" NAME="M05_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_awvalid"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_awready">
+        <PORT DIR="I" LEFT="0" NAME="M05_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_awready"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_wdata"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M05_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_wstrb"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_wvalid">
+        <PORT DIR="O" LEFT="0" NAME="M05_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_wvalid"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_wready">
+        <PORT DIR="I" LEFT="0" NAME="M05_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_wready"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M05_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_bresp"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_bvalid">
+        <PORT DIR="I" LEFT="0" NAME="M05_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_bvalid"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_bready">
+        <PORT DIR="O" LEFT="0" NAME="M05_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_bready"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_araddr"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M01_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_arprot">
+        <PORT DIR="O" LEFT="2" NAME="M05_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_arprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_arprot"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_arvalid">
+        <PORT DIR="O" LEFT="0" NAME="M05_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_arvalid"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_arready">
+        <PORT DIR="I" LEFT="0" NAME="M05_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_arready"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M05_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_rdata"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M05_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_rresp"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M01_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_rvalid">
+        <PORT DIR="I" LEFT="0" NAME="M05_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_rvalid"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M01_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_rready">
+        <PORT DIR="O" LEFT="0" NAME="M05_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_rready"/>
+            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M07_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M07_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_awprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_awprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_awvalid" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_awready" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M07_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M07_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_wvalid" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_wready" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M07_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_bvalid" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_bready" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M07_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M07_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_arprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_arprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_arvalid" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_arready" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M07_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M07_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M07_AXI_rvalid" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M07_AXI_rready" SIGIS="undef" SIGNAME="axi_ad9361_adc_dma_s_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361_adc_dma" PORT="s_axi_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M04_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M04_AXI_awaddr">
@@ -2877,194 +2774,289 @@
             <CONNECTION INSTANCE="axi_hdmi_core" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_awaddr"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M03_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_awprot">
+        <PORT DIR="O" LEFT="2" NAME="M02_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_awprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_awprot"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_awvalid">
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_awvalid"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M03_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_awready">
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_awready"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_wdata"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M03_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_wstrb"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_wvalid">
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_wvalid"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M03_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_wready">
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_wready"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_bresp"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M03_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_bvalid">
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_bvalid"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_bready">
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_bready"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_araddr"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M03_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_arprot">
+        <PORT DIR="O" LEFT="2" NAME="M02_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_arprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_arprot"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_arvalid">
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_arvalid"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M03_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_arready">
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_arready"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_rdata"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_rresp"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M03_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_rvalid">
+        <PORT DIR="I" LEFT="0" NAME="M02_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_rvalid"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_rready">
+        <PORT DIR="O" LEFT="0" NAME="M02_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M02_AXI_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_rready"/>
+            <CONNECTION INSTANCE="axi_hdmi_clkgen" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_awaddr"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M05_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_awprot">
+        <PORT DIR="O" LEFT="2" NAME="M01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_awprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_awprot"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M05_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_awvalid">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_awvalid"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M05_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_awready">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_awready"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_wdata"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M05_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_wstrb"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M05_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_wvalid">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_wvalid"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M05_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_wready">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_wready"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M05_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_bresp"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M05_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_bvalid">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_bvalid"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M05_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_bready">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_bready"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_araddr"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M05_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_arprot">
+        <PORT DIR="O" LEFT="2" NAME="M01_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_arprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_arprot"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M05_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_arvalid">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_arvalid"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M05_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_arready">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_arready"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M05_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_rdata"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M05_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_rresp"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M05_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_rvalid">
+        <PORT DIR="I" LEFT="0" NAME="M01_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_rvalid"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M05_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M05_AXI_rready">
+        <PORT DIR="O" LEFT="0" NAME="M01_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M01_AXI_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_spdif_tx_core" PORT="s_axi_rready"/>
+            <CONNECTION INSTANCE="axi_sysid_0" PORT="s_axi_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M06_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_awprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_awprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M06_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_arprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_arprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="axi_ad9361_s_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_ad9361" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_S00_AXI_awid">
@@ -3257,91 +3249,99 @@
             <CONNECTION INSTANCE="sys_ps7" PORT="M_AXI_GP0_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_awaddr"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_awvalid">
+        <PORT DIR="O" LEFT="2" NAME="M03_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_awprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_awvalid"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_awready">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_awready"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_wdata">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_wdata"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M00_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_wstrb">
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_wstrb"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_wvalid">
+        <PORT DIR="O" LEFT="3" NAME="M03_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_wvalid"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_wready">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_wready"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_bresp">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_bresp"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_bvalid">
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_bvalid"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_bready">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_bready"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_araddr">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_araddr"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_arvalid">
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_arvalid"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_arready">
+        <PORT DIR="O" LEFT="2" NAME="M03_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_arprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_arready"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_rdata">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_rdata"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_rresp">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_rresp"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_rvalid">
+        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_rvalid"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M00_AXI_rready">
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_iic_main" PORT="s_axi_rready"/>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="axi_cpu_interconnect_M03_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_hdmi_dma" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -4448,7 +4448,7 @@
         <PERIPHERAL INSTANCE="axi_hdmi_core"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE BD="system_axi_hp0_interconnect_0" BDTYPE="SBD" COREREVISION="10" DRIVERMODE="CORE" FULLNAME="/axi_hp0_interconnect" HWVERSION="1.0" INSTANCE="axi_hp0_interconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="system_axi_hp0_interconnect_0" VLNV="xilinx.com:ip:smartconnect:1.0">
+    <MODULE BD="system_axi_hp0_interconnect_0" BDTYPE="SBD" COREREVISION="11" DRIVERMODE="CORE" FULLNAME="/axi_hp0_interconnect" HWVERSION="1.0" INSTANCE="axi_hp0_interconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="system_axi_hp0_interconnect_0" VLNV="xilinx.com:ip:smartconnect:1.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
@@ -4718,7 +4718,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE BD="system_axi_hp1_interconnect_0" BDTYPE="SBD" COREREVISION="10" DRIVERMODE="CORE" FULLNAME="/axi_hp1_interconnect" HWVERSION="1.0" INSTANCE="axi_hp1_interconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="system_axi_hp1_interconnect_0" VLNV="xilinx.com:ip:smartconnect:1.0">
+    <MODULE BD="system_axi_hp1_interconnect_0" BDTYPE="SBD" COREREVISION="11" DRIVERMODE="CORE" FULLNAME="/axi_hp1_interconnect" HWVERSION="1.0" INSTANCE="axi_hp1_interconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="system_axi_hp1_interconnect_0" VLNV="xilinx.com:ip:smartconnect:1.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
@@ -5024,7 +5024,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE BD="system_axi_hp2_interconnect_0" BDTYPE="SBD" COREREVISION="10" DRIVERMODE="CORE" FULLNAME="/axi_hp2_interconnect" HWVERSION="1.0" INSTANCE="axi_hp2_interconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="system_axi_hp2_interconnect_0" VLNV="xilinx.com:ip:smartconnect:1.0">
+    <MODULE BD="system_axi_hp2_interconnect_0" BDTYPE="SBD" COREREVISION="11" DRIVERMODE="CORE" FULLNAME="/axi_hp2_interconnect" HWVERSION="1.0" INSTANCE="axi_hp2_interconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="system_axi_hp2_interconnect_0" VLNV="xilinx.com:ip:smartconnect:1.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
@@ -5294,7 +5294,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="21" FULLNAME="/axi_iic_main" HWVERSION="2.0" INSTANCE="axi_iic_main" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_iic" VLNV="xilinx.com:ip:axi_iic:2.0">
+    <MODULE COREREVISION="22" FULLNAME="/axi_iic_main" HWVERSION="2.0" INSTANCE="axi_iic_main" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_iic" VLNV="xilinx.com:ip:axi_iic:2.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_iic;v=v2_0;d=pg090-axi-iic.pdf"/>
       </DOCUMENTS>
@@ -6718,7 +6718,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/blk_mem_gen_0" HWVERSION="8.4" INSTANCE="blk_mem_gen_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY" MODTYPE="blk_mem_gen" VLNV="xilinx.com:ip:blk_mem_gen:8.4">
+    <MODULE COREREVISION="3" FULLNAME="/blk_mem_gen_0" HWVERSION="8.4" INSTANCE="blk_mem_gen_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY" MODTYPE="blk_mem_gen" VLNV="xilinx.com:ip:blk_mem_gen:8.4">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=blk_mem_gen;v=v8_4;d=pg058-blk-mem-gen.pdf"/>
       </DOCUMENTS>
@@ -6919,7 +6919,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="19" FULLNAME="/openwifi_ip/axi_dma_0" HWVERSION="7.1" INSTANCE="openwifi_ip_axi_dma_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
+    <MODULE COREREVISION="20" FULLNAME="/openwifi_ip/axi_dma_0" HWVERSION="7.1" INSTANCE="openwifi_ip_axi_dma_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_dma;v=v7_1;d=pg021_axi_dma.pdf"/>
       </DOCUMENTS>
@@ -8524,7 +8524,7 @@
         <PERIPHERAL INSTANCE="openwifi_ip_tx_intf_0"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE COREREVISION="19" FULLNAME="/openwifi_ip/axi_dma_1" HWVERSION="7.1" INSTANCE="openwifi_ip_axi_dma_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
+    <MODULE COREREVISION="20" FULLNAME="/openwifi_ip/axi_dma_1" HWVERSION="7.1" INSTANCE="openwifi_ip_axi_dma_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="axi_dma" VLNV="xilinx.com:ip:axi_dma:7.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_dma;v=v7_1;d=pg021_axi_dma.pdf"/>
       </DOCUMENTS>
@@ -10124,15 +10124,6 @@
         <MEMRANGE ADDRESSBLOCK="ACP_DDR_LOWOCM" BASENAME="C_BASEADDR" BASEVALUE="0x00000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x3FFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_SG" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI_ACP"/>
         <MEMRANGE ADDRESSBLOCK="ACP_DDR_LOWOCM" BASENAME="C_BASEADDR" BASEVALUE="0x00000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x3FFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_MM2S" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI_ACP"/>
         <MEMRANGE ADDRESSBLOCK="ACP_DDR_LOWOCM" BASENAME="C_BASEADDR" BASEVALUE="0x00000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x3FFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_S2MM" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI_ACP"/>
-        <MEMRANGE ADDRESSBLOCK="ACP_M_AXI_GP0" BASENAME="C_BASEADDR" BASEVALUE="0x40000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x7FFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_SG" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_ACP"/>
-        <MEMRANGE ADDRESSBLOCK="ACP_M_AXI_GP0" BASENAME="C_BASEADDR" BASEVALUE="0x40000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x7FFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_MM2S" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_ACP"/>
-        <MEMRANGE ADDRESSBLOCK="ACP_M_AXI_GP0" BASENAME="C_BASEADDR" BASEVALUE="0x40000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0x7FFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_S2MM" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_ACP"/>
-        <MEMRANGE ADDRESSBLOCK="ACP_M_AXI_GP1" BASENAME="C_BASEADDR" BASEVALUE="0x80000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0xBFFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_SG" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_ACP"/>
-        <MEMRANGE ADDRESSBLOCK="ACP_M_AXI_GP1" BASENAME="C_BASEADDR" BASEVALUE="0x80000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0xBFFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_MM2S" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_ACP"/>
-        <MEMRANGE ADDRESSBLOCK="ACP_M_AXI_GP1" BASENAME="C_BASEADDR" BASEVALUE="0x80000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0xBFFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_S2MM" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_ACP"/>
-        <MEMRANGE ADDRESSBLOCK="ACP_IOP" BASENAME="C_BASEADDR" BASEVALUE="0xE0000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0xE03FFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_SG" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_ACP"/>
-        <MEMRANGE ADDRESSBLOCK="ACP_IOP" BASENAME="C_BASEADDR" BASEVALUE="0xE0000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0xE03FFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_MM2S" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_ACP"/>
-        <MEMRANGE ADDRESSBLOCK="ACP_IOP" BASENAME="C_BASEADDR" BASEVALUE="0xE0000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0xE03FFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_S2MM" MEMTYPE="REGISTER" SLAVEBUSINTERFACE="S_AXI_ACP"/>
         <MEMRANGE ADDRESSBLOCK="ACP_QSPI_LINEAR" BASENAME="C_BASEADDR" BASEVALUE="0xFC000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0xFDFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_SG" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI_ACP"/>
         <MEMRANGE ADDRESSBLOCK="ACP_QSPI_LINEAR" BASENAME="C_BASEADDR" BASEVALUE="0xFC000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0xFDFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_MM2S" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI_ACP"/>
         <MEMRANGE ADDRESSBLOCK="ACP_QSPI_LINEAR" BASENAME="C_BASEADDR" BASEVALUE="0xFC000000" HIGHNAME="C_HIGHADDR" HIGHVALUE="0xFDFFFFFF" INSTANCE="sys_ps7" IS_DATA="TRUE" IS_INSTRUCTION="TRUE" MASTERBUSINTERFACE="M_AXI_S2MM" MEMTYPE="MEMORY" SLAVEBUSINTERFACE="S_AXI_ACP"/>
@@ -10142,7 +10133,7 @@
         <PERIPHERAL INSTANCE="openwifi_ip_rx_intf_0"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE COREREVISION="19" FULLNAME="/openwifi_ip/axi_interconnect_0" HWVERSION="2.1" INSTANCE="openwifi_ip_axi_interconnect_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
+    <MODULE COREREVISION="20" FULLNAME="/openwifi_ip/axi_interconnect_0" HWVERSION="2.1" INSTANCE="openwifi_ip_axi_interconnect_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_interconnect;v=v2_1;d=pg059-axi-interconnect.pdf"/>
       </DOCUMENTS>
@@ -10666,6 +10657,107 @@
             <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_sg_rready"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="S01_AXI_awid" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="31" NAME="S01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="S01_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awlen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awlen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S01_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awsize">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awsize"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="S01_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awburst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awburst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S01_AXI_awlock" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="3" NAME="S01_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awcache">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awcache"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S01_AXI_awqos" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="S01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="S01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="S01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="S01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="S01_AXI_wlast" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_wlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_wlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="S01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="S01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S01_AXI_bid" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="1" NAME="S01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="S01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="S01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S01_AXI_arid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_araddr" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arlen" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arsize" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arburst" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arlock" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arcache" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arqos" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arvalid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_arready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_rid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_rdata" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_rresp" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_rlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_rvalid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_rready" SIGIS="undef"/>
         <PORT DIR="I" NAME="S00_AXI_awid" SIGIS="undef"/>
         <PORT DIR="I" NAME="S00_AXI_awaddr" SIGIS="undef"/>
         <PORT DIR="I" NAME="S00_AXI_awlen" SIGIS="undef"/>
@@ -10945,107 +11037,6 @@
             <CONNECTION INSTANCE="sys_ps7" PORT="S_AXI_HP3_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S01_AXI_awid" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="S01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="S01_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S01_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awsize"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="S01_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S01_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="S01_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S01_AXI_awqos" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="S01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="S01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="63" NAME="S01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="S01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="S01_AXI_wlast" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_wlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_wlast"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="S01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="S01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S01_AXI_bid" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="1" NAME="S01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="S01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="S01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_m_axi_s2mm_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axi_s2mm_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S01_AXI_arid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_araddr" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arcache" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arqos" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_arready" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_rid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_rdata" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_rresp" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_rlast" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_rvalid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_rready" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="openwifi_ip_axi_dma_0_M_AXI_MM2S" DATAWIDTH="64" NAME="S00_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -11213,7 +11204,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="19" FULLNAME="/openwifi_ip/axi_interconnect_1" HWVERSION="2.1" INSTANCE="openwifi_ip_axi_interconnect_1" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
+    <MODULE COREREVISION="20" FULLNAME="/openwifi_ip/axi_interconnect_1" HWVERSION="2.1" INSTANCE="openwifi_ip_axi_interconnect_1" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_interconnect;v=v2_1;d=pg059-axi-interconnect.pdf"/>
       </DOCUMENTS>
@@ -11626,172 +11617,6 @@
             <CONNECTION INSTANCE="openwifi_ip_sys_rstgen1" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M03_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M03_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M03_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M03_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M03_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M03_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M03_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M02_AXI_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="openwifi_ip_openofdm_tx_0" PORT="s00_axi_awaddr"/>
@@ -11887,99 +11712,87 @@
             <CONNECTION INSTANCE="openwifi_ip_openofdm_tx_0" PORT="s00_axi_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_awaddr"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M05_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_awprot">
+        <PORT DIR="O" NAME="M03_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_awprot"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M05_AXI_awvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_awvalid">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_awvalid"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_AXI_awready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_awready">
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_awready"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_wdata">
+        <PORT DIR="O" NAME="M03_AXI_wstrb" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_wdata"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M05_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_wstrb">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_wstrb"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M05_AXI_wvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_wvalid">
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_wvalid"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_AXI_wready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_wready">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_wready"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M05_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_bresp">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_bresp"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_AXI_bvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_bvalid">
+        <PORT DIR="O" LEFT="31" NAME="M03_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_bvalid"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M05_AXI_bready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_bready">
+        <PORT DIR="O" NAME="M03_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_bready"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M05_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_araddr">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_araddr"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M05_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_arprot">
+        <PORT DIR="I" LEFT="31" NAME="M03_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_arprot"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M05_AXI_arvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_arvalid">
+        <PORT DIR="I" LEFT="1" NAME="M03_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_arvalid"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M05_AXI_arready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_arready">
+        <PORT DIR="I" LEFT="0" NAME="M03_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_arready"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M05_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_rdata">
+        <PORT DIR="O" LEFT="0" NAME="M03_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_s_axi_lite_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M05_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M05_AXI_rvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M05_AXI_rready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_rready"/>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="s_axi_lite_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M04_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M04_AXI_awaddr">
@@ -12077,194 +11890,99 @@
             <CONNECTION INSTANCE="openwifi_ip_rx_intf_0" PORT="s00_axi_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_awaddr">
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_awaddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_awaddr"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_awprot">
+        <PORT DIR="O" LEFT="2" NAME="M05_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_awprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_awprot"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_awvalid">
+        <PORT DIR="O" NAME="M05_AXI_awvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_awvalid"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_awready">
+        <PORT DIR="I" NAME="M05_AXI_awready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_awready"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_wdata">
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_wdata"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_wstrb">
+        <PORT DIR="O" LEFT="3" NAME="M05_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_wstrb"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_wvalid">
+        <PORT DIR="O" NAME="M05_AXI_wvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_wvalid"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_wready">
+        <PORT DIR="I" NAME="M05_AXI_wready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_wready"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_bresp">
+        <PORT DIR="I" LEFT="1" NAME="M05_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_bresp"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_bresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_bvalid">
+        <PORT DIR="I" NAME="M05_AXI_bvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_bvalid"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_bready">
+        <PORT DIR="O" NAME="M05_AXI_bready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_bready"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_araddr">
+        <PORT DIR="O" LEFT="31" NAME="M05_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_araddr"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M01_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_arprot">
+        <PORT DIR="O" LEFT="2" NAME="M05_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_arprot">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_arprot"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_arprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_arvalid">
+        <PORT DIR="O" NAME="M05_AXI_arvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_arvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_arvalid"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_arready">
+        <PORT DIR="I" NAME="M05_AXI_arready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_arready"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_arready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_rdata">
+        <PORT DIR="I" LEFT="31" NAME="M05_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_rdata"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_rdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_rresp">
+        <PORT DIR="I" LEFT="1" NAME="M05_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_rresp"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_rresp"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_rvalid">
+        <PORT DIR="I" NAME="M05_AXI_rvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_rvalid"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_rready">
+        <PORT DIR="O" NAME="M05_AXI_rready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M05_AXI_rready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_rready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M06_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_awprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_awprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="2" NAME="M06_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_arprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_arprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_rready"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="11" NAME="S00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_S00_AXI_awid">
@@ -12455,6 +12173,279 @@
         <PORT DIR="I" NAME="S00_AXI_rready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_S00_AXI_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="sys_ps7" PORT="M_AXI_GP1_RREADY"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M06_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_awprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_awprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_awvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_awready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M06_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_wvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_wready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_bvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_bready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M06_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_arprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_arprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_arvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_arready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M06_AXI_rvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M06_AXI_rready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M06_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axi_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_wstrb" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M00_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="M00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="M00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_0_s_axi_lite_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axi_lite_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_awprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_awprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_bvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="2" NAME="M01_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_arprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_arprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="M01_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="M01_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M01_AXI_rvalid" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M01_AXI_rready" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_1_M01_AXI_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -12664,7 +12655,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="19" FULLNAME="/openwifi_ip/axi_interconnect_2" HWVERSION="2.1" INSTANCE="openwifi_ip_axi_interconnect_2" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
+    <MODULE COREREVISION="20" FULLNAME="/openwifi_ip/axi_interconnect_2" HWVERSION="2.1" INSTANCE="openwifi_ip_axi_interconnect_2" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axi_interconnect" VLNV="xilinx.com:ip:axi_interconnect:2.1">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_interconnect;v=v2_1;d=pg059-axi-interconnect.pdf"/>
       </DOCUMENTS>
@@ -13037,196 +13028,6 @@
             <CONNECTION INSTANCE="openwifi_ip_sys_rstgen1" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S01_AXI_awid" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="S01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awaddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="S01_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S01_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awsize"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="S01_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S01_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="S01_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S01_AXI_awqos" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="S01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="S01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="63" NAME="S01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_wdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_wdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="S01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_wstrb">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="S01_AXI_wlast" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_wlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_wlast"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="S01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="S01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S01_AXI_bid" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="1" NAME="S01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_bresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_bresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="S01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_bvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_bvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="S01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S01_AXI_arid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_araddr" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arcache" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arqos" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_arvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_arready" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_rid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_rdata" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_rresp" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_rlast" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S01_AXI_rvalid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S01_AXI_rready" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_awid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_awaddr" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_awcache" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_awqos" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_awvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S00_AXI_awready" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_wdata" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_wlast" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_wvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S00_AXI_wready" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S00_AXI_bid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S00_AXI_bresp" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S00_AXI_bvalid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_bready" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S00_AXI_arid" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="S00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="S00_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S00_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arsize"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="1" NAME="S00_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arburst">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S00_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="S00_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S00_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S00_AXI_arqos" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="0" NAME="S00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="S00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S00_AXI_rid" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="63" NAME="S00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="S00_AXI_rlast" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_rlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_rlast"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="0" NAME="S00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="0" NAME="S00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_rready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" LEFT="1" NAME="M00_AXI_awid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_interconnect_2_M00_AXI_awid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="sys_ps7" PORT="S_AXI_ACP_AWID"/>
@@ -13566,6 +13367,196 @@
         <PORT DIR="I" NAME="S02_AXI_rready" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_sg_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_sg_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S01_AXI_awid" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="31" NAME="S01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awaddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awaddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="S01_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awlen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awlen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S01_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awsize">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awsize"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="S01_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awburst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awburst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S01_AXI_awlock" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="3" NAME="S01_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awcache">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awcache"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S01_AXI_awqos" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="S01_AXI_awvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="S01_AXI_awready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_awready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_awready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="S01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_wdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="S01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="S01_AXI_wlast" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_wlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_wlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="S01_AXI_wvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_wvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="S01_AXI_wready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S01_AXI_bid" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="1" NAME="S01_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_bresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_bresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="S01_AXI_bvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_bvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_bvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="S01_AXI_bready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_s2mm_bready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_s2mm_bready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S01_AXI_arid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_araddr" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arlen" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arsize" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arburst" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arlock" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arcache" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arprot" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arqos" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_arvalid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_arready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_rid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_rdata" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_rresp" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_rlast" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S01_AXI_rvalid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S01_AXI_rready" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_awid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_awaddr" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_awlen" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_awsize" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_awburst" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_awlock" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_awcache" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_awprot" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_awqos" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_awvalid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S00_AXI_awready" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_wdata" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_wstrb" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_wlast" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_wvalid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S00_AXI_wready" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S00_AXI_bid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S00_AXI_bresp" SIGIS="undef"/>
+        <PORT DIR="O" NAME="S00_AXI_bvalid" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_bready" SIGIS="undef"/>
+        <PORT DIR="I" NAME="S00_AXI_arid" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="31" NAME="S00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="S00_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arlen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arlen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S00_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arsize">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arsize"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="S00_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arburst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arburst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S00_AXI_arlock" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="3" NAME="S00_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arcache">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arcache"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S00_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S00_AXI_arqos" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="0" NAME="S00_AXI_arvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="S00_AXI_arready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S00_AXI_rid" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="63" NAME="S00_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="S00_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="S00_AXI_rlast" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_rlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_rlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="S00_AXI_rvalid" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="S00_AXI_rready" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_axi_dma_1_m_axi_mm2s_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="openwifi_ip_axi_dma_1" PORT="m_axi_mm2s_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -14736,10 +14727,10 @@
             <CONNECTION INSTANCE="openwifi_ip_axi_interconnect_2" PORT="S02_ARESETN"/>
             <CONNECTION INSTANCE="openwifi_ip_openofdm_tx_0" PORT="phy_tx_arestn"/>
             <CONNECTION INSTANCE="openwifi_ip_openofdm_tx_0" PORT="s00_axi_aresetn"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="openwifi_ip_rx_intf_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="openwifi_ip_rx_intf_0" PORT="s00_axis_aresetn"/>
             <CONNECTION INSTANCE="openwifi_ip_rx_intf_0" PORT="m00_axis_aresetn"/>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axis_aresetn"/>
             <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="m00_axis_aresetn"/>
@@ -14766,6 +14757,7 @@
         <PARAMETER NAME="C_M00_AXIS_TDATA_WIDTH" VALUE="64"/>
         <PARAMETER NAME="WAIT_COUNT_BITS" VALUE="5"/>
         <PARAMETER NAME="MAX_NUM_DMA_SYMBOL" VALUE="8192"/>
+        <PARAMETER NAME="TSF_TIMER_WIDTH" VALUE="64"/>
         <PARAMETER NAME="Component_Name" VALUE="system_tx_intf_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_BASEADDR" VALUE="0x83C00000"/>
@@ -14890,26 +14882,6 @@
         <PORT DIR="O" NAME="tx_iq_fifo_rden" SIGIS="undef" SIGNAME="openwifi_ip_tx_intf_0_tx_iq_fifo_rden">
           <CONNECTIONS>
             <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="tx_iq_fifo_rden"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="high_tx_allowed0" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_high_tx_allowed0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="high_tx_allowed0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="high_tx_allowed1" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_high_tx_allowed1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="high_tx_allowed1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="high_tx_allowed2" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_high_tx_allowed2">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="high_tx_allowed2"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="high_tx_allowed3" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_high_tx_allowed3">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="high_tx_allowed3"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="tx_bb_is_ongoing" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_tx_bb_is_ongoing">
@@ -15123,16 +15095,6 @@
             <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="m_axis_mm2s_tvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="s00_axis_tlast_beacon" SIGIS="undef" SIGNAME="openwifi_ip_tx_intf_0_s00_axis_tlast_beacon">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axis_tlast_beacon"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="s00_axis_tlast_response" SIGIS="undef" SIGNAME="openwifi_ip_tx_intf_0_s00_axis_tlast_response">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="s00_axis_tlast_response"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT CLKFREQUENCY="200000000" DIR="I" NAME="m00_axis_aclk" SIGIS="clk" SIGNAME="sys_ps7_FCLK_CLK2">
           <CONNECTIONS>
             <CONNECTION INSTANCE="sys_ps7" PORT="FCLK_CLK2"/>
@@ -15164,10 +15126,9 @@
             <CONNECTION INSTANCE="openwifi_ip_axi_dma_0" PORT="s_axis_s2mm_tready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="dac_data_nn" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="1" NAME="tx_queue_idx" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_tx_intf_0_tx_queue_idx">
+        <PORT DIR="I" LEFT="63" NAME="tsf_runtime_val" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_tsf_runtime_val">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="tx_queue_idx"/>
+            <CONNECTION INSTANCE="openwifi_ip_xpu_0" PORT="tsf_runtime_val"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -15272,7 +15233,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/openwifi_ip/xlslice_0" HWVERSION="1.0" INSTANCE="openwifi_ip_xlslice_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/openwifi_ip/xlslice_0" HWVERSION="1.0" INSTANCE="openwifi_ip_xlslice_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="32"/>
@@ -15296,7 +15257,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/openwifi_ip/xlslice_1" HWVERSION="1.0" INSTANCE="openwifi_ip_xlslice_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
+    <MODULE COREREVISION="2" FULLNAME="/openwifi_ip/xlslice_1" HWVERSION="1.0" INSTANCE="openwifi_ip_xlslice_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlslice" VLNV="xilinx.com:ip:xlslice:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="32"/>
@@ -15390,6 +15351,7 @@
         <PORT DIR="O" LEFT="63" NAME="tsf_runtime_val" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_tsf_runtime_val">
           <CONNECTIONS>
             <CONNECTION INSTANCE="openwifi_ip_rx_intf_0" PORT="tsf_runtime_val"/>
+            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="tsf_runtime_val"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="tsf_pulse_1M" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_tsf_pulse_1M">
@@ -15501,26 +15463,6 @@
         <PORT DIR="I" NAME="tx_iq_fifo_rden" SIGIS="undef" SIGNAME="openwifi_ip_tx_intf_0_tx_iq_fifo_rden">
           <CONNECTIONS>
             <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="tx_iq_fifo_rden"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="high_tx_allowed0" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_high_tx_allowed0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="high_tx_allowed0"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="high_tx_allowed1" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_high_tx_allowed1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="high_tx_allowed1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="high_tx_allowed2" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_high_tx_allowed2">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="high_tx_allowed2"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="high_tx_allowed3" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_high_tx_allowed3">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="high_tx_allowed3"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="tx_bb_is_ongoing" SIGIS="undef" SIGNAME="openwifi_ip_xpu_0_tx_bb_is_ongoing">
@@ -15703,21 +15645,6 @@
             <CONNECTION INSTANCE="openwifi_ip_axi_interconnect_1" PORT="M06_AXI_rready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="tx_queue_idx" RIGHT="0" SIGIS="undef" SIGNAME="openwifi_ip_tx_intf_0_tx_queue_idx">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="tx_queue_idx"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s00_axis_tlast_beacon" SIGIS="undef" SIGNAME="openwifi_ip_tx_intf_0_s00_axis_tlast_beacon">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axis_tlast_beacon"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="s00_axis_tlast_response" SIGIS="undef" SIGNAME="openwifi_ip_tx_intf_0_s00_axis_tlast_response">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axis_tlast_response"/>
-          </CONNECTIONS>
-        </PORT>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="openwifi_ip_axi_interconnect_1_M06_AXI" DATAWIDTH="32" NAME="s00_axi" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -15776,7 +15703,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/sys_audio_clkgen" HWVERSION="6.0" INSTANCE="sys_audio_clkgen" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
+    <MODULE COREREVISION="3" FULLNAME="/sys_audio_clkgen" HWVERSION="6.0" INSTANCE="sys_audio_clkgen" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clk_wiz" VLNV="xilinx.com:ip:clk_wiz:6.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=clk_wiz;v=v6_0;d=pg065-clk-wiz.pdf"/>
       </DOCUMENTS>
@@ -16364,7 +16291,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/sys_concat_intc" HWVERSION="2.1" INSTANCE="sys_concat_intc" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+    <MODULE COREREVISION="3" FULLNAME="/sys_concat_intc" HWVERSION="2.1" INSTANCE="sys_concat_intc" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
@@ -18831,10 +18758,10 @@
             <CONNECTION INSTANCE="openwifi_ip_sys_rstgen1" PORT="slowest_sync_clk"/>
             <CONNECTION INSTANCE="openwifi_ip_openofdm_tx_0" PORT="clk"/>
             <CONNECTION INSTANCE="openwifi_ip_openofdm_tx_0" PORT="s00_axi_aclk"/>
+            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="openwifi_ip_rx_intf_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="openwifi_ip_rx_intf_0" PORT="s00_axis_aclk"/>
             <CONNECTION INSTANCE="openwifi_ip_rx_intf_0" PORT="m00_axis_aclk"/>
-            <CONNECTION INSTANCE="openwifi_ip_openofdm_rx_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="s00_axis_aclk"/>
             <CONNECTION INSTANCE="openwifi_ip_tx_intf_0" PORT="m00_axis_aclk"/>
@@ -20244,7 +20171,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/util_ad9361_divclk_sel_concat" HWVERSION="2.1" INSTANCE="util_ad9361_divclk_sel_concat" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
+    <MODULE COREREVISION="3" FULLNAME="/util_ad9361_divclk_sel_concat" HWVERSION="2.1" INSTANCE="util_ad9361_divclk_sel_concat" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconcat" VLNV="xilinx.com:ip:xlconcat:2.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="IN0_WIDTH" VALUE="1"/>
@@ -20340,7 +20267,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+    <MODULE COREREVISION="6" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
@@ -20357,7 +20284,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="5" FULLNAME="/xlconstant_1" HWVERSION="1.1" INSTANCE="xlconstant_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
+    <MODULE COREREVISION="6" FULLNAME="/xlconstant_1" HWVERSION="1.1" INSTANCE="xlconstant_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>

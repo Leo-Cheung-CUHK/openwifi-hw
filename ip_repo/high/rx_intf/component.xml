@@ -519,7 +519,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f4ec5852</spirit:value>
+            <spirit:value>fb11a652</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -538,7 +538,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>f4ec5852</spirit:value>
+            <spirit:value>fb11a652</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1579,24 +1579,24 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/clock_speed.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:isIncludeFile>true</spirit:isIncludeFile>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>src/board_def.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
-        <spirit:name>src/fifo32_1clk_dep32_fifo_generator_0_0/fifo32_1clk_dep32_fifo_generator_0_0.xci</spirit:name>
+        <spirit:name>src/clock_speed.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fifo64_1clk_fifo_generator_0_0/fifo64_1clk_fifo_generator_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>src/fifo64_1clk_fifo_generator_0_0/fifo64_1clk_fifo_generator_0_0.xci</spirit:name>
+        <spirit:name>src/fifo32_1clk_dep32_fifo_generator_0_0/fifo32_1clk_dep32_fifo_generator_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
@@ -1685,24 +1685,24 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>src/clock_speed.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
-        <spirit:isIncludeFile>true</spirit:isIncludeFile>
-      </spirit:file>
-      <spirit:file>
         <spirit:name>src/board_def.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
-        <spirit:name>src/fifo32_1clk_dep32_fifo_generator_0_0/fifo32_1clk_dep32_fifo_generator_0_0.xci</spirit:name>
+        <spirit:name>src/clock_speed.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>src/fifo64_1clk_fifo_generator_0_0/fifo64_1clk_fifo_generator_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>src/fifo64_1clk_fifo_generator_0_0/fifo64_1clk_fifo_generator_0_0.xci</spirit:name>
+        <spirit:name>src/fifo32_1clk_dep32_fifo_generator_0_0/fifo32_1clk_dep32_fifo_generator_0_0.xci</spirit:name>
         <spirit:userFileType>xci</spirit:userFileType>
         <spirit:userFileType>IMPORTED_FILE</spirit:userFileType>
       </spirit:file>
@@ -1879,20 +1879,20 @@
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2021-03-01T12:07:56Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2021-10-15T12:58:11Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a641322_ARCHIVE_LOCATION">/home/leo/Documents/openwifi/openwifi-hw/ip_repo/high/rx_intf</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@56791b7f_ARCHIVE_LOCATION">/home/leo/Documents/openwifi/openwifi-hw/ip_repo/high/rx_intf</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@203c21ec_ARCHIVE_LOCATION">/home/leo/Documents/openwifi/openwifi-hw/ip_repo/high/rx_intf</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@48a40f33_ARCHIVE_LOCATION">/home/leo/Documents/openwifi/openwifi-hw/ip_repo/high/rx_intf</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@19f0b86_ARCHIVE_LOCATION">/home/leo/Documents/openwifi/openwifi-hw/ip_repo/high/rx_intf</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3f81c490_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/rx_intf</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4241b024_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/rx_intf</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52e51535_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/rx_intf</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3514d169_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/rx_intf</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@212f9c40_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/rx_intf</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="4de3a200"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="871c369d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a238195b"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="da2cd3c8"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="9ace9086"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="468b1df9"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="8967f015"/>

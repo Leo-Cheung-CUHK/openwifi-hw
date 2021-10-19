@@ -152,9 +152,8 @@
         //end
       //end
     //end
-    
     assign counter_top = `COUNT_TOP_20M;
-
+    
     // 20MHz en
     always @( posedge clk )
     begin

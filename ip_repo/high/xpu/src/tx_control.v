@@ -152,7 +152,6 @@
           send_ack_count <= 0;
           ack_tx_flag<=0;
           tx_control_state  <= IDLE;
-          // tx_control_state_priv <= IDLE;
           tx_try_complete<=0;
           tx_status<=0;
           tx_fail_lock <= 0;
@@ -184,7 +183,6 @@
           recv_ack_timeout_top_adj_scale <= 0;
         end
       else begin
-        // tx_control_state_priv<=tx_control_state;
         ackcts_rate <= (cts_torts_rate[4]?signal_rate[3:0]:cts_torts_rate[3:0]);
         ackcts_time <= preamble_sig_time + ofdm_symbol_time*({4'd0,ackcts_n_sym_reg});
         sifs_time_reg   <= sifs_time;
@@ -223,10 +221,6 @@
             is_blockack_received<=is_blockack;
             is_pspoll_received<=is_pspoll;
             is_rts_received<=is_rts;
-            // tx_status<=tx_status; //maintain status from state RECV_ACK for ARM reading
-            // num_retrans<=num_retrans;
-            // retrans_in_progress<=retrans_in_progress;
-
             //8.3.1.4 ACK frame format: The RA field of the ACK frame is copied from the Address 2 field of the immediately previous individually
             //addressed data, management, BlockAckReq, BlockAck, or PS-Poll frames.
             if ( fcs_valid && (is_data||is_management||is_blockackreq||is_blockack||is_pspoll||(is_rts&&(!cts_torts_disable))) 
@@ -234,8 +228,6 @@
               begin
                   tx_control_state  <= SEND_ACK; //we also send cts (if rts is received) in SEND_ACK status
               end
-            //else if ( pulse_tx_bb_end && tx_pkt_type[0]==1 && (core_state_old!=SEND_ACK) )// need to recv ACK! We need to miss this pulse_tx_bb_end intentionally when send ACK, because ACK don't need ACK
-            //else if ( phy_tx_done && (core_state_old!=SEND_ACK) )// need to recv ACK! We need to miss this pulse_tx_bb_end intentionally when send ACK, because ACK don't need ACK
             else if ( phy_tx_done && cts_toself_bb_is_ongoing==0 ) // because SEND_ACK won't be back until phy_tx_done. So here phy_tx_done must be from high layer
               begin
                   tx_control_state  <= RECV_ACK_JUDGE;
@@ -248,16 +240,6 @@
 
           SEND_ACK: begin // data is calculated by calc_phy_header C program
             ack_tx_flag<=1;
-            // ack_addr <= ack_addr;
-            // tx_try_complete<=tx_try_complete;
-            // tx_status<=tx_status; //maintain status from state RECV_ACK for ARM reading
-            // num_retrans<=num_retrans;
-            // start_retrans<=start_retrans;
-            // retrans_in_progress<=retrans_in_progress;
-            // tx_dpram_op_counter<=tx_dpram_op_counter;
-            // douta_reg<=douta_reg;
-            // recv_ack_timeout_top<=recv_ack_timeout_top;
-
             //standard: For ACK frames sent by non-QoS STAs, if the More Fragments bit was equal to 0 in the Frame Control field
             //of the immediately previous individually addressed data or management frame, the duration value is set to 0.
             if ( (is_data_received||is_management_received) && (FC_more_frag_received==0)) begin
@@ -269,12 +251,10 @@
             //field of the immediately previous data, management, PS-Poll, BlockAckReq, or BlockAck frame minus the
             //time, in microseconds, required to transmit the ACK frame and its SIFS interval.
             //assume we use 6M for ack(14byte): n_ofdm=6=(22+14*8)/24; time_us=20(preamble+SIGNAL)+6*4=44;
-              //duration_new<= duration_extra+(duration_received-44-sifs_time);//SIFS 2.4GHz 10us; 5GHz 16us
               duration_new<= duration_extra+(duration_received-ackcts_time-sifs_time_reg);
               FC_type_new<=2'b01;
               FC_subtype_new<=4'b1101;
             end else if (is_rts_received) begin
-              //duration_new<= duration_extra+(duration_received-44-sifs_time);//SIFS 2.4GHz 10us; 5GHz 16us
               duration_new<= duration_extra+(duration_received-ackcts_time-sifs_time_reg);
               FC_type_new<=2'b01;
               FC_subtype_new<=4'b1100;
@@ -285,15 +265,12 @@
 
           SEND_ACK_DO: begin
             send_ack_count <= ( send_ack_count!=4?(send_ack_count + 1):send_ack_count );
-            // wea <= (send_ack_count<4?1:0);
             wea <= 1;
             addra <= send_ack_count;
             tx_control_state <= ( send_ack_count!=4?tx_control_state:(phy_tx_done?IDLE:tx_control_state) );
             if (send_ack_count==0) begin
-                //dina<={32'h0, 32'h000001cb}; // rate 6M len 14
                 dina<={32'h0, 14'd0, ackcts_signal_parity, ackcts_signal_len, 1'b0, ackcts_rate};
             end else if (send_ack_count==2) begin
-                //dina<={ack_addr[31:0], 32'h000000d4};
                 dina<={ack_addr[31:0], duration_new, 8'd0, FC_subtype_new, FC_type_new, 2'd0};
             end else if (send_ack_count==3) begin
                 dina<={48'h0,ack_addr[47:32]};
@@ -301,31 +278,17 @@
           end
 
           RECV_ACK_JUDGE: begin
-            // ack_tx_flag<=ack_tx_flag;
-            // wea<=wea;
-            // dina<=dina;
-            // send_ack_count <= send_ack_count;
-            // ack_addr <= ack_addr;
-            // ack_timeout_count<=ack_timeout_count;
-            // start_retrans<=start_retrans;
-            // tx_dpram_op_counter<=tx_dpram_op_counter;
-            // douta_reg<=douta_reg;
-            // recv_ack_timeout_top<=recv_ack_timeout_top;
             if (tx_pkt_need_ack==1) // continue to actual ACK receiving
                 begin
                 tx_control_state<= RECV_ACK_WAIT_TX_BB_DONE;
                 addra<=2;
                 tx_try_complete<=0;
-                // tx_status<=tx_status; //maintain status from state RECV_ACK for ARM reading
-                // num_retrans<=num_retrans;
                 retrans_in_progress<=1;
                 end
             else
                 begin
                 tx_control_state<= IDLE;
-                // addra<=addra;
                 tx_try_complete<=1;
-                // tx_status<={1'b0,num_retrans}; // because interrupt will be raised, set status
                 tx_fail_lock <= 0;
                 num_retrans_lock <= num_retrans;
                 num_retrans<=0;
@@ -334,132 +297,60 @@
           end
 
           RECV_ACK_WAIT_TX_BB_DONE: begin
-            // ack_tx_flag<=ack_tx_flag;
-            // recv_ack_timeout_top<=recv_ack_timeout_top;
-
-            // addra<=addra;
-
             tx_dpram_op_counter <= ( tx_dpram_op_counter!=3?(tx_dpram_op_counter + 1):tx_dpram_op_counter );
             
             wea <= ( tx_dpram_op_counter==2?1:wea );
             douta_reg <= ( tx_dpram_op_counter==2?({douta[63:12], 1'b1, douta[10:0]}):douta_reg );
-            //dina <= ( tx_dpram_op_counter==3?douta_reg:dina );
             dina <= douta_reg;
-
-            // send_ack_count <= send_ack_count;
-            // ack_addr <= ack_addr;
-            // ack_timeout_count<=ack_timeout_count;
-            // // tx_status<=tx_status; //maintain status from state RECV_ACK for ARM reading
-            // num_retrans<=num_retrans;
-            // tx_try_complete<=tx_try_complete;
-            // start_retrans<=start_retrans;
-            // retrans_in_progress<=retrans_in_progress;
 
             if (pulse_tx_bb_end) begin
                 tx_control_state<= RECV_ACK_WAIT_SIG_VALID;
             end 
-            // else begin
-            //     tx_control_state<= tx_control_state;
-            // end
             
           end
 
           RECV_ACK_WAIT_SIG_VALID: begin
-            // ack_tx_flag<=ack_tx_flag;
-            // wea<=wea;
-            // addra<=addra;
-            // dina<=dina;
-            // send_ack_count <= send_ack_count;
-            // ack_addr <= ack_addr;
-            // tx_dpram_op_counter<=tx_dpram_op_counter;
-            // douta_reg<=douta_reg;
-            // recv_ack_timeout_top<=recv_ack_timeout_top;
-
             ack_timeout_count<= ( (sig_valid && (signal_len==14))?0:(ack_timeout_count+1) );
             if ( (ack_timeout_count<recv_ack_sig_valid_timeout_top_scale) && sig_valid && (signal_len==14) ) begin //before timeout, we detect a sig valid, signal length field is ACK
                 tx_control_state<= RECV_ACK;
-                // tx_try_complete<=tx_try_complete;
-                // tx_status<=tx_status;
-                // num_retrans<=num_retrans;
-                // start_retrans<=start_retrans;
-                // retrans_in_progress<=retrans_in_progress;
-                // ack_timeout_count<=0;
                 recv_ack_timeout_top <= num_data_ofdm_symbol_reg_tmp+recv_ack_timeout_top_adj_scale;
             end else if ( ack_timeout_count==recv_ack_sig_valid_timeout_top_scale ) begin // sig valid timeout
                 tx_control_state<= IDLE;
                 if  ((num_retrans==retrans_limit) || (retrans_limit==0)) begin// should not run into this state. but just in case
                     tx_try_complete<=1;
-                    // tx_status<={1'b1,num_retrans};
                     tx_fail_lock <= 1;
                     num_retrans_lock <= num_retrans;
                     num_retrans<=0;
-                    // start_retrans<=start_retrans;
                     retrans_in_progress<=0;
                 end else begin
-                    // tx_try_complete<=tx_try_complete;
-                    // tx_status<=tx_status;
                     num_retrans<=num_retrans+1;
                     start_retrans<=1;
-                    // retrans_in_progress<=retrans_in_progress;
                 end
             end 
-            // else begin
-            //     tx_control_state<= tx_control_state;
-            //     tx_try_complete<=tx_try_complete;
-            //     // tx_status<=tx_status; //maintain status from state RECV_ACK for ARM reading
-            //     num_retrans<=num_retrans;
-            //     start_retrans<=start_retrans;
-            //     retrans_in_progress<=retrans_in_progress;
-            // end
           end
 
           RECV_ACK: begin
-            // ack_tx_flag<=ack_tx_flag;
-            // wea<=wea;
-            // addra<=addra;
-            // dina<=dina;
-            // send_ack_count <= send_ack_count;
-            // ack_addr <= ack_addr;
-            // tx_dpram_op_counter<=tx_dpram_op_counter;
-            // douta_reg<=douta_reg;
-            // recv_ack_timeout_top <= recv_ack_timeout_top;
-
             ack_timeout_count<=ack_timeout_count+1;
             if ( (ack_timeout_count<recv_ack_timeout_top) && (recv_ack_fcs_valid_disable|fcs_valid) && (FC_type==2'b01) && (FC_subtype==4'b1101) && (self_mac_addr==addr1)) begin//before timeout, we detect a ACK type frame fcs valid
                 tx_control_state<= IDLE;
                 tx_try_complete<=1;
-                // tx_status<={1'b0,num_retrans};
                 tx_fail_lock <= 0;
                 num_retrans_lock <= num_retrans;
                 num_retrans<=0;
-                // start_retrans<=start_retrans;
                 retrans_in_progress<=0;
             end else if ( ack_timeout_count==recv_ack_timeout_top ) begin// timeout
                 tx_control_state<= IDLE;
                 if  ((num_retrans==retrans_limit) || (retrans_limit==0)) begin// should not run into this state. but just in case
                     tx_try_complete<=1;
-                    // tx_status<={1'b1,num_retrans};
                     tx_fail_lock <= 1;
                     num_retrans_lock <= num_retrans;
                     num_retrans<=0;
-                    // start_retrans<=start_retrans;
                     retrans_in_progress<=0;
                 end else begin
-                    // tx_try_complete<=tx_try_complete;
-                    // tx_status<=tx_status;
                     num_retrans<=num_retrans+1;
                     start_retrans<=1;
-                    // retrans_in_progress<=retrans_in_progress;
                 end
             end 
-            // else begin
-            //     tx_control_state<= tx_control_state;
-            //     tx_try_complete<=tx_try_complete;
-            //     // tx_status<=tx_status; //maintain status from state RECV_ACK for ARM reading
-            //     num_retrans<=num_retrans;
-            //     start_retrans<=start_retrans;
-            //     retrans_in_progress<=retrans_in_progress;
-            // end
           end
         endcase
       end

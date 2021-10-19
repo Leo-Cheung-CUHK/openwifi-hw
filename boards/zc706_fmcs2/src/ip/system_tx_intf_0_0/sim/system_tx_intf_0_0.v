@@ -79,10 +79,6 @@ module system_tx_intf_0_0 (
   douta,
   tx_iq_fifo_empty,
   tx_iq_fifo_rden,
-  high_tx_allowed0,
-  high_tx_allowed1,
-  high_tx_allowed2,
-  high_tx_allowed3,
   tx_bb_is_ongoing,
   ack_tx_flag,
   wea_from_xpu,
@@ -126,8 +122,6 @@ module system_tx_intf_0_0 (
   s00_axis_tstrb,
   s00_axis_tlast,
   s00_axis_tvalid,
-  s00_axis_tlast_beacon,
-  s00_axis_tlast_response,
   m00_axis_aclk,
   m00_axis_aresetn,
   m00_axis_tvalid,
@@ -135,8 +129,7 @@ module system_tx_intf_0_0 (
   m00_axis_tstrb,
   m00_axis_tlast,
   m00_axis_tready,
-  dac_data_nn,
-  tx_queue_idx
+  tsf_runtime_val
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME dac_rst, POLARITY ACTIVE_HIGH, INSERT_VIP 0" *)
@@ -167,10 +160,6 @@ input wire [47 : 0] mac_addr;
 output wire [63 : 0] douta;
 output wire tx_iq_fifo_empty;
 output wire tx_iq_fifo_rden;
-input wire high_tx_allowed0;
-input wire high_tx_allowed1;
-input wire high_tx_allowed2;
-input wire high_tx_allowed3;
 input wire tx_bb_is_ongoing;
 input wire ack_tx_flag;
 input wire wea_from_xpu;
@@ -249,8 +238,6 @@ input wire s00_axis_tlast;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s00_axis, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 200000000, PHASE 0.000, CLK_DOMAIN system_sys_ps7_0_FCLK_CLK2, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 s00_axis TVALID" *)
 input wire s00_axis_tvalid;
-output wire s00_axis_tlast_beacon;
-output wire s00_axis_tlast_response;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m00_axis_aclk, ASSOCIATED_BUSIF m00_axis, ASSOCIATED_RESET m00_axis_aresetn, FREQ_HZ 200000000, PHASE 0.000, CLK_DOMAIN system_sys_ps7_0_FCLK_CLK2, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 m00_axis_aclk CLK" *)
 input wire m00_axis_aclk;
@@ -268,8 +255,7 @@ output wire m00_axis_tlast;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME m00_axis, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 1, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 200000000, PHASE 0.000, CLK_DOMAIN system_sys_ps7_0_FCLK_CLK2, LAYERED_METADATA undef, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 m00_axis TREADY" *)
 input wire m00_axis_tready;
-output wire dac_data_nn;
-output wire [1 : 0] tx_queue_idx;
+input wire [63 : 0] tsf_runtime_val;
 
   tx_intf #(
     .DAC_PACK_DATA_WIDTH(64),
@@ -282,7 +268,8 @@ output wire [1 : 0] tx_queue_idx;
     .C_S00_AXIS_TDATA_WIDTH(64),
     .C_M00_AXIS_TDATA_WIDTH(64),
     .WAIT_COUNT_BITS(5),
-    .MAX_NUM_DMA_SYMBOL(8192)
+    .MAX_NUM_DMA_SYMBOL(8192),
+    .TSF_TIMER_WIDTH(64)
   ) inst (
     .dac_rst(dac_rst),
     .dac_clk(dac_clk),
@@ -308,10 +295,6 @@ output wire [1 : 0] tx_queue_idx;
     .douta(douta),
     .tx_iq_fifo_empty(tx_iq_fifo_empty),
     .tx_iq_fifo_rden(tx_iq_fifo_rden),
-    .high_tx_allowed0(high_tx_allowed0),
-    .high_tx_allowed1(high_tx_allowed1),
-    .high_tx_allowed2(high_tx_allowed2),
-    .high_tx_allowed3(high_tx_allowed3),
     .tx_bb_is_ongoing(tx_bb_is_ongoing),
     .ack_tx_flag(ack_tx_flag),
     .wea_from_xpu(wea_from_xpu),
@@ -355,8 +338,6 @@ output wire [1 : 0] tx_queue_idx;
     .s00_axis_tstrb(s00_axis_tstrb),
     .s00_axis_tlast(s00_axis_tlast),
     .s00_axis_tvalid(s00_axis_tvalid),
-    .s00_axis_tlast_beacon(s00_axis_tlast_beacon),
-    .s00_axis_tlast_response(s00_axis_tlast_response),
     .m00_axis_aclk(m00_axis_aclk),
     .m00_axis_aresetn(m00_axis_aresetn),
     .m00_axis_tvalid(m00_axis_tvalid),
@@ -364,7 +345,6 @@ output wire [1 : 0] tx_queue_idx;
     .m00_axis_tstrb(m00_axis_tstrb),
     .m00_axis_tlast(m00_axis_tlast),
     .m00_axis_tready(m00_axis_tready),
-    .dac_data_nn(dac_data_nn),
-    .tx_queue_idx(tx_queue_idx)
+    .tsf_runtime_val(tsf_runtime_val)
   );
 endmodule

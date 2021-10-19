@@ -50,7 +50,7 @@
 // IP VLNV: analog.com:user:util_rfifo:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "util_rfifo,Vivado 2018.3" *)
+(* X_CORE_INFO = "util_rfifo,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "system_axi_ad9361_dac_fifo_0,util_rfifo,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

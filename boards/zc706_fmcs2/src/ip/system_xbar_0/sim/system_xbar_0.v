@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:axi_crossbar:2.1
-// IP Revision: 19
+// IP Revision: 20
 
 `timescale 1ns/1ps
 
@@ -211,7 +211,7 @@ ERT_VIP 0, XIL_INTERFACENAME M07_AXI, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 
 .0 M08_AXI RREADY [0:0] [8:8]" *)
 output wire [8 : 0] m_axi_rready;
 
-  axi_crossbar_v2_1_19_axi_crossbar #(
+  axi_crossbar_v2_1_20_axi_crossbar #(
     .C_FAMILY("zynq"),
     .C_NUM_SLAVE_SLOTS(1),
     .C_NUM_MASTER_SLOTS(9),

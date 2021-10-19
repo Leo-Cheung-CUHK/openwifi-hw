@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Oct 15 20:50:55 2021
+# Process ID: 31640
+# Current directory: /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/tx_intf/tx_intf/tx_intf.runs/synth_1
+# Command line: vivado -log tx_intf.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source tx_intf.tcl
+# Log file: /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/tx_intf/tx_intf/tx_intf.runs/synth_1/tx_intf.vds
+# Journal file: /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/tx_intf/tx_intf/tx_intf.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source tx_intf.tcl -notrace

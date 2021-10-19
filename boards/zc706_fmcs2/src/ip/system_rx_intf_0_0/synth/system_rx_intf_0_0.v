@@ -50,7 +50,7 @@
 // IP VLNV: user.org:user:rx_intf:1.0
 // IP Revision: 2
 
-(* X_CORE_INFO = "rx_intf,Vivado 2018.3" *)
+(* X_CORE_INFO = "rx_intf,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "system_rx_intf_0_0,rx_intf,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

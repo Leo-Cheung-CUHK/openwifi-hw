@@ -1,7 +1,7 @@
-//Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+//Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-//Date        : Mon May 10 14:59:33 2021
+//Tool Version: Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+//Date        : Sat Oct 16 21:40:40 2021
 //Host        : leo running 64-bit Ubuntu 18.04.5 LTS
 //Command     : generate_target system.bd
 //Design      : system
@@ -3790,14 +3790,11 @@ module openwifi_ip_imp_ZYLLT2
   wire tx_intf_0_m00_axis_TREADY;
   wire tx_intf_0_m00_axis_TVALID;
   wire tx_intf_0_phy_tx_start;
-  wire tx_intf_0_s00_axis_tlast_beacon;
-  wire tx_intf_0_s00_axis_tlast_response;
   wire tx_intf_0_tx_hold;
   wire tx_intf_0_tx_iq_fifo_empty;
   wire tx_intf_0_tx_iq_fifo_rden;
   wire tx_intf_0_tx_pkt_need_ack;
   wire [3:0]tx_intf_0_tx_pkt_retrans_limit;
-  wire [1:0]tx_intf_0_tx_queue_idx;
   wire [15:0]xlslice_0_Dout;
   wire [15:0]xlslice_1_Dout;
   wire xpu_0_ack_tx_flag;
@@ -3808,10 +3805,6 @@ module openwifi_ip_imp_ZYLLT2
   wire [7:0]xpu_0_channel;
   wire [63:0]xpu_0_dina;
   wire [7:0]xpu_0_gpio_status_lock_by_sig_valid;
-  wire xpu_0_high_tx_allowed0;
-  wire xpu_0_high_tx_allowed1;
-  wire xpu_0_high_tx_allowed2;
-  wire xpu_0_high_tx_allowed3;
   wire [47:0]xpu_0_mac_addr;
   wire xpu_0_mute_adc_out_to_bb;
   wire xpu_0_retrans_in_progress;
@@ -4697,10 +4690,6 @@ module openwifi_ip_imp_ZYLLT2
         .dma_ready(tx_intf_0_dma_ready),
         .dma_valid(dma_valid_1),
         .douta(tx_intf_0_douta),
-        .high_tx_allowed0(xpu_0_high_tx_allowed0),
-        .high_tx_allowed1(xpu_0_high_tx_allowed1),
-        .high_tx_allowed2(xpu_0_high_tx_allowed2),
-        .high_tx_allowed3(xpu_0_high_tx_allowed3),
         .m00_axis_aclk(s_axi_lite_aclk_1),
         .m00_axis_aresetn(sys_rstgen1_peripheral_aresetn),
         .m00_axis_tdata(tx_intf_0_m00_axis_TDATA),
@@ -4738,13 +4727,12 @@ module openwifi_ip_imp_ZYLLT2
         .s00_axis_aresetn(sys_rstgen1_peripheral_aresetn),
         .s00_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
         .s00_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
-        .s00_axis_tlast_beacon(tx_intf_0_s00_axis_tlast_beacon),
-        .s00_axis_tlast_response(tx_intf_0_s00_axis_tlast_response),
         .s00_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
         .s00_axis_tstrb({1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1,1'b1}),
         .s00_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
         .start_retrans(xpu_0_start_retrans),
         .tsf_pulse_1M(xpu_0_tsf_pulse_1M),
+        .tsf_runtime_val(xpu_0_tsf_runtime_val),
         .tx_bb_is_ongoing(xpu_0_tx_bb_is_ongoing),
         .tx_end_from_acc(phy_tx_0_phy_tx_done),
         .tx_hold(tx_intf_0_tx_hold),
@@ -4754,7 +4742,6 @@ module openwifi_ip_imp_ZYLLT2
         .tx_itrpt1(openwifi_ip_tx_itrpt1),
         .tx_pkt_need_ack(tx_intf_0_tx_pkt_need_ack),
         .tx_pkt_retrans_limit(tx_intf_0_tx_pkt_retrans_limit),
-        .tx_queue_idx(tx_intf_0_tx_queue_idx),
         .tx_start_from_acc(phy_tx_0_phy_tx_started),
         .tx_status(xpu_0_tx_status),
         .tx_try_complete(xpu_0_tx_try_complete),
@@ -4787,10 +4774,6 @@ module openwifi_ip_imp_ZYLLT2
         .fcs_ok(openofdm_rx_0_fcs_ok),
         .gpio_status(gpio_status_1),
         .gpio_status_lock_by_sig_valid(xpu_0_gpio_status_lock_by_sig_valid),
-        .high_tx_allowed0(xpu_0_high_tx_allowed0),
-        .high_tx_allowed1(xpu_0_high_tx_allowed1),
-        .high_tx_allowed2(xpu_0_high_tx_allowed2),
-        .high_tx_allowed3(xpu_0_high_tx_allowed3),
         .ht_unsupport(openofdm_rx_0_ht_unsupport),
         .legacy_sig_stb(openofdm_rx_0_legacy_sig_stb),
         .long_preamble_detected(openofdm_rx_0_long_preamble_detected),
@@ -4826,8 +4809,6 @@ module openwifi_ip_imp_ZYLLT2
         .s00_axi_wready(axi_interconnect_1_M06_AXI_WREADY),
         .s00_axi_wstrb(axi_interconnect_1_M06_AXI_WSTRB),
         .s00_axi_wvalid(axi_interconnect_1_M06_AXI_WVALID),
-        .s00_axis_tlast_beacon(tx_intf_0_s00_axis_tlast_beacon),
-        .s00_axis_tlast_response(tx_intf_0_s00_axis_tlast_response),
         .short_preamble_detected(openofdm_rx_0_short_preamble_detected),
         .start_retrans(xpu_0_start_retrans),
         .tsf_pulse_1M(xpu_0_tsf_pulse_1M),
@@ -4837,7 +4818,6 @@ module openwifi_ip_imp_ZYLLT2
         .tx_iq_fifo_rden(tx_intf_0_tx_iq_fifo_rden),
         .tx_pkt_need_ack(tx_intf_0_tx_pkt_need_ack),
         .tx_pkt_retrans_limit(tx_intf_0_tx_pkt_retrans_limit),
-        .tx_queue_idx(tx_intf_0_tx_queue_idx),
         .tx_status(xpu_0_tx_status),
         .tx_try_complete(xpu_0_tx_try_complete),
         .wea(xpu_0_wea));

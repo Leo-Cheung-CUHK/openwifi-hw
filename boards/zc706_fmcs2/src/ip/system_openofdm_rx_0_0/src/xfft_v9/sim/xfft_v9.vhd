@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:xfft:9.1
--- IP Revision: 1
+-- IP Revision: 2
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY xfft_v9_1_1;
-USE xfft_v9_1_1.xfft_v9_1_1;
+LIBRARY xfft_v9_1_2;
+USE xfft_v9_1_2.xfft_v9_1_2;
 
 ENTITY xfft_v9 IS
   PORT (
@@ -83,7 +83,7 @@ END xfft_v9;
 ARCHITECTURE xfft_v9_arch OF xfft_v9 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF xfft_v9_arch: ARCHITECTURE IS "yes";
-  COMPONENT xfft_v9_1_1 IS
+  COMPONENT xfft_v9_1_2 IS
     GENERIC (
       C_XDEVICEFAMILY : STRING;
       C_S_AXIS_CONFIG_TDATA_WIDTH : INTEGER;
@@ -146,7 +146,7 @@ ARCHITECTURE xfft_v9_arch OF xfft_v9 IS
       event_data_in_channel_halt : OUT STD_LOGIC;
       event_data_out_channel_halt : OUT STD_LOGIC
     );
-  END COMPONENT xfft_v9_1_1;
+  END COMPONENT xfft_v9_1_2;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF event_data_out_channel_halt: SIGNAL IS "XIL_INTERFACENAME event_data_out_channel_halt_intf, SENSITIVITY EDGE_RISING, PortWidth 1";
@@ -180,7 +180,7 @@ ARCHITECTURE xfft_v9_arch OF xfft_v9 IS
   ATTRIBUTE X_INTERFACE_PARAMETER OF aclk: SIGNAL IS "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF S_AXIS_CONFIG:M_AXIS_DATA:M_AXIS_STATUS:S_AXIS_DATA, ASSOCIATED_RESET aresetn, ASSOCIATED_CLKEN aclken, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 aclk_intf CLK";
 BEGIN
-  U0 : xfft_v9_1_1
+  U0 : xfft_v9_1_2
     GENERIC MAP (
       C_XDEVICEFAMILY => "zynq",
       C_S_AXIS_CONFIG_TDATA_WIDTH => 8,

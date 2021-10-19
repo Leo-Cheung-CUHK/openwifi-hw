@@ -61,10 +61,6 @@
         output wire tx_try_complete,
 	    input  wire tx_iq_fifo_empty,
         input  wire tx_iq_fifo_rden,
-        output wire high_tx_allowed0,
-        output wire high_tx_allowed1,
-        output wire high_tx_allowed2,
-        output wire high_tx_allowed3,
         output wire tx_bb_is_ongoing,
         output wire ack_tx_flag,
         output wire wea,
@@ -102,10 +98,7 @@
 		output wire [C_S00_AXI_DATA_WIDTH-1 : 0] s00_axi_rdata,
 		output wire [1 : 0] s00_axi_rresp,
 		output wire s00_axi_rvalid,
-		input  wire s00_axi_rready,
-        input  wire [1:0] tx_queue_idx,
-        input  wire s00_axis_tlast_beacon,
-        input  wire s00_axis_tlast_response
+		input  wire s00_axi_rready
 	);
 
     wire slv_reg_wren_signal;
@@ -219,13 +212,6 @@
     wire iq_rssi_half_db_valid;
     wire rssi_half_db_valid;
 
-    // wire [4:0] tx_status;
-
-    wire slice_en0;
-    wire slice_en1;
-    wire slice_en2;
-    wire slice_en3;
-
     wire fcs_valid;
     wire sig_valid;
 
@@ -243,53 +229,6 @@
     wire [6:0] sifs_time;
     wire [6:0] phy_rx_start_delay_time;
 
-    ////////////////////////////////    ////////////////////////////////    ////////////////////////////////
-    /////////////////////////////////////   JIT SYSTEM LOGIC    ////////////////////////////////
-    ////////////////////////////////    ////////////////////////////////    ////////////////////////////////
-    wire reset_tsf;
-
-    // Beacon here is also the request message
-    wire write_beacon; 
-    wire read_beacon;
-    wire enable_beacon_tx; 
-    wire is_beacon;
-    wire receive_beacon;
-
-    wire [(TSF_TIMER_WIDTH-1):0] write_beacon_val;
-    wire [(TSF_TIMER_WIDTH-1):0] read_beacon_val;
-    wire [(TSF_TIMER_WIDTH-1):0] receive_beacon_val;
-    
-    // For request message
-    wire write_response;
-    wire read_response;
-    wire enable_response_tx;
-    wire is_response; 
-    wire receive_response;
-
-    wire [(TSF_TIMER_WIDTH-1):0] write_response_val;
-    wire [(TSF_TIMER_WIDTH-1):0] read_response_val;
-    wire [(TSF_TIMER_WIDTH-1):0] receive_response_val;
-    wire [(TSF_TIMER_WIDTH-1):0] tsf_cyctime_val;
-
-    wire [(TSF_TIMER_WIDTH-1):0] short_preamble_detected_val;
-    wire [(TSF_TIMER_WIDTH-1):0] long_preamble_detected_val;
-    wire [(TSF_TIMER_WIDTH-1):0] legacy_sig_stb_val;
-
-    // Assignment
-    assign write_beacon       = (s00_axis_tlast_beacon == 1)? 1 :0 ;
-    assign read_beacon        = ((tx_queue_idx == 0) && (pulse_tx_bb_start == 1) ) ? 1 :0 ;
-    assign enable_beacon_tx   = (high_tx_allowed0 == 1)? 1 :0 ;
-    assign is_beacon          = ( (FC_type==2'b00) && (FC_subtype==4'b1000))?1:0;
-    assign receive_beacon     = ((fcs_valid ==1) && (is_beacon == 1)) ? 1 : 0;
-
-    assign write_response     = (s00_axis_tlast_response == 1)? 1 :0 ;
-    assign read_response      = ((tx_queue_idx == 1) && (pulse_tx_bb_start == 1) ) ? 1 :0 ;
-    assign enable_response_tx = (high_tx_allowed1 == 1)? 1 :0 ;
-    assign is_response        = ( (FC_type==2'b10) && (FC_subtype==4'b1101))?1:0; 
-    assign receive_response   = ((fcs_valid ==1) && (is_response == 1)) ? 1 : 0;
-
-    //assign reset_tsf = receive_beacon ? 1 : enable_beacon_tx;  
-    assign reset_tsf = receive_beacon ? 1 : read_beacon;  
     ////////////////////////////////    ////////////////////////////////    ////////////////////////////////
     ////////////////////////////////    ////////////////////////////////    ////////////////////////////////
 
@@ -314,11 +253,8 @@
 
 	assign mute_adc_out_to_bb = (slv_reg1[0]?slv_reg1[31]:(tx_rf_is_ongoing|cts_toself_rf_is_ongoing|ack_cts_is_ongoing));
 	assign block_rx_dma_to_ps = (block_rx_dma_to_ps_internal&(~slv_reg1[2]));	
-    assign high_tx_allowed0 = ( slv_reg1[4] ==0?slice_en0:slv_reg1[1] );
-	assign high_tx_allowed1 = ( slv_reg1[12]==0?slice_en1:slv_reg1[8] );
-	assign high_tx_allowed2 = ( slv_reg1[20]==0?slice_en2:slv_reg1[16]);
-	assign high_tx_allowed3 = ( slv_reg1[28]==0?slice_en3:slv_reg1[24]);
-	assign mac_addr = {slv_reg31[15:0], slv_reg30};
+
+    assign mac_addr = {slv_reg31[15:0], slv_reg30};
 	
 	// assign slv_reg50 = {high_tx_allowed_internal1, high_tx_allowed_internal0, 4'h0,ack_tx_flag,demod_is_ongoing,tx_rf_is_ongoing,tx_bb_is_ongoing}; // we should use ack_tx_flag to disable tx interrupt to linux!
 	// assign slv_reg51[4:0] = tx_status;
@@ -347,41 +283,11 @@
     // assign slv_reg42 = addr4[31:0];
     // assign slv_reg43 = addr4[47:32];
 
-    assign slv_reg12 = short_preamble_detected_val[(C_S00_AXI_DATA_WIDTH-1):0];     
-    assign slv_reg13 = short_preamble_detected_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
-
-    assign slv_reg14 = long_preamble_detected_val[(C_S00_AXI_DATA_WIDTH-1):0];     
-    assign slv_reg15 = long_preamble_detected_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
-
-    assign slv_reg24 = legacy_sig_stb_val[(C_S00_AXI_DATA_WIDTH-1):0];     
-    assign slv_reg25 = legacy_sig_stb_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
-
-    assign slv_reg32 = tsf_cyctime_val[(C_S00_AXI_DATA_WIDTH-1):0];     
-    assign slv_reg33 = tsf_cyctime_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
-
-    assign slv_reg44 = write_beacon_val[(C_S00_AXI_DATA_WIDTH-1):0];     
-    assign slv_reg45 = write_beacon_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
-
-    assign slv_reg46 = read_beacon_val[(C_S00_AXI_DATA_WIDTH-1):0];      
-    assign slv_reg47 = read_beacon_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
-
-    assign slv_reg48 = receive_beacon_val[(C_S00_AXI_DATA_WIDTH-1):0];   
-    assign slv_reg49 = receive_beacon_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
-
-    assign slv_reg52 = write_response_val[(C_S00_AXI_DATA_WIDTH-1):0];        
-    assign slv_reg53 = write_response_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
-
-    assign slv_reg54 = read_response_val[(C_S00_AXI_DATA_WIDTH-1):0];       
-    assign slv_reg55 = read_response_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
-    
-    assign slv_reg56 = receive_response_val[(C_S00_AXI_DATA_WIDTH-1):0];        
-    assign slv_reg57 = receive_response_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
- 
-    assign slv_reg58 = tsf_runtime_val[(C_S00_AXI_DATA_WIDTH-1):0];        
-    assign slv_reg59 = tsf_runtime_val[(TSF_TIMER_WIDTH-1):C_S00_AXI_DATA_WIDTH];
-
     // assign slv_reg60 = rssi_half_db;
     // assign slv_reg61 = iq_rssi_half_db;
+    assign slv_reg58    = tsf_runtime_val[31:0];
+    assign slv_reg59    = tsf_runtime_val[63:32];
+
     assign slv_reg63 = 32'hf016055a;//version -- internet git commit revision
 
     tx_on_detection # (
@@ -556,65 +462,16 @@
         .rssi_half_db_valid(rssi_half_db_valid)
     );
 
-	time_slice_gen #(
-        .TIMER_WIDTH(TSF_TIMER_WIDTH)
-	) time_slice_gen_i (
-        .clk(s00_axi_aclk),
-        .rstn(s00_axi_aresetn&(~slv_reg0[7])),
-        .tsf_load_control(slv_reg3[C_S00_AXI_DATA_WIDTH-1]),
-        .tsf_load_val({slv_reg3[(TSF_TIMER_WIDTH-C_S00_AXI_DATA_WIDTH-1):0],slv_reg2}),
-
-        .tsf_pulse_sb(tx_iq_fifo_rden),
-        .tsf_runtime_val(tsf_runtime_val),
-
-        .slv_reg_wren_signal(slv_reg_wren_signal),
-        .count_total_slice_idx(slv_reg20[26:25]),
-        .count_total          (slv_reg20[24:0]),
-        .count_start_slice_idx(slv_reg21[26:25]),
-        .count_start          (slv_reg21[24:0]),
-        .count_end_slice_idx  (slv_reg22[26:25]),
-        .count_end            (slv_reg22[24:0]),
-
-        .slice_en0(slice_en0),
-        .slice_en1(slice_en1),
-        .slice_en2(slice_en2),
-        .slice_en3(slice_en3)
-	);
-
+    // 200 MHz TSF timer - outputs tsf_runtime_val
 	tsf_timer # (
 	   .TIMER_WIDTH(TSF_TIMER_WIDTH)
 	) tsf_timer_i (
 	   .clk(s00_axi_aclk),
        .rstn(s00_axi_aresetn),
-       .reset_tsf(reset_tsf),
 
-       .short_preamble_detected(short_preamble_detected),
-       .long_preamble_detected(long_preamble_detected),
-       .legacy_sig_stb(legacy_sig_stb),
-       
-       .write_beacon(write_beacon),
-       .write_beacon_val(write_beacon_val),
+       .tsf_load_control(slv_reg3[C_S00_AXI_DATA_WIDTH-1]),
+       .tsf_load_val({slv_reg3[(TSF_TIMER_WIDTH-C_S00_AXI_DATA_WIDTH-1):0],slv_reg2}),
 
-       .read_beacon(read_beacon),
-       .read_beacon_val(read_beacon_val),
-
-       .receive_beacon(receive_beacon),
-       .receive_beacon_val(receive_beacon_val),
-
-       .write_response(write_response),
-       .write_response_val(write_response_val),
-
-       .read_response(read_response),
-       .read_response_val(read_response_val),
-
-       .receive_response(receive_response),
-       .receive_response_val(receive_response_val),
-
-       .short_preamble_detected_val(short_preamble_detected_val),
-       .long_preamble_detected_val(long_preamble_detected_val),
-       .legacy_sig_stb_val(legacy_sig_stb_val),
-
-       .tsf_cyctime_val(tsf_cyctime_val),
        .tsf_runtime_val(tsf_runtime_val),
        .tsf_pulse_1M(tsf_pulse_1M)
     );

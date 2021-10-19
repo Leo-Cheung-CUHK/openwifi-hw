@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2018.3
+set scripts_vivado_version 2019.1
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -158,11 +158,17 @@ proc create_hier_cell_s00_nodes { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:sc_rtl:1.0 M_SC_AW
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:sc_rtl:1.0 M_SC_B
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:sc_rtl:1.0 M_SC_W
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:sc_rtl:1.0 S_SC_AW
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:sc_rtl:1.0 S_SC_B
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:sc_rtl:1.0 S_SC_W
+
 
   # Create pins
   create_bd_pin -dir I -type clk m_sc_clk
@@ -374,7 +380,9 @@ proc create_hier_cell_s00_entry_pipeline { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 m_axi
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi
+
 
   # Create pins
   create_bd_pin -dir I -type clk aclk
@@ -510,7 +518,9 @@ proc create_hier_cell_m00_exit_pipeline { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 m_axi
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi
+
 
   # Create pins
   create_bd_pin -dir I -type clk aclk
@@ -669,11 +679,13 @@ proc create_root_design { parentCell } {
    CONFIG.SUPPORTS_NARROW_BURST {0} \
    CONFIG.WUSER_BITS_PER_BYTE {0} \
    ] $M00_AXI
+
   set S00_AXI [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S00_AXI ]
   set_property -dict [ list \
    CONFIG.NUM_READ_OUTSTANDING {0} \
    CONFIG.NUM_WRITE_OUTSTANDING {8} \
    ] $S00_AXI
+
 
   # Create ports
   set aclk [ create_bd_port -dir I -type clk aclk ]

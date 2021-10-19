@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Root MajorVersion="0" MinorVersion="36">
+<Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="system" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1620629981"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1620629981"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1620629981"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1620629981"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1634391649"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1634391649"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1634391649"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1634391649"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip/system_sys_ps7_0/system_sys_ps7_0.xci" Type="IP">
         <Instance HierarchyPath="sys_ps7"/>
@@ -327,14 +327,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/system_rx_intf_0_0/system_rx_intf_0_0.xci" Type="IP">
-        <Instance HierarchyPath="openwifi_ip/rx_intf_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip/system_openofdm_rx_0_0/system_openofdm_rx_0_0.xci" Type="IP">
         <Instance HierarchyPath="openwifi_ip/openofdm_rx_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -343,8 +335,8 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/system_xpu_0_0/system_xpu_0_0.xci" Type="IP">
-        <Instance HierarchyPath="openwifi_ip/xpu_0"/>
+      <File Name="ip/system_rx_intf_0_0/system_rx_intf_0_0.xci" Type="IP">
+        <Instance HierarchyPath="openwifi_ip/rx_intf_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -353,6 +345,14 @@
       </File>
       <File Name="ip/system_tx_intf_0_0/system_tx_intf_0_0.xci" Type="IP">
         <Instance HierarchyPath="openwifi_ip/tx_intf_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip/system_xpu_0_0/system_xpu_0_0.xci" Type="IP">
+        <Instance HierarchyPath="openwifi_ip/xpu_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -381,17 +381,6 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="synth/system.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-      </File>
-      <File Name="sim/system.v" Type="Verilog">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip/system_auto_pc_0/system_auto_pc_0.xci" Type="IP">
@@ -440,6 +429,17 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth/system.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="sim/system.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="system_ooc.xdc" Type="XDC">

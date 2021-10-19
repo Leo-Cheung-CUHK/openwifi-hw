@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2018.3
+set scripts_vivado_version 2019.1
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -156,8 +156,11 @@ proc create_hier_cell_openwifi_ip { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M00_AXI
+
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M00_AXI1
+
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S00_AXI
+
 
   # Create pins
   create_bd_pin -dir I -type clk adc_clk
@@ -341,14 +344,11 @@ proc create_hier_cell_openwifi_ip { parentCell nameHier } {
   connect_bd_net -net tx_intf_0_dma_ready [get_bd_pins dma_ready] [get_bd_pins tx_intf_0/dma_ready]
   connect_bd_net -net tx_intf_0_douta [get_bd_pins tx_intf_0/douta] [get_bd_pins xpu_0/douta]
   connect_bd_net -net tx_intf_0_phy_tx_start [get_bd_pins openofdm_tx_0/phy_tx_start] [get_bd_pins tx_intf_0/phy_tx_start]
-  connect_bd_net -net tx_intf_0_s00_axis_tlast_beacon [get_bd_pins tx_intf_0/s00_axis_tlast_beacon] [get_bd_pins xpu_0/s00_axis_tlast_beacon]
-  connect_bd_net -net tx_intf_0_s00_axis_tlast_response [get_bd_pins tx_intf_0/s00_axis_tlast_response] [get_bd_pins xpu_0/s00_axis_tlast_response]
   connect_bd_net -net tx_intf_0_tx_hold [get_bd_pins openofdm_tx_0/result_iq_hold] [get_bd_pins tx_intf_0/tx_hold]
   connect_bd_net -net tx_intf_0_tx_iq_fifo_empty [get_bd_pins tx_intf_0/tx_iq_fifo_empty] [get_bd_pins xpu_0/tx_iq_fifo_empty]
   connect_bd_net -net tx_intf_0_tx_iq_fifo_rden [get_bd_pins tx_intf_0/tx_iq_fifo_rden] [get_bd_pins xpu_0/tx_iq_fifo_rden]
   connect_bd_net -net tx_intf_0_tx_pkt_need_ack [get_bd_pins tx_intf_0/tx_pkt_need_ack] [get_bd_pins xpu_0/tx_pkt_need_ack]
   connect_bd_net -net tx_intf_0_tx_pkt_retrans_limit [get_bd_pins tx_intf_0/tx_pkt_retrans_limit] [get_bd_pins xpu_0/tx_pkt_retrans_limit]
-  connect_bd_net -net tx_intf_0_tx_queue_idx [get_bd_pins tx_intf_0/tx_queue_idx] [get_bd_pins xpu_0/tx_queue_idx]
   connect_bd_net -net xlslice_0_Dout [get_bd_pins xlslice_0/Dout] [get_bd_pins xpu_0/ddc_i]
   connect_bd_net -net xlslice_1_Dout [get_bd_pins xlslice_1/Dout] [get_bd_pins xpu_0/ddc_q]
   connect_bd_net -net xpu_0_ack_tx_flag [get_bd_pins tx_intf_0/ack_tx_flag] [get_bd_pins xpu_0/ack_tx_flag]
@@ -359,10 +359,6 @@ proc create_hier_cell_openwifi_ip { parentCell nameHier } {
   connect_bd_net -net xpu_0_channel [get_bd_pins tx_intf_0/channel] [get_bd_pins xpu_0/channel]
   connect_bd_net -net xpu_0_dina [get_bd_pins tx_intf_0/dina_from_xpu] [get_bd_pins xpu_0/dina]
   connect_bd_net -net xpu_0_gpio_status_lock_by_sig_valid [get_bd_pins rx_intf_0/gpio_status_lock_by_sig_valid] [get_bd_pins xpu_0/gpio_status_lock_by_sig_valid]
-  connect_bd_net -net xpu_0_high_tx_allowed0 [get_bd_pins tx_intf_0/high_tx_allowed0] [get_bd_pins xpu_0/high_tx_allowed0]
-  connect_bd_net -net xpu_0_high_tx_allowed1 [get_bd_pins tx_intf_0/high_tx_allowed1] [get_bd_pins xpu_0/high_tx_allowed1]
-  connect_bd_net -net xpu_0_high_tx_allowed2 [get_bd_pins tx_intf_0/high_tx_allowed2] [get_bd_pins xpu_0/high_tx_allowed2]
-  connect_bd_net -net xpu_0_high_tx_allowed3 [get_bd_pins tx_intf_0/high_tx_allowed3] [get_bd_pins xpu_0/high_tx_allowed3]
   connect_bd_net -net xpu_0_mac_addr [get_bd_pins tx_intf_0/mac_addr] [get_bd_pins xpu_0/mac_addr]
   connect_bd_net -net xpu_0_mute_adc_out_to_bb [get_bd_pins rx_intf_0/mute_adc_out_to_bb] [get_bd_pins xpu_0/mute_adc_out_to_bb]
   connect_bd_net -net xpu_0_retrans_in_progress [get_bd_pins tx_intf_0/retrans_in_progress] [get_bd_pins xpu_0/retrans_in_progress]
@@ -370,7 +366,7 @@ proc create_hier_cell_openwifi_ip { parentCell nameHier } {
   connect_bd_net -net xpu_0_rssi_half_db_lock_by_sig_valid [get_bd_pins rx_intf_0/rssi_half_db_lock_by_sig_valid] [get_bd_pins xpu_0/rssi_half_db_lock_by_sig_valid]
   connect_bd_net -net xpu_0_start_retrans [get_bd_pins tx_intf_0/start_retrans] [get_bd_pins xpu_0/start_retrans]
   connect_bd_net -net xpu_0_tsf_pulse_1M [get_bd_pins rx_intf_0/tsf_pulse_1M] [get_bd_pins tx_intf_0/tsf_pulse_1M] [get_bd_pins xpu_0/tsf_pulse_1M]
-  connect_bd_net -net xpu_0_tsf_runtime_val [get_bd_pins rx_intf_0/tsf_runtime_val] [get_bd_pins xpu_0/tsf_runtime_val]
+  connect_bd_net -net xpu_0_tsf_runtime_val [get_bd_pins rx_intf_0/tsf_runtime_val] [get_bd_pins tx_intf_0/tsf_runtime_val] [get_bd_pins xpu_0/tsf_runtime_val]
   connect_bd_net -net xpu_0_tx_bb_is_ongoing [get_bd_pins tx_intf_0/tx_bb_is_ongoing] [get_bd_pins xpu_0/tx_bb_is_ongoing]
   connect_bd_net -net xpu_0_tx_status [get_bd_pins tx_intf_0/tx_status] [get_bd_pins xpu_0/tx_status]
   connect_bd_net -net xpu_0_tx_try_complete [get_bd_pins tx_intf_0/tx_try_complete] [get_bd_pins xpu_0/tx_try_complete]
@@ -415,8 +411,11 @@ proc create_root_design { parentCell } {
 
   # Create interface ports
   set ddr [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 ddr ]
+
   set fixed_io [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 fixed_io ]
+
   set iic_main [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 iic_main ]
+
 
   # Create ports
   set enable [ create_bd_port -dir O enable ]

@@ -1,0 +1,704 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Oct 15 20:56:20 2021
+# Process ID: 32365
+# Current directory: /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1
+# Command line: vivado -log rx_intf.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rx_intf.tcl
+# Log file: /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/rx_intf.vds
+# Journal file: /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source rx_intf.tcl -notrace
+Command: synth_design -top rx_intf -part xc7z045ffg900-2
+Starting synth_design
+INFO: [IP_Flow 19-2162] IP 'fifo64_1clk_fifo_generator_0_0' is locked:
+* IP definition 'FIFO Generator (13.2)' for IP 'fifo64_1clk_fifo_generator_0_0' (customized with software release 2018.3) has a different revision in the IP Catalog.
+INFO: [IP_Flow 19-2162] IP 'fifo32_1clk_dep32_fifo_generator_0_0' is locked:
+* IP definition 'FIFO Generator (13.2)' for IP 'fifo32_1clk_dep32_fifo_generator_0_0' (customized with software release 2018.3) has a different revision in the IP Catalog.
+INFO: [IP_Flow 19-2162] IP 'fifo64_1clk_dep512_fifo_generator_0_0' is locked:
+* IP definition 'FIFO Generator (13.2)' for IP 'fifo64_1clk_dep512_fifo_generator_0_0' (customized with software release 2018.3) has a different revision in the IP Catalog.
+INFO: [IP_Flow 19-2162] IP 'fifo32_2clk_dep32_fifo_generator_0_0' is locked:
+* IP definition 'FIFO Generator (13.2)' for IP 'fifo32_2clk_dep32_fifo_generator_0_0' (customized with software release 2018.3) has a different revision in the IP Catalog.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z045'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z045'
+INFO: [Common 17-1540] The version limit for your license is '2021.03' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Device 21-403] Loading part xc7z045ffg900-2
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 32426 
+WARNING: [Synth 8-2306] macro COUNT_TOP_20M redefined [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_iq_intf.v:8]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1866.691 ; gain = 159.652 ; free physical = 11084 ; free virtual = 188594
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'rx_intf' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf.v:6]
+	Parameter GPIO_STATUS_WIDTH bound to: 8 - type: integer 
+	Parameter RSSI_HALF_DB_WIDTH bound to: 11 - type: integer 
+	Parameter ADC_PACK_DATA_WIDTH bound to: 64 - type: integer 
+	Parameter IQ_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter RSSI_DATA_WIDTH bound to: 10 - type: integer 
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter WAIT_COUNT_BITS bound to: 5 - type: integer 
+	Parameter MAX_NUM_DMA_SYMBOL bound to: 8192 - type: integer 
+	Parameter TSF_TIMER_WIDTH bound to: 64 - type: integer 
+	Parameter MAX_BIT_NUM_DMA_SYMBOL bound to: 14 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_array_single' [/home/leo/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903]
+	Parameter DEST_SYNC_FF bound to: 4 - type: integer 
+	Parameter INIT_SYNC_FF bound to: 0 - type: integer 
+	Parameter SIM_ASSERT_CHK bound to: 0 - type: integer 
+	Parameter SRC_INPUT_REG bound to: 1 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [/home/leo/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:958]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_array_single' (1#1) [/home/leo/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:903]
+INFO: [Synth 8-6157] synthesizing module 'adc_intf' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/adc_intf.v:5]
+	Parameter IQ_DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo32_2clk_dep32' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo32_2clk_dep32/src/fifo32_2clk_dep32.v:13]
+INFO: [Synth 8-6157] synthesizing module 'fifo32_2clk_dep32_fifo_generator_0_0' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/.Xil/Vivado-32365-leo/realtime/fifo32_2clk_dep32_fifo_generator_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo32_2clk_dep32_fifo_generator_0_0' (2#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/.Xil/Vivado-32365-leo/realtime/fifo32_2clk_dep32_fifo_generator_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'fifo_generator_0' of module 'fifo32_2clk_dep32_fifo_generator_0_0' has 13 connections declared, but only 11 given [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo32_2clk_dep32/src/fifo32_2clk_dep32.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'fifo32_2clk_dep32' (3#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo32_2clk_dep32/src/fifo32_2clk_dep32.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'adc_intf' (4#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/adc_intf.v:5]
+INFO: [Synth 8-6157] synthesizing module 'rx_intf_s_axi' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_s_axi.v:6]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter ADDR_LSB bound to: 2 - type: integer 
+	Parameter OPT_MEM_ADDR_BITS bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'rx_intf_s_axi' (5#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_s_axi.v:6]
+INFO: [Synth 8-6157] synthesizing module 'rx_intf_s_axis' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_s_axis.v:6]
+	Parameter MAX_NUM_DMA_SYMBOL bound to: 8192 - type: integer 
+	Parameter MAX_BIT_NUM_DMA_SYMBOL bound to: 14 - type: integer 
+	Parameter C_S_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter bit_num bound to: 14 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter WRITE_FIFO bound to: 2'b01 
+INFO: [Synth 8-6157] synthesizing module 'fifo64_1clk_dep512' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo64_1clk_dep512/src/fifo64_1clk_dep512.v:13]
+INFO: [Synth 8-6157] synthesizing module 'fifo64_1clk_dep512_fifo_generator_0_0' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/.Xil/Vivado-32365-leo/realtime/fifo64_1clk_dep512_fifo_generator_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo64_1clk_dep512_fifo_generator_0_0' (6#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/.Xil/Vivado-32365-leo/realtime/fifo64_1clk_dep512_fifo_generator_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'fifo_generator_0' of module 'fifo64_1clk_dep512_fifo_generator_0_0' has 11 connections declared, but only 9 given [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo64_1clk_dep512/src/fifo64_1clk_dep512.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'fifo64_1clk_dep512' (7#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo64_1clk_dep512/src/fifo64_1clk_dep512.v:13]
+WARNING: [Synth 8-689] width (14) of port connection 'data_count' does not match port width (10) of module 'fifo64_1clk_dep512' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_s_axis.v:114]
+INFO: [Synth 8-6155] done synthesizing module 'rx_intf_s_axis' (8#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_s_axis.v:6]
+INFO: [Synth 8-6157] synthesizing module 'rx_iq_intf' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_iq_intf.v:10]
+	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter IQ_DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo32_1clk_dep32' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo32_1clk_dep32/src/fifo32_1clk_dep32.v:13]
+INFO: [Synth 8-6157] synthesizing module 'fifo32_1clk_dep32_fifo_generator_0_0' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/.Xil/Vivado-32365-leo/realtime/fifo32_1clk_dep32_fifo_generator_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo32_1clk_dep32_fifo_generator_0_0' (9#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/.Xil/Vivado-32365-leo/realtime/fifo32_1clk_dep32_fifo_generator_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'fifo_generator_0' of module 'fifo32_1clk_dep32_fifo_generator_0_0' has 11 connections declared, but only 9 given [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo32_1clk_dep32/src/fifo32_1clk_dep32.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'fifo32_1clk_dep32' (10#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo32_1clk_dep32/src/fifo32_1clk_dep32.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'rx_iq_intf' (11#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_iq_intf.v:10]
+INFO: [Synth 8-6157] synthesizing module 'byte_to_word_fcs_sn_insert' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/byte_to_word_fcs_sn_insert.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'byte_to_word_fcs_sn_insert' (12#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/byte_to_word_fcs_sn_insert.v:3]
+INFO: [Synth 8-6157] synthesizing module 'rx_intf_pl_to_m_axis' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_pl_to_m_axis.v:8]
+	Parameter GPIO_STATUS_WIDTH bound to: 8 - type: integer 
+	Parameter RSSI_HALF_DB_WIDTH bound to: 11 - type: integer 
+	Parameter IQ_DATA_WIDTH bound to: 16 - type: integer 
+	Parameter TSF_TIMER_WIDTH bound to: 64 - type: integer 
+	Parameter C_M00_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter MAX_BIT_NUM_DMA_SYMBOL bound to: 14 - type: integer 
+	Parameter WAIT_S2MM_INTR bound to: 1'b0 
+	Parameter COUNT_TO_TOP bound to: 1'b1 
+	Parameter WAIT_FOR_PKT bound to: 3'b000 
+	Parameter DMA_HEADER0_INSERT bound to: 3'b001 
+	Parameter DMA_HEADER1_INSERT_AND_START bound to: 3'b010 
+	Parameter WAIT_FILTER_FLAG bound to: 3'b011 
+	Parameter WAIT_DMA_TLAST bound to: 3'b100 
+	Parameter WAIT_RST_DONE bound to: 3'b101 
+INFO: [Synth 8-226] default block is never used [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_pl_to_m_axis.v:106]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_pl_to_m_axis.v:172]
+WARNING: [Synth 8-6014] Unused sequential element old_rx_state_reg was removed.  [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_pl_to_m_axis.v:163]
+INFO: [Synth 8-6155] done synthesizing module 'rx_intf_pl_to_m_axis' (13#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_pl_to_m_axis.v:8]
+INFO: [Synth 8-6157] synthesizing module 'rx_intf_m_axis' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_m_axis.v:6]
+	Parameter WAIT_COUNT_BITS bound to: 5 - type: integer 
+	Parameter MAX_NUM_DMA_SYMBOL bound to: 8192 - type: integer 
+	Parameter MAX_BIT_NUM_DMA_SYMBOL bound to: 14 - type: integer 
+	Parameter C_M_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
+	Parameter bit_num bound to: 14 - type: integer 
+	Parameter IDLE bound to: 2'b00 
+	Parameter INIT_COUNTER bound to: 2'b01 
+	Parameter SEND_STREAM bound to: 2'b10 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_m_axis.v:97]
+INFO: [Synth 8-6157] synthesizing module 'fifo64_1clk' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo64_1clk/src/fifo64_1clk.v:13]
+INFO: [Synth 8-6157] synthesizing module 'fifo64_1clk_fifo_generator_0_0' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/.Xil/Vivado-32365-leo/realtime/fifo64_1clk_fifo_generator_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo64_1clk_fifo_generator_0_0' (14#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/.Xil/Vivado-32365-leo/realtime/fifo64_1clk_fifo_generator_0_0_stub.v:6]
+WARNING: [Synth 8-7023] instance 'fifo_generator_0' of module 'fifo64_1clk_fifo_generator_0_0' has 11 connections declared, but only 9 given [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo64_1clk/src/fifo64_1clk.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'fifo64_1clk' (15#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo64_1clk/src/fifo64_1clk.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'rx_intf_m_axis' (16#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_m_axis.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'rx_intf' (17#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf.v:6]
+WARNING: [Synth 8-3331] design rx_intf_pl_to_m_axis has unconnected port pkt_rate[6]
+WARNING: [Synth 8-3331] design rx_intf_pl_to_m_axis has unconnected port pkt_rate[5]
+WARNING: [Synth 8-3331] design rx_intf_pl_to_m_axis has unconnected port pkt_rate[4]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[63]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[62]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[61]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[60]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[59]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[58]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[57]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[56]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[55]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[54]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[53]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[52]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[51]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[50]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[49]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[48]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[47]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[46]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[45]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[44]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[43]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[42]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[41]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[40]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[39]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[38]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[37]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[36]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[35]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[34]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[33]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[32]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[7]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[6]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[5]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[4]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[3]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[2]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[1]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[0]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1903.566 ; gain = 196.527 ; free physical = 11111 ; free virtual = 188621
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1921.379 ; gain = 214.340 ; free physical = 11109 ; free virtual = 188619
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1921.379 ; gain = 214.340 ; free physical = 11109 ; free virtual = 188619
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo64_1clk/src/fifo64_1clk_fifo_generator_0_0/fifo64_1clk_fifo_generator_0_0/fifo64_1clk_fifo_generator_0_0_in_context.xdc] for cell 'rx_intf_m_axis_i/fifo64_1clk_i/fifo_generator_0'
+Finished Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo64_1clk/src/fifo64_1clk_fifo_generator_0_0/fifo64_1clk_fifo_generator_0_0/fifo64_1clk_fifo_generator_0_0_in_context.xdc] for cell 'rx_intf_m_axis_i/fifo64_1clk_i/fifo_generator_0'
+Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo32_1clk_dep32/src/fifo32_1clk_dep32_fifo_generator_0_0/fifo32_1clk_dep32_fifo_generator_0_0/fifo32_1clk_dep32_fifo_generator_0_0_in_context.xdc] for cell 'rx_iq_intf_i/fifo32_1clk_dep32_i/fifo_generator_0'
+Finished Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo32_1clk_dep32/src/fifo32_1clk_dep32_fifo_generator_0_0/fifo32_1clk_dep32_fifo_generator_0_0/fifo32_1clk_dep32_fifo_generator_0_0_in_context.xdc] for cell 'rx_iq_intf_i/fifo32_1clk_dep32_i/fifo_generator_0'
+Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo64_1clk_dep512/src/fifo64_1clk_dep512_fifo_generator_0_0/fifo64_1clk_dep512_fifo_generator_0_0/fifo64_1clk_dep512_fifo_generator_0_0_in_context.xdc] for cell 'rx_intf_s_axis_i/fifo64_1clk_de512_i/fifo_generator_0'
+Finished Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo64_1clk_dep512/src/fifo64_1clk_dep512_fifo_generator_0_0/fifo64_1clk_dep512_fifo_generator_0_0/fifo64_1clk_dep512_fifo_generator_0_0_in_context.xdc] for cell 'rx_intf_s_axis_i/fifo64_1clk_de512_i/fifo_generator_0'
+Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo32_2clk_dep32/src/fifo32_2clk_dep32_fifo_generator_0_0/fifo32_2clk_dep32_fifo_generator_0_0/fifo32_2clk_dep32_fifo_generator_0_0_in_context.xdc] for cell 'adc_intf_i/fifo32_2clk_dep32_i/fifo_generator_0'
+Finished Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo32_2clk_dep32/src/fifo32_2clk_dep32_fifo_generator_0_0/fifo32_2clk_dep32_fifo_generator_0_0/fifo32_2clk_dep32_fifo_generator_0_0_in_context.xdc] for cell 'adc_intf_i/fifo32_2clk_dep32_i/fifo_generator_0'
+Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/dont_touch.xdc]
+Sourcing Tcl File [/home/leo/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_array_single.tcl] for cell 'xpm_cdc_array_single_inst_ant_flag'
+Finished Sourcing Tcl File [/home/leo/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_array_single.tcl] for cell 'xpm_cdc_array_single_inst_ant_flag'
+Sourcing Tcl File [/home/leo/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_array_single.tcl] for cell 'xpm_cdc_array_single_inst_mute_adc'
+Finished Sourcing Tcl File [/home/leo/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_array_single.tcl] for cell 'xpm_cdc_array_single_inst_mute_adc'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/leo/Xilinx2019/Vivado/2019.1/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_array_single.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/rx_intf_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/rx_intf_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2107.973 ; gain = 0.000 ; free physical = 11005 ; free virtual = 188515
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2107.973 ; gain = 0.000 ; free physical = 11005 ; free virtual = 188515
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 11085 ; free virtual = 188594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z045ffg900-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 11085 ; free virtual = 188594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for rx_intf_m_axis_i/fifo64_1clk_i/fifo_generator_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for rx_iq_intf_i/fifo32_1clk_dep32_i/fifo_generator_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for rx_intf_s_axis_i/fifo64_1clk_de512_i/fifo_generator_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for adc_intf_i/fifo32_2clk_dep32_i/fifo_generator_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for xpm_cdc_array_single_inst_ant_flag. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for xpm_cdc_array_single_inst_mute_adc. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 11085 ; free virtual = 188594
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'mst_exec_state_reg' in module 'rx_intf_m_axis'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf.v:240]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              001 |                               00
+            INIT_COUNTER |                              010 |                               01
+             SEND_STREAM |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'mst_exec_state_reg' using encoding 'one-hot' in module 'rx_intf_m_axis'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 11077 ; free virtual = 188586
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     15 Bit       Adders := 1     
+	   3 Input     14 Bit       Adders := 1     
+	   2 Input     14 Bit       Adders := 2     
+	   2 Input     13 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 4     
+	               32 Bit    Registers := 17    
+	               16 Bit    Registers := 2     
+	               15 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 3     
+	                5 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 31    
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 4     
+	   7 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 17    
+	  16 Input     32 Bit        Muxes := 16    
+	   5 Input     32 Bit        Muxes := 1     
+	   7 Input     14 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   7 Input     13 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 2     
+	  16 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 3     
+	   7 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 26    
+	   5 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 12    
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module rx_intf 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     14 Bit       Adders := 2     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module xpm_cdc_array_single 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 5     
+Module adc_intf 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module rx_intf_s_axi 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 16    
+	                7 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 15    
+	  16 Input     32 Bit        Muxes := 16    
+	  16 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_intf_s_axis 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_iq_intf 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   5 Input     32 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module byte_to_word_fcs_sn_insert 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+	   8 Input      1 Bit        Muxes := 1     
+Module rx_intf_pl_to_m_axis 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     14 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               64 Bit    Registers := 2     
+	               15 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   7 Input     64 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 2     
+	   7 Input     14 Bit        Muxes := 1     
+	   7 Input     13 Bit        Muxes := 1     
+	   2 Input     13 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 2     
+	   7 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+	   7 Input      1 Bit        Muxes := 12    
+	   8 Input      1 Bit        Muxes := 1     
+Module rx_intf_m_axis 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     15 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 900 (col length:140)
+BRAMs: 1090 (col length: RAMB18 140 RAMB36 70)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'count_top_scale_reg[14:0]' into 'count_top_scale_reg[14:0]' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/src/rx_intf_pl_to_m_axis.v:170]
+DSP Report: Generating DSP count_top_scale_reg, operation Mode is: (A*(B:0x14))'.
+DSP Report: register count_top_scale_reg is absorbed into DSP count_top_scale_reg.
+DSP Report: operator count_top_scale0 is absorbed into DSP count_top_scale_reg.
+DSP Report: Generating DSP count_top_scale_plus1_reg, operation Mode is: (A*(B:0x14))'+1.
+DSP Report: register count_top_scale_plus1_reg is absorbed into DSP count_top_scale_plus1_reg.
+DSP Report: register count_top_scale_reg is absorbed into DSP count_top_scale_plus1_reg.
+DSP Report: operator count_top_scale_plus10 is absorbed into DSP count_top_scale_plus1_reg.
+DSP Report: operator count_top_scale0 is absorbed into DSP count_top_scale_plus1_reg.
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[63]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[62]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[61]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[60]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[59]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[58]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[57]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[56]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[55]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[54]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[53]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[52]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[51]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[50]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[49]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[48]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[47]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[46]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[45]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[44]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[43]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[42]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[41]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[40]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[39]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[38]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[37]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[36]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[35]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[34]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[33]
+WARNING: [Synth 8-3331] design rx_iq_intf has unconnected port data_from_s_axis[32]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[7]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[6]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[5]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[4]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[3]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[2]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[1]
+WARNING: [Synth 8-3331] design rx_intf_s_axis has unconnected port S_AXIS_TSTRB[0]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design rx_intf_s_axi has unconnected port S_AXI_ARPROT[0]
+INFO: [Synth 8-3886] merging instance 'rx_intf_s_axi_i/axi_rresp_reg[0]' (FDRE) to 'rx_intf_s_axi_i/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (rx_intf_s_axi_i/\axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'rx_intf_s_axi_i/axi_bresp_reg[0]' (FDRE) to 'rx_intf_s_axi_i/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (rx_intf_s_axi_i/\axi_bresp_reg[1] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 11056 ; free virtual = 188569
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++---------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name          | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++---------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|rx_intf_pl_to_m_axis | (A*(B:0x14))'   | 15     | 5      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|rx_intf_pl_to_m_axis | (A*(B:0x14))'+1 | 15     | 5      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 1    | 1    | 
++---------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10909 ; free virtual = 188421
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10908 ; free virtual = 188420
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10902 ; free virtual = 188414
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10901 ; free virtual = 188413
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10901 ; free virtual = 188413
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10901 ; free virtual = 188413
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10901 ; free virtual = 188413
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10901 ; free virtual = 188413
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10901 ; free virtual = 188413
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------------------------------+----------+
+|      |BlackBox name                         |Instances |
++------+--------------------------------------+----------+
+|1     |fifo32_2clk_dep32_fifo_generator_0_0  |         1|
+|2     |fifo64_1clk_fifo_generator_0_0        |         1|
+|3     |fifo64_1clk_dep512_fifo_generator_0_0 |         1|
+|4     |fifo32_1clk_dep32_fifo_generator_0_0  |         1|
++------+--------------------------------------+----------+
+
+Report Cell Usage: 
++------+--------------------------------------+------+
+|      |Cell                                  |Count |
++------+--------------------------------------+------+
+|1     |fifo32_1clk_dep32_fifo_generator_0_0  |     1|
+|2     |fifo32_2clk_dep32_fifo_generator_0_0  |     1|
+|3     |fifo64_1clk_dep512_fifo_generator_0_0 |     1|
+|4     |fifo64_1clk_fifo_generator_0_0        |     1|
+|5     |BUFG                                  |     4|
+|6     |CARRY4                                |    49|
+|7     |DSP48E1_1                             |     1|
+|8     |DSP48E1_2                             |     1|
+|9     |LUT1                                  |    21|
+|10    |LUT2                                  |    49|
+|11    |LUT3                                  |   106|
+|12    |LUT4                                  |    98|
+|13    |LUT5                                  |   238|
+|14    |LUT6                                  |   361|
+|15    |MUXF7                                 |    64|
+|16    |MUXF8                                 |    32|
+|17    |FDRE                                  |   972|
+|18    |IBUF                                  |   338|
+|19    |OBUF                                  |   152|
++------+--------------------------------------+------+
+
+Report Instance Areas: 
++------+-------------------------------------+---------------------------+------+
+|      |Instance                             |Module                     |Cells |
++------+-------------------------------------+---------------------------+------+
+|1     |top                                  |                           |  2734|
+|2     |  xpm_cdc_array_single_inst_mute_adc |xpm_cdc_array_single__2    |     5|
+|3     |  xpm_cdc_array_single_inst_ant_flag |xpm_cdc_array_single       |     5|
+|4     |  adc_intf_i                         |adc_intf                   |   167|
+|5     |    fifo32_2clk_dep32_i              |fifo32_2clk_dep32          |    46|
+|6     |  byte_to_word_fcs_sn_insert_inst    |byte_to_word_fcs_sn_insert |   322|
+|7     |  rx_intf_m_axis_i                   |rx_intf_m_axis             |   188|
+|8     |    fifo64_1clk_i                    |fifo64_1clk                |   154|
+|9     |  rx_intf_pl_to_m_axis_i             |rx_intf_pl_to_m_axis       |   332|
+|10    |  rx_intf_s_axi_i                    |rx_intf_s_axi              |  1047|
+|11    |  rx_intf_s_axis_i                   |rx_intf_s_axis             |   111|
+|12    |    fifo64_1clk_de512_i              |fifo64_1clk_dep512         |    81|
+|13    |  rx_iq_intf_i                       |rx_iq_intf                 |    57|
+|14    |    fifo32_1clk_dep32_i              |fifo32_1clk_dep32          |    46|
++------+-------------------------------------+---------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10901 ; free virtual = 188413
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 46 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2107.973 ; gain = 214.340 ; free physical = 10966 ; free virtual = 188477
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2107.973 ; gain = 400.934 ; free physical = 10966 ; free virtual = 188477
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 147 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2135.863 ; gain = 0.000 ; free physical = 10905 ; free virtual = 188416
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+63 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2135.863 ; gain = 718.254 ; free physical = 11010 ; free virtual = 188521
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2135.863 ; gain = 0.000 ; free physical = 11010 ; free virtual = 188521
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/rx_intf/rx_intf/rx_intf.runs/synth_1/rx_intf.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file rx_intf_utilization_synth.rpt -pb rx_intf_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 15 20:56:51 2021...

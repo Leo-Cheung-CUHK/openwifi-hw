@@ -50,7 +50,7 @@
 // IP VLNV: analog.com:user:axi_ad9361:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "axi_ad9361,Vivado 2018.3" *)
+(* X_CORE_INFO = "axi_ad9361,Vivado 2019.1" *)
 (* CHECK_LICENSE_TYPE = "system_axi_ad9361_0,axi_ad9361,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
