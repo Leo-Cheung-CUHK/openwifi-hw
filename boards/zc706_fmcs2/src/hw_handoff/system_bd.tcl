@@ -20,7 +20,7 @@ set script_folder [_tcl::get_script_folder]
 ################################################################
 # Check if script is running in correct Vivado version.
 ################################################################
-set scripts_vivado_version 2019.1
+set scripts_vivado_version 2018.3
 set current_vivado_version [version -short]
 
 if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
@@ -59,7 +59,7 @@ set run_remote_bd_flow 1
 if { $run_remote_bd_flow == 1 } {
   # Set the reference directory for source file relative paths (by default 
   # the value is script directory path)
-  set origin_dir ./src
+  set origin_dir ./Documents/workarea/JIT/openwifi-hw-inc/boards/zc706_fmcs2/src
 
   # Use origin directory path location variable, if specified in the tcl shell
   if { [info exists ::origin_dir_loc] } {
@@ -156,11 +156,8 @@ proc create_hier_cell_openwifi_ip { parentCell nameHier } {
 
   # Create interface pins
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M00_AXI
-
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M00_AXI1
-
   create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 S00_AXI
-
 
   # Create pins
   create_bd_pin -dir I -type clk adc_clk
@@ -359,6 +356,9 @@ proc create_hier_cell_openwifi_ip { parentCell nameHier } {
   connect_bd_net -net xpu_0_channel [get_bd_pins tx_intf_0/channel] [get_bd_pins xpu_0/channel]
   connect_bd_net -net xpu_0_dina [get_bd_pins tx_intf_0/dina_from_xpu] [get_bd_pins xpu_0/dina]
   connect_bd_net -net xpu_0_gpio_status_lock_by_sig_valid [get_bd_pins rx_intf_0/gpio_status_lock_by_sig_valid] [get_bd_pins xpu_0/gpio_status_lock_by_sig_valid]
+  connect_bd_net -net xpu_0_high_tx_allowed0 [get_bd_pins tx_intf_0/high_tx_allowed0] [get_bd_pins xpu_0/high_tx_allowed0]
+  connect_bd_net -net xpu_0_high_tx_allowed1 [get_bd_pins tx_intf_0/high_tx_allowed1] [get_bd_pins xpu_0/high_tx_allowed1]
+  connect_bd_net -net xpu_0_high_tx_allowed2 [get_bd_pins tx_intf_0/high_tx_allowed2] [get_bd_pins xpu_0/high_tx_allowed2]
   connect_bd_net -net xpu_0_mac_addr [get_bd_pins tx_intf_0/mac_addr] [get_bd_pins xpu_0/mac_addr]
   connect_bd_net -net xpu_0_mute_adc_out_to_bb [get_bd_pins rx_intf_0/mute_adc_out_to_bb] [get_bd_pins xpu_0/mute_adc_out_to_bb]
   connect_bd_net -net xpu_0_retrans_in_progress [get_bd_pins tx_intf_0/retrans_in_progress] [get_bd_pins xpu_0/retrans_in_progress]
@@ -411,11 +411,8 @@ proc create_root_design { parentCell } {
 
   # Create interface ports
   set ddr [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 ddr ]
-
   set fixed_io [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 fixed_io ]
-
   set iic_main [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 iic_main ]
-
 
   # Create ports
   set enable [ create_bd_port -dir O enable ]

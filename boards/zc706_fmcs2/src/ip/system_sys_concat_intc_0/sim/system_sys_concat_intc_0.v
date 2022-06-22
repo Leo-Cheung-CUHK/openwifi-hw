@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:xlconcat:2.1
-// IP Revision: 3
+// IP Revision: 1
 
 `timescale 1ns/1ps
 
@@ -91,7 +91,7 @@ input wire [0 : 0] In14;
 input wire [0 : 0] In15;
 output wire [15 : 0] dout;
 
-  xlconcat_v2_1_3_xlconcat #(
+  xlconcat_v2_1_1_xlconcat #(
     .IN0_WIDTH(1),
     .IN1_WIDTH(1),
     .IN2_WIDTH(1),

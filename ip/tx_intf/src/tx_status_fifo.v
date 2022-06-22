@@ -18,7 +18,8 @@
     //   input wire [12:0] s_axis_fifo_data_count1,
     //   input wire [12:0] s_axis_fifo_data_count2,
     //   input wire [12:0] s_axis_fifo_data_count3,
-      
+      input wire [1:0] tx_queue_idx,
+
       output wire [18:0] tx_status_out
 	);
     reg  empty_reg;
@@ -46,7 +47,7 @@
     fifo32_1clk_dep64 fifo32_1clk_dep64_i (
         .CLK(clk),
         .DATAO(datao),
-        .DI({13'd0, linux_prio,2'b00,tx_pkt_sn,tx_status}),
+        .DI({13'd0, linux_prio,tx_queue_idx,tx_pkt_sn,tx_status}),
         .EMPTY(empty),
         .FULL(full),
         .RDEN(rden),

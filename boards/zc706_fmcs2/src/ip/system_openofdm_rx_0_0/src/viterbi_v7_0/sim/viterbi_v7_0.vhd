@@ -1,4 +1,4 @@
--- (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+-- (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
 -- 
 -- This file contains confidential and proprietary information
 -- of Xilinx, Inc. and is protected under U.S. and
@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:viterbi:9.1
--- IP Revision: 11
+-- IP Revision: 10
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY viterbi_v9_1_11;
-USE viterbi_v9_1_11.viterbi_v9_1_11;
+LIBRARY viterbi_v9_1_10;
+USE viterbi_v9_1_10.viterbi_v9_1_10;
 
 ENTITY viterbi_v7_0 IS
   PORT (
@@ -73,7 +73,7 @@ END viterbi_v7_0;
 ARCHITECTURE viterbi_v7_0_arch OF viterbi_v7_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF viterbi_v7_0_arch: ARCHITECTURE IS "yes";
-  COMPONENT viterbi_v9_1_11 IS
+  COMPONENT viterbi_v9_1_10 IS
     GENERIC (
       C_HAS_S_AXIS_DATA_TUSER : INTEGER;
       C_HAS_M_AXIS_DATA_TUSER : INTEGER;
@@ -142,7 +142,7 @@ ARCHITECTURE viterbi_v7_0_arch OF viterbi_v7_0 IS
       m_axis_dstat_tvalid : OUT STD_LOGIC;
       m_axis_dstat_tready : IN STD_LOGIC
     );
-  END COMPONENT viterbi_v9_1_11;
+  END COMPONENT viterbi_v9_1_10;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF m_axis_data_tvalid: SIGNAL IS "xilinx.com:interface:axis:1.0 M_AXIS_DATA TVALID";
@@ -160,7 +160,7 @@ ARCHITECTURE viterbi_v7_0_arch OF viterbi_v7_0 IS
   ATTRIBUTE X_INTERFACE_PARAMETER OF aclk: SIGNAL IS "XIL_INTERFACENAME aclk_intf, ASSOCIATED_BUSIF M_AXIS_DSTAT:S_AXIS_DSTAT:M_AXIS_DATA:S_AXIS_DATA, ASSOCIATED_RESET aresetn, ASSOCIATED_CLKEN aclken, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0";
   ATTRIBUTE X_INTERFACE_INFO OF aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 aclk_intf CLK";
 BEGIN
-  U0 : viterbi_v9_1_11
+  U0 : viterbi_v9_1_10
     GENERIC MAP (
       C_HAS_S_AXIS_DATA_TUSER => 1,
       C_HAS_M_AXIS_DATA_TUSER => 0,

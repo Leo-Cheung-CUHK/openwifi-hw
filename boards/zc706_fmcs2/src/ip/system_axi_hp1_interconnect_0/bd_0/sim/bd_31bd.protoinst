@@ -59,8 +59,6 @@
 				"/m00_exit_pipeline/m_axi": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
-						"ACLK": { "actual": "aclk"},
-						"ARESETN": { "actual": "aresetn"},
 						"AWADDR": { "actual": "m_axi_awaddr"},
 						"AWBURST": { "actual": "m_axi_awburst"},
 						"AWCACHE": { "actual": "m_axi_awcache"},
@@ -84,8 +82,6 @@
 				"/m00_exit_pipeline/s_axi": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
-						"ACLK": { "actual": "aclk"},
-						"ARESETN": { "actual": "aresetn"},
 						"AWADDR": { "actual": "s_axi_awaddr"},
 						"AWCACHE": { "actual": "s_axi_awcache"},
 						"AWID": { "actual": "s_axi_awid[0:0]"},
@@ -166,8 +162,6 @@
 				"/s00_entry_pipeline/m_axi": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
-						"ACLK": { "actual": "aclk"},
-						"ARESETN": { "actual": "aresetn"},
 						"AWADDR": { "actual": "m_axi_awaddr"},
 						"AWCACHE": { "actual": "m_axi_awcache"},
 						"AWID": { "actual": "m_axi_awid[0:0]"},
@@ -285,7 +279,6 @@
 						"AWPROT": { "actual": "s_axi_awprot"},
 						"AWQOS": { "actual": "s_axi_awqos"},
 						"AWREADY": { "actual": "s_axi_awready"},
-						"AWSIZE": { "actual": "s_axi_awsize"},
 						"AWUSER": { "actual": "s_axi_awuser"},
 						"AWVALID": { "actual": "s_axi_awvalid"},
 						"BID": { "actual": "s_axi_bid"},
@@ -362,8 +355,6 @@
 				"/s00_entry_pipeline/s_axi": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
-						"ACLK": { "actual": "aclk"},
-						"ARESETN": { "actual": "aresetn"},
 						"AWADDR": { "actual": "s_axi_awaddr"},
 						"AWBURST": { "actual": "s_axi_awburst"},
 						"AWCACHE": { "actual": "s_axi_awcache"},

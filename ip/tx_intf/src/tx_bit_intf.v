@@ -26,9 +26,14 @@
 	    output wire ask_tsf_from_s_axis,
 
 	    input wire  emptyn_data_from_s_axis,
-      input wire  empty_dmg_from_s_axis,
+
+      input wire  empty_dmg_from_s_axis_0,
+      input wire  empty_dmg_from_s_axis_1,
+      input wire  empty_dmg_from_s_axis_2,
+
       output reg  [1:0] linux_prio,
-	    
+	    output wire [1:0] tx_queue_idx,
+
 	    //input wire src_indication,//0-s_axis-->phy_tx-->iq-->duc; 1-s_axis-->iq-->duc
 	    input wire auto_start_mode,
 	    input wire [9:0] num_dma_symbol_th,
@@ -43,6 +48,9 @@
       input wire retrans_in_progress,
       input wire start_retrans,
 
+	    input wire high_tx_allowed0,
+	    input wire high_tx_allowed1,
+	    input wire high_tx_allowed2,
       input wire [TSF_TIMER_WIDTH-1 : 0] tsf_runtime_val,
 
 	    input wire tx_bb_is_ongoing,
@@ -66,11 +74,12 @@
     
     localparam [2:0]   WAIT_CHANCE =                    3'b000,
                        PREPARE_TX_FETCH=                3'b001,
-                       PREPARE_TX_JUDGE=                3'b010,
-                       DO_CTS_TOSELF=                   3'b011,
-                       WAIT_SIFS =                      3'b100,
-                       DO_TX =                          3'b101,
-                       DROP_PKT =                       3'b110;
+                       PREPARE_TDMA_TX_JUDGE=           3'b010,
+                       PREPARE_CSMA_TX_JUDGE=           3'b011,
+                       DO_CTS_TOSELF =                  3'b100,
+                       WAIT_SIFS =                      3'b101,
+                       DO_TX =                          3'b110,
+                       DROP_PKT =                       3'b111;
     //(* mark_debug = "true" *) reg [2:0] high_tx_ctl_state;
     reg [2:0] high_tx_ctl_state;
     reg [2:0] high_tx_ctl_state_old;
@@ -94,7 +103,8 @@
 
     reg [63:0] num_dma_symbol_total_current;
     reg [63:0] tsf_packet;
-    
+    reg [1:0] tx_queue_idx_reg;
+
     reg start_delay0;
     reg start_delay1;
     reg start_delay2;
@@ -116,14 +126,16 @@
 
     assign start = ( (auto_start_mode==1'b0)?(1'b0): (start_delay0|start_delay1|start_delay2|start_delay3|start_delay4|start_delay5) );
 
-    assign wea_high = (read_data_from_s_axis_en&emptyn_data_from_s_axis);
+    assign wea_high = (read_data_from_s_axis_en & emptyn_data_from_s_axis);
     assign wea = ( (ack_tx_flag|retrans_in_progress)?wea_from_xpu:wea_internal );
     assign addra = ( (ack_tx_flag|retrans_in_progress)?addra_from_xpu:addra_internal );
     assign dina = ( (ack_tx_flag|retrans_in_progress)?dina_from_xpu:dina_internal );
 
     assign tx_pkt_need_ack = num_dma_symbol_total_current[13];
     assign tx_pkt_retrans_limit = num_dma_symbol_total_current[17:14];
-        
+
+    assign tx_queue_idx = tx_queue_idx_reg;
+
     assign cts_toself_signal_parity = (~(^cts_toself_rate)); //because the cts and ack pkt length field is always 14: 1110 that always has 3 1s
     assign cts_toself_signal_len = 14;
     
@@ -150,6 +162,7 @@
           high_tx_ctl_state <= WAIT_CHANCE;
           high_tx_ctl_state_old<=WAIT_CHANCE;
           wr_counter <= 13'b0;
+          tx_queue_idx_reg<=0;
           send_cts_toself_wait_count<=0;
 
           cts_toself_bb_is_ongoing<=0;
@@ -174,10 +187,22 @@
             cts_toself_rf_is_ongoing<=0;
             read_data_from_s_axis_en <= 0;
 
-            if ((~tx_bb_is_ongoing) && (~ack_tx_flag) && (~empty_dmg_from_s_axis)) begin
-              high_tx_ctl_state  <= PREPARE_TX_FETCH;
-              read_dmg_from_s_axis_en <= 1;
-              read_tsf_from_s_axis_en <= 1;
+            // XPU output the allowed signals, timestamp and dmg symbol are first read out.
+            if ( high_tx_allowed0 && (~empty_dmg_from_s_axis_0) && (~tx_bb_is_ongoing) && (~ack_tx_flag) ) begin
+                high_tx_ctl_state  <= PREPARE_TX_FETCH;
+                read_dmg_from_s_axis_en <= 1;
+                read_tsf_from_s_axis_en <= 1;
+                tx_queue_idx_reg<=0;
+            end else if ( high_tx_allowed1 && (~empty_dmg_from_s_axis_1) && (~tx_bb_is_ongoing) && (~ack_tx_flag) ) begin
+                high_tx_ctl_state  <= PREPARE_TX_FETCH;
+                read_dmg_from_s_axis_en <= 1;
+                read_tsf_from_s_axis_en <= 1;
+                tx_queue_idx_reg<=1;
+            end else if ( high_tx_allowed2 && (~empty_dmg_from_s_axis_2) && (~tx_bb_is_ongoing) && (~ack_tx_flag) ) begin
+                high_tx_ctl_state  <= PREPARE_TX_FETCH;
+                read_dmg_from_s_axis_en <= 1;
+                read_tsf_from_s_axis_en <= 1;
+                tx_queue_idx_reg<=2;
             end
             wr_counter <= 13'b0;
             send_cts_toself_wait_count<=0;
@@ -189,30 +214,29 @@
             read_dmg_from_s_axis_en <= 0;
             read_tsf_from_s_axis_en <= 0;
 
-            high_tx_ctl_state  <= PREPARE_TX_JUDGE;
+            if (tx_queue_idx_reg != 2)
+              high_tx_ctl_state  <= PREPARE_TDMA_TX_JUDGE;  // check the timestamp for TDMA time-slotted transmission
+            else
+              high_tx_ctl_state  <= PREPARE_CSMA_TX_JUDGE;  // for CSMA
           end
 
-          PREPARE_TX_JUDGE: begin
+          PREPARE_TDMA_TX_JUDGE: begin
             if (tsf_packet < tsf_runtime_val) begin// if the packet's timestampe is outdated, we drop this packet
-              high_tx_ctl_state  <= DROP_PKT;
-              read_data_from_s_axis_en <= 1;
+                read_data_from_s_axis_en <= 1;
+                high_tx_ctl_state  <= DROP_PKT;
             end else if (tsf_packet == tsf_runtime_val) begin
-              if (num_dma_symbol_total_current[63]==1)  // from cts_toself_config[31] in tx queue
+                read_data_from_s_axis_en <= 1;
+                high_tx_ctl_state <= DO_TX;
+            end
+          end
+
+          PREPARE_CSMA_TX_JUDGE: begin
+              if (num_dma_symbol_total_current[63]==1)
                 high_tx_ctl_state <= DO_CTS_TOSELF;
               else begin
                 read_data_from_s_axis_en <= 1;
                 high_tx_ctl_state <= DO_TX;
               end
-            end
-          end
-
-          DROP_PKT: begin
-            wr_counter <= ( wea_high?(wr_counter + 1):wr_counter );
-            if (wr_counter == (num_dma_symbol_total_current[12:0]-1)) begin
-              high_tx_ctl_state <= WAIT_CHANCE;
-              read_data_from_s_axis_en<= 0;
-            end else
-              read_data_from_s_axis_en <= read_data_from_s_axis_en;
           end
 
           DO_CTS_TOSELF: begin
@@ -258,6 +282,16 @@
             high_tx_ctl_state <= ( tx_end_from_acc?WAIT_CHANCE:high_tx_ctl_state );
             cts_toself_rf_is_ongoing <=( tx_end_from_acc?0:cts_toself_rf_is_ongoing );
           end
+
+          DROP_PKT: begin
+            wr_counter <= ( wea_high?(wr_counter + 1):wr_counter );
+            if (wr_counter == (num_dma_symbol_total_current[12:0]-1)) begin
+              high_tx_ctl_state <= WAIT_CHANCE;
+              read_data_from_s_axis_en<= 0;
+            end else
+              read_data_from_s_axis_en <= read_data_from_s_axis_en;
+          end
+
         endcase
       end
     end

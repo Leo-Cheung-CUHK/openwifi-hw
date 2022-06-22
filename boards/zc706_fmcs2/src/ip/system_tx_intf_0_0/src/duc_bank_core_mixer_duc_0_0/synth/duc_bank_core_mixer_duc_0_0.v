@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -50,9 +50,9 @@
 // IP VLNV: xilinx.com:hls:mixer_duc:1.0
 // IP Revision: 2004101804
 
-(* X_CORE_INFO = "mixer_duc,Vivado 2019.1" *)
+(* X_CORE_INFO = "mixer_duc,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "duc_bank_core_mixer_duc_0_0,mixer_duc,{}" *)
-(* CORE_GENERATION_INFO = "duc_bank_core_mixer_duc_0_0,mixer_duc,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=mixer_duc,x_ipVersion=1.0,x_ipCoreRevision=2004101804,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "duc_bank_core_mixer_duc_0_0,mixer_duc,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=mixer_duc,x_ipVersion=1.0,x_ipCoreRevision=2004101804,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* IP_DEFINITION_SOURCE = "HLS" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module duc_bank_core_mixer_duc_0_0 (

@@ -3,35 +3,28 @@
     with args -log xpu.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source xpu.tcl
 
 
-****** Vivado v2019.1 (64-bit)
-  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
-  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 source xpu.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu'.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/leo/Xilinx2019/Vivado/2019.1/data/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/leo/Xilinx/Vivado/2018.3/data/ip'.
 Command: synth_design -top xpu -part xc7z045ffg900-2
 Starting synth_design
-INFO: [IP_Flow 19-2162] IP 'fifo8_1clk_dep64_fifo_generator_0_0' is locked:
-* IP definition 'FIFO Generator (13.2)' for IP 'fifo8_1clk_dep64_fifo_generator_0_0' (customized with software release 2018.3) has a different revision in the IP Catalog.
-INFO: [IP_Flow 19-2162] IP 'mv_avg32_fir_compiler_0_0' is locked:
-* IP definition 'FIR Compiler (7.2)' for IP 'mv_avg32_fir_compiler_0_0' (customized with software release 2018.3) has a different revision in the IP Catalog.
-INFO: [IP_Flow 19-2162] IP 'mv_avg128_fir_compiler_0_0' is locked:
-* IP definition 'FIR Compiler (7.2)' for IP 'mv_avg128_fir_compiler_0_0' (customized with software release 2018.3) has a different revision in the IP Catalog.
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z045'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z045'
 INFO: [Common 17-1540] The version limit for your license is '2021.03' and has expired for new software. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
-INFO: [Device 21-403] Loading part xc7z045ffg900-2
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 29522 
-WARNING: [Synth 8-2611] redeclaration of ansi port pulse_tx_bb_start is not allowed [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v:35]
-WARNING: [Synth 8-976] pulse_tx_bb_start has already been declared [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v:35]
-WARNING: [Synth 8-2654] second declaration of pulse_tx_bb_start ignored [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v:35]
-INFO: [Synth 8-994] pulse_tx_bb_start is declared here [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v:22]
+INFO: Helper process launched with PID 1063 
+WARNING: [Synth 8-2611] redeclaration of ansi port pulse_tx_bb_start is not allowed [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v:34]
+WARNING: [Synth 8-976] pulse_tx_bb_start has already been declared [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v:34]
+WARNING: [Synth 8-2654] second declaration of pulse_tx_bb_start ignored [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v:34]
+INFO: [Synth 8-994] pulse_tx_bb_start is declared here [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v:21]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1865.582 ; gain = 159.621 ; free physical = 8012 ; free virtual = 186331
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1486.559 ; gain = 94.500 ; free physical = 40380 ; free virtual = 187682
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'xpu' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:5]
 	Parameter GPIO_STATUS_WIDTH bound to: 8 - type: integer 
@@ -49,6 +42,21 @@ INFO: [Synth 8-6155] done synthesizing module 'tx_on_detection' (1#1) [/home/leo
 INFO: [Synth 8-6157] synthesizing module 'cca' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/cca.v:5]
 	Parameter RSSI_HALF_DB_WIDTH bound to: 11 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'cca' (2#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/cca.v:5]
+INFO: [Synth 8-6157] synthesizing module 'csma_ca' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/csma_ca.v:5]
+	Parameter RSSI_HALF_DB_WIDTH bound to: 11 - type: integer 
+	Parameter BACKOFF_CH_BUSY bound to: 2'b00 
+	Parameter BACKOFF_WAIT bound to: 2'b01 
+	Parameter BACKOFF_RUN bound to: 2'b10 
+	Parameter BACKOFF_SUSPEND bound to: 2'b11 
+	Parameter NAV_IDLE bound to: 2'b00 
+	Parameter NAV_WAIT_FOR_DURATION bound to: 2'b01 
+	Parameter NAV_CHECK_RA bound to: 2'b10 
+	Parameter NAV_UPDATE bound to: 2'b11 
+INFO: [Synth 8-6157] synthesizing module 'n_sym_len14_pkt' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/n_sym_len14_pkt.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'n_sym_len14_pkt' (3#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/n_sym_len14_pkt.v:5]
+WARNING: [Synth 8-6014] Unused sequential element nav_state_old_reg was removed.  [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/csma_ca.v:123]
+WARNING: [Synth 8-6014] Unused sequential element backoff_state_old_reg was removed.  [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/csma_ca.v:249]
+INFO: [Synth 8-6155] done synthesizing module 'csma_ca' (4#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/csma_ca.v:5]
 INFO: [Synth 8-6157] synthesizing module 'tx_control' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_control.v:7]
 	Parameter RSSI_HALF_DB_WIDTH bound to: 11 - type: integer 
 	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 64 - type: integer 
@@ -59,10 +67,8 @@ INFO: [Synth 8-6157] synthesizing module 'tx_control' [/home/leo/Documents/worka
 	Parameter RECV_ACK_WAIT_TX_BB_DONE bound to: 3'b100 
 	Parameter RECV_ACK_WAIT_SIG_VALID bound to: 3'b101 
 	Parameter RECV_ACK bound to: 3'b110 
-INFO: [Synth 8-6157] synthesizing module 'n_sym_len14_pkt' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/n_sym_len14_pkt.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'n_sym_len14_pkt' (3#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/n_sym_len14_pkt.v:5]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_control.v:199]
-INFO: [Synth 8-6155] done synthesizing module 'tx_control' (4#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_control.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'tx_control' (5#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_control.v:7]
 INFO: [Synth 8-6157] synthesizing module 'pkt_filter_ctl' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/pkt_filter_ctl.v:5]
 	Parameter FIF_ALLMULTI bound to: 14'b00000000000010 
 	Parameter FIF_FCSFAIL bound to: 14'b00000000000100 
@@ -86,9 +92,9 @@ INFO: [Synth 8-6157] synthesizing module 'pkt_filter_ctl' [/home/leo/Documents/w
 INFO: [Synth 8-155] case statement is not full and has no default [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/pkt_filter_ctl.v:115]
 WARNING: [Synth 8-6014] Unused sequential element filter_state_pre_reg was removed.  [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/pkt_filter_ctl.v:111]
 WARNING: [Synth 8-6014] Unused sequential element abnormal_flag_reg was removed.  [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/pkt_filter_ctl.v:112]
-INFO: [Synth 8-6155] done synthesizing module 'pkt_filter_ctl' (5#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/pkt_filter_ctl.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'pkt_filter_ctl' (6#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/pkt_filter_ctl.v:5]
 INFO: [Synth 8-6157] synthesizing module 'phy_rx_parse' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/phy_rx_parse.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'phy_rx_parse' (6#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/phy_rx_parse.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'phy_rx_parse' (7#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/phy_rx_parse.v:5]
 INFO: [Synth 8-6157] synthesizing module 'rssi' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/rssi.v:5]
 	Parameter GPIO_STATUS_WIDTH bound to: 8 - type: integer 
 	Parameter DELAY_CTL_WIDTH bound to: 7 - type: integer 
@@ -100,15 +106,15 @@ INFO: [Synth 8-6157] synthesizing module 'iq_abs_avg' [/home/leo/Documents/worka
 INFO: [Synth 8-6157] synthesizing module 'dc_rm' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/dc_rm.v:5]
 	Parameter DATA_WIDTH bound to: 16 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'mv_avg128' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/mv_avg128/src/mv_avg128.v:13]
-INFO: [Synth 8-6157] synthesizing module 'mv_avg128_fir_compiler_0_0' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-29496-leo/realtime/mv_avg128_fir_compiler_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mv_avg128_fir_compiler_0_0' (7#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-29496-leo/realtime/mv_avg128_fir_compiler_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mv_avg128' (8#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/mv_avg128/src/mv_avg128.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'dc_rm' (9#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/dc_rm.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mv_avg128_fir_compiler_0_0' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-1034-leo/realtime/mv_avg128_fir_compiler_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mv_avg128_fir_compiler_0_0' (8#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-1034-leo/realtime/mv_avg128_fir_compiler_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mv_avg128' (9#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/mv_avg128/src/mv_avg128.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'dc_rm' (10#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/dc_rm.v:5]
 INFO: [Synth 8-6157] synthesizing module 'mv_avg32' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/mv_avg32/src/mv_avg32.v:13]
-INFO: [Synth 8-6157] synthesizing module 'mv_avg32_fir_compiler_0_0' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-29496-leo/realtime/mv_avg32_fir_compiler_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mv_avg32_fir_compiler_0_0' (10#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-29496-leo/realtime/mv_avg32_fir_compiler_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'mv_avg32' (11#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/mv_avg32/src/mv_avg32.v:13]
-INFO: [Synth 8-6155] done synthesizing module 'iq_abs_avg' (12#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/iq_abs_avg.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mv_avg32_fir_compiler_0_0' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-1034-leo/realtime/mv_avg32_fir_compiler_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mv_avg32_fir_compiler_0_0' (11#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-1034-leo/realtime/mv_avg32_fir_compiler_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'mv_avg32' (12#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/mv_avg32/src/mv_avg32.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'iq_abs_avg' (13#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/iq_abs_avg.v:5]
 INFO: [Synth 8-6157] synthesizing module 'iq_rssi_to_db' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/iq_rssi_to_db.v:5]
 	Parameter IQ_DATA_WIDTH bound to: 16 - type: integer 
 	Parameter IQ_RSSI_HALF_DB_WIDTH bound to: 9 - type: integer 
@@ -119,7 +125,7 @@ INFO: [Synth 8-6157] synthesizing module 'iq_rssi_to_db' [/home/leo/Documents/wo
 	Parameter ADD_P3 bound to: 3'b100 
 	Parameter GEN_FINAL bound to: 3'b101 
 INFO: [Synth 8-155] case statement is not full and has no default [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/iq_rssi_to_db.v:71]
-INFO: [Synth 8-6155] done synthesizing module 'iq_rssi_to_db' (13#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/iq_rssi_to_db.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'iq_rssi_to_db' (14#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/iq_rssi_to_db.v:5]
 INFO: [Synth 8-6157] synthesizing module 'fifo8_delay64' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/fifo8_delay64.v:5]
 	Parameter DATA_WIDTH bound to: 8 - type: integer 
 	Parameter DELAY_CTL_WIDTH bound to: 7 - type: integer 
@@ -127,61 +133,77 @@ INFO: [Synth 8-6157] synthesizing module 'fifo8_delay64' [/home/leo/Documents/wo
 	Parameter WAIT_FILL bound to: 2'b01 
 	Parameter NORMAL_RW bound to: 2'b10 
 INFO: [Synth 8-6157] synthesizing module 'fifo8_1clk_dep64' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo8_1clk_dep64/src/fifo8_1clk_dep64.v:13]
-INFO: [Synth 8-6157] synthesizing module 'fifo8_1clk_dep64_fifo_generator_0_0' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-29496-leo/realtime/fifo8_1clk_dep64_fifo_generator_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'fifo8_1clk_dep64_fifo_generator_0_0' (14#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-29496-leo/realtime/fifo8_1clk_dep64_fifo_generator_0_0_stub.v:6]
-WARNING: [Synth 8-7023] instance 'fifo_generator_0' of module 'fifo8_1clk_dep64_fifo_generator_0_0' has 11 connections declared, but only 9 given [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo8_1clk_dep64/src/fifo8_1clk_dep64.v:52]
-INFO: [Synth 8-6155] done synthesizing module 'fifo8_1clk_dep64' (15#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo8_1clk_dep64/src/fifo8_1clk_dep64.v:13]
+INFO: [Synth 8-6157] synthesizing module 'fifo8_1clk_dep64_fifo_generator_0_0' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-1034-leo/realtime/fifo8_1clk_dep64_fifo_generator_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fifo8_1clk_dep64_fifo_generator_0_0' (15#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/.Xil/Vivado-1034-leo/realtime/fifo8_1clk_dep64_fifo_generator_0_0_stub.v:6]
+WARNING: [Synth 8-350] instance 'fifo_generator_0' of module 'fifo8_1clk_dep64_fifo_generator_0_0' requires 11 connections, but only 9 given [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo8_1clk_dep64/src/fifo8_1clk_dep64.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'fifo8_1clk_dep64' (16#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo8_1clk_dep64/src/fifo8_1clk_dep64.v:13]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/fifo8_delay64.v:58]
-INFO: [Synth 8-6155] done synthesizing module 'fifo8_delay64' (16#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/fifo8_delay64.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'rssi' (17#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/rssi.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'fifo8_delay64' (17#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/fifo8_delay64.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'rssi' (18#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/rssi.v:5]
+INFO: [Synth 8-6157] synthesizing module 'time_slice_gen' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/time_slice_gen.v:5]
+	Parameter TIMER_WIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'time_slice_gen' (19#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/time_slice_gen.v:5]
+WARNING: [Synth 8-350] instance 'time_slice_gen_i' of module 'time_slice_gen' requires 15 connections, but only 14 given [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:525]
 INFO: [Synth 8-6157] synthesizing module 'tsf_timer' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tsf_timer.v:7]
 	Parameter TIMER_WIDTH bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'tsf_timer' (18#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tsf_timer.v:7]
-WARNING: [Synth 8-689] width (64) of port connection 'tsf_load_val' does not match port width (1) of module 'tsf_timer' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:473]
+INFO: [Synth 8-6155] done synthesizing module 'tsf_timer' (20#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tsf_timer.v:7]
+WARNING: [Synth 8-689] width (64) of port connection 'tsf_load_val' does not match port width (1) of module 'tsf_timer' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:553]
 INFO: [Synth 8-6157] synthesizing module 'xpu_s_axi' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu_s_axi.v:6]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 8 - type: integer 
 	Parameter ADDR_LSB bound to: 2 - type: integer 
 	Parameter OPT_MEM_ADDR_BITS bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'xpu_s_axi' (19#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu_s_axi.v:6]
-WARNING: [Synth 8-3848] Net slv_reg12 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:117]
-WARNING: [Synth 8-3848] Net slv_reg13 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:118]
-WARNING: [Synth 8-3848] Net slv_reg14 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:119]
-WARNING: [Synth 8-3848] Net slv_reg15 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:120]
-WARNING: [Synth 8-3848] Net slv_reg24 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:129]
-WARNING: [Synth 8-3848] Net slv_reg25 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:130]
-WARNING: [Synth 8-3848] Net slv_reg32 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:138]
-WARNING: [Synth 8-3848] Net slv_reg33 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:139]
-WARNING: [Synth 8-3848] Net slv_reg44 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:150]
-WARNING: [Synth 8-3848] Net slv_reg45 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:151]
-WARNING: [Synth 8-3848] Net slv_reg46 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:152]
-WARNING: [Synth 8-3848] Net slv_reg47 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:153]
-WARNING: [Synth 8-3848] Net slv_reg48 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:154]
-WARNING: [Synth 8-3848] Net slv_reg49 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:155]
-WARNING: [Synth 8-3848] Net slv_reg52 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:158]
-WARNING: [Synth 8-3848] Net slv_reg53 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:159]
-WARNING: [Synth 8-3848] Net slv_reg54 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:160]
-WARNING: [Synth 8-3848] Net slv_reg55 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:161]
-WARNING: [Synth 8-3848] Net slv_reg56 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:162]
-WARNING: [Synth 8-3848] Net slv_reg57 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:163]
-INFO: [Synth 8-6155] done synthesizing module 'xpu' (20#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'xpu_s_axi' (21#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu_s_axi.v:6]
+WARNING: [Synth 8-3848] Net slv_reg12 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:120]
+WARNING: [Synth 8-3848] Net slv_reg13 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:121]
+WARNING: [Synth 8-3848] Net slv_reg14 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:122]
+WARNING: [Synth 8-3848] Net slv_reg15 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:123]
+WARNING: [Synth 8-3848] Net slv_reg24 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:132]
+WARNING: [Synth 8-3848] Net slv_reg25 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:133]
+WARNING: [Synth 8-3848] Net slv_reg32 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:141]
+WARNING: [Synth 8-3848] Net slv_reg33 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:142]
+WARNING: [Synth 8-3848] Net slv_reg44 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:153]
+WARNING: [Synth 8-3848] Net slv_reg45 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:154]
+WARNING: [Synth 8-3848] Net slv_reg46 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:155]
+WARNING: [Synth 8-3848] Net slv_reg47 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:156]
+WARNING: [Synth 8-3848] Net slv_reg48 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:157]
+WARNING: [Synth 8-3848] Net slv_reg49 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:158]
+WARNING: [Synth 8-3848] Net slv_reg52 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:161]
+WARNING: [Synth 8-3848] Net slv_reg53 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:162]
+WARNING: [Synth 8-3848] Net slv_reg54 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:163]
+WARNING: [Synth 8-3848] Net slv_reg55 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:164]
+WARNING: [Synth 8-3848] Net slv_reg56 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:165]
+WARNING: [Synth 8-3848] Net slv_reg57 in module/entity xpu does not have driver. [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:166]
+INFO: [Synth 8-6155] done synthesizing module 'xpu' (22#1) [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:5]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_AWPROT[1]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_AWPROT[0]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_ARPROT[2]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_ARPROT[0]
+WARNING: [Synth 8-3331] design time_slice_gen has unconnected port beacon_start_tx
 WARNING: [Synth 8-3331] design pkt_filter_ctl has unconnected port FC_DI_valid
 WARNING: [Synth 8-3331] design tx_control has unconnected port signal_rate[6]
 WARNING: [Synth 8-3331] design tx_control has unconnected port signal_rate[5]
 WARNING: [Synth 8-3331] design tx_control has unconnected port signal_rate[4]
 WARNING: [Synth 8-3331] design tx_control has unconnected port douta[11]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port signal_rate[6]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port signal_rate[5]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port signal_rate[4]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[11]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[10]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[9]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[8]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[7]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[6]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[5]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[4]
 WARNING: [Synth 8-3331] design xpu has unconnected port tx_iq_fifo_rden
 WARNING: [Synth 8-3331] design xpu has unconnected port short_preamble_detected
 WARNING: [Synth 8-3331] design xpu has unconnected port long_preamble_detected
 WARNING: [Synth 8-3331] design xpu has unconnected port legacy_sig_stb
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1920.488 ; gain = 214.527 ; free physical = 8024 ; free virtual = 186340
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1544.684 ; gain = 152.625 ; free physical = 40372 ; free virtual = 187675
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -190,15 +212,117 @@ Report Check Netlist:
 +------+------------------+-------+---------+-------+------------------+
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[31] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[30] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[29] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[28] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[27] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[26] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[25] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[24] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[23] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[22] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[21] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[20] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[19] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[18] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[17] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[16] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[15] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[14] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[13] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[12] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[11] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[10] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[9] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[8] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[7] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[6] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[5] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[4] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[3] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[2] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[1] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG12[0] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[31] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[30] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[29] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[28] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[27] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[26] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[25] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[24] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[23] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[22] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[21] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[20] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[19] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[18] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[17] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[16] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[15] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[14] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[13] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[12] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[11] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[10] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[9] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[8] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[7] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[6] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[5] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[4] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[3] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[2] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[1] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG13[0] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[31] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[30] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[29] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[28] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[27] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[26] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[25] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[24] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[23] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[22] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[21] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[20] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[19] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[18] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[17] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[16] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[15] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[14] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[13] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[12] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[11] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[10] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[9] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[8] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[7] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[6] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[5] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[4] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[3] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[2] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[1] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG14[0] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG15[31] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG15[30] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG15[29] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+WARNING: [Synth 8-3295] tying undriven pin xpu_s_axi_i:SLV_REG15[28] to constant 0 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/xpu.v:564]
+INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1940.301 ; gain = 234.340 ; free physical = 8029 ; free virtual = 186345
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1544.684 ; gain = 152.625 ; free physical = 40380 ; free virtual = 187683
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1940.301 ; gain = 234.340 ; free physical = 8029 ; free virtual = 186345
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1544.684 ; gain = 152.625 ; free physical = 40380 ; free virtual = 187683
 ---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z045ffg900-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -213,20 +337,21 @@ Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xp
 Finished Parsing XDC File [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2130.895 ; gain = 0.000 ; free physical = 7922 ; free virtual = 186238
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1989.270 ; gain = 0.000 ; free physical = 40035 ; free virtual = 187338
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2130.895 ; gain = 0.000 ; free physical = 7922 ; free virtual = 186238
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1989.270 ; gain = 0.000 ; free physical = 40035 ; free virtual = 187338
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1989.270 ; gain = 0.000 ; free physical = 40035 ; free virtual = 187338
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 8016 ; free virtual = 186332
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1989.270 ; gain = 597.211 ; free physical = 40133 ; free virtual = 187436
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z045ffg900-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 8016 ; free virtual = 186332
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1989.270 ; gain = 597.211 ; free physical = 40133 ; free virtual = 187436
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -235,16 +360,60 @@ Applied set_property DONT_TOUCH = true for rssi_i/fifo8_delay64_i/fifo8_1clk_dep
 Applied set_property DONT_TOUCH = true for rssi_i/iq_abs_avg_i/mv_avg32_i/fir_compiler_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for rssi_i/iq_abs_avg_i/dc_rm_i/mv_avg128_i/fir_compiler_0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 8016 ; free virtual = 186332
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1989.270 ; gain = 597.211 ; free physical = 40135 ; free virtual = 187438
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "backoff_timer" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "backoff_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "backoff_state" won't be mapped to RAM because it is too sparse
+DSP Debug: swapped A/B pins for adder 0x28dfb1d0
+INFO: [Synth 8-5544] ROM "wea0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'filter_state_reg' in module 'pkt_filter_ctl'
+INFO: [Synth 8-5544] ROM "filter_bssid" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "filter_bssid" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "filter_bssid" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "filter_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "block_rx_dma_to_ps_valid" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "filter_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "filter_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "filter_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "filter_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "FC_DI" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "FC_DI_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "rx_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "rx_addr_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "dst_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "dst_addr_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tx_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tx_addr_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SC" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SC_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "src_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "src_addr_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "p_5_in" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_4_in" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_3_in" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_2_in" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_1_in" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_0_in" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "calc_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "num_shfit_bit" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p3" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mult_p1" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sum_p1p2" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sum_p1p2p3" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iq_rssi_half_db_reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iq_rssi_half_db_valid_reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'calc_state_reg' in module 'iq_rssi_to_db'
 INFO: [Synth 8-802] inferred FSM for state register 'rw_state_reg' in module 'fifo8_delay64'
+INFO: [Synth 8-5544] ROM "wren_internal" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rden_internal" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rst_count" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rw_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rw_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rw_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "tsf_pulse_1M" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "sifs_time0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "phy_rx_start_delay_time0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -276,7 +445,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'calc_state_reg' using enco
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'rw_state_reg' using encoding 'one-hot' in module 'fifo8_delay64'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 8008 ; free virtual = 186326
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1989.270 ; gain = 597.211 ; free physical = 40124 ; free virtual = 187428
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -295,22 +464,31 @@ Detailed RTL Component Info :
 	   3 Input     16 Bit       Adders := 2     
 	   2 Input     16 Bit       Adders := 3     
 	   2 Input     15 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
 	   4 Input     11 Bit       Adders := 1     
+	   3 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
 	   2 Input      3 Bit       Adders := 2     
 	   2 Input      2 Bit       Adders := 1     
 +---XORs : 
-	                4 Bit    Wide XORs := 1     
+	   2 Input      1 Bit         XORs := 6     
++---XORs : 
+	                4 Bit    Wide XORs := 2     
 +---Registers : 
 	               64 Bit    Registers := 3     
 	               48 Bit    Registers := 6     
 	               36 Bit    Registers := 1     
 	               33 Bit    Registers := 1     
-	               32 Bit    Registers := 48    
+	               32 Bit    Registers := 49    
+	               25 Bit    Registers := 7     
 	               16 Bit    Registers := 6     
-	               15 Bit    Registers := 4     
+	               15 Bit    Registers := 5     
 	               14 Bit    Registers := 2     
+	               13 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
 	               11 Bit    Registers := 2     
 	               10 Bit    Registers := 1     
 	                9 Bit    Registers := 1     
@@ -319,8 +497,8 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 5     
-	                2 Bit    Registers := 4     
-	                1 Bit    Registers := 43    
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 51    
 +---Multipliers : 
 	                 3x32  Multipliers := 1     
 +---Muxes : 
@@ -341,16 +519,22 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit        Muxes := 7     
 	   8 Input     16 Bit        Muxes := 1     
 	  24 Input     16 Bit        Muxes := 1     
+	   4 Input     15 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 7     
 	   8 Input     15 Bit        Muxes := 2     
-	   2 Input     15 Bit        Muxes := 5     
 	   6 Input     14 Bit        Muxes := 2     
+	   4 Input     13 Bit        Muxes := 1     
+	   4 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 3     
 	   8 Input     10 Bit        Muxes := 1     
 	   6 Input      9 Bit        Muxes := 2     
-	   2 Input      7 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 3     
 	   6 Input      6 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	   5 Input      5 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 3     
+	   4 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 4     
 	   8 Input      4 Bit        Muxes := 1     
 	  10 Input      4 Bit        Muxes := 1     
@@ -359,10 +543,12 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit        Muxes := 11    
 	   5 Input      3 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 4     
+	   8 Input      2 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
-	   3 Input      2 Bit        Muxes := 1     
-	   8 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 32    
+	   2 Input      1 Bit        Muxes := 52    
+	   4 Input      1 Bit        Muxes := 9     
 	   8 Input      1 Bit        Muxes := 22    
 	  11 Input      1 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 10    
@@ -383,9 +569,10 @@ Module xpu
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input     15 Bit        Muxes := 3     
-	   2 Input      7 Bit        Muxes := 2     
-	   2 Input      5 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 3     
+	   4 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
 Module tx_on_detection 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -393,6 +580,36 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 9     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 5     
+Module csma_ca 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     13 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   3 Input     10 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 6     
++---XORs : 
+	                4 Bit    Wide XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               15 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   4 Input     15 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 2     
+	   4 Input     13 Bit        Muxes := 1     
+	   4 Input     12 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 3     
+	   8 Input      2 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 9     
 Module tx_control 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -466,7 +683,7 @@ Detailed RTL Component Info :
 	   4 Input     32 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 2     
 	  24 Input     16 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 12    
 	   6 Input      1 Bit        Muxes := 1     
 	  12 Input      1 Bit        Muxes := 1     
 	  18 Input      1 Bit        Muxes := 1     
@@ -523,6 +740,13 @@ Detailed RTL Component Info :
 	               11 Bit    Registers := 2     
 	                8 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
+Module time_slice_gen 
+Detailed RTL Component Info : 
++---Registers : 
+	               25 Bit    Registers := 7     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
 Module tsf_timer 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -563,7 +787,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'bb_rf_delay_count_top_scale_reg[13:0]' into 'bb_rf_delay_count_top_scale_reg[13:0]' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v:58]
+INFO: [Synth 8-4471] merging register 'bb_rf_delay_count_top_scale_reg[13:0]' into 'bb_rf_delay_count_top_scale_reg[13:0]' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v:57]
 DSP Report: Generating DSP bb_rf_delay_count_top_scale_reg, operation Mode is: (A*(B:0x14))'.
 DSP Report: register bb_rf_delay_count_top_scale_reg is absorbed into DSP bb_rf_delay_count_top_scale_reg.
 DSP Report: operator bb_rf_delay_count_top_scale0 is absorbed into DSP bb_rf_delay_count_top_scale_reg.
@@ -572,6 +796,8 @@ DSP Report: register bb_rf_delay_count_top_scale_plus1_reg is absorbed into DSP 
 DSP Report: register bb_rf_delay_count_top_scale_reg is absorbed into DSP bb_rf_delay_count_top_scale_plus1_reg.
 DSP Report: operator bb_rf_delay_count_top_scale_plus10 is absorbed into DSP bb_rf_delay_count_top_scale_plus1_reg.
 DSP Report: operator bb_rf_delay_count_top_scale0 is absorbed into DSP bb_rf_delay_count_top_scale_plus1_reg.
+INFO: [Synth 8-5546] ROM "backoff_timer" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "wea0" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 DSP Report: Generating DSP send_ack_wait_top_scale_reg, operation Mode is: (A*(B:0x14))'.
 DSP Report: register send_ack_wait_top_scale_reg is absorbed into DSP send_ack_wait_top_scale_reg.
 DSP Report: operator send_ack_wait_top_scale0 is absorbed into DSP send_ack_wait_top_scale_reg.
@@ -582,6 +808,18 @@ DSP Report: Generating DSP recv_ack_timeout_top0, operation Mode is: C+(A*(B:0x1
 DSP Report: register recv_ack_timeout_top_adj_scale_reg is absorbed into DSP recv_ack_timeout_top0.
 DSP Report: operator recv_ack_timeout_top_adj_scale0 is absorbed into DSP recv_ack_timeout_top0.
 DSP Report: operator recv_ack_timeout_top0 is absorbed into DSP recv_ack_timeout_top0.
+INFO: [Synth 8-5546] ROM "FC_DI" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "FC_DI_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "rx_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "rx_addr_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "dst_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "dst_addr_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tx_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tx_addr_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SC" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "SC_valid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "src_addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "src_addr_valid" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-4471] merging register 'iq_rssi_to_db_i/iq_rssi_reg_reg[15:0]' into 'iq_rssi_to_db_i/iq_rssi_reg_reg[15:0]' [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/iq_rssi_to_db.v:57]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/iq_rssi_to_db.v:143]
 WARNING: [Synth 8-6014] Unused sequential element iq_rssi_to_db_i/mult_p1_reg was removed.  [/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/iq_rssi_to_db.v:63]
@@ -592,17 +830,19 @@ DSP Report: operator iq_rssi_to_db_i/iq_rssi20 is absorbed into DSP iq_rssi_to_d
 DSP Report: Generating DSP iq_rssi_to_db_i/sum_p1p2_reg, operation Mode is: (C'+(A2*B2)')'.
 DSP Report: register iq_rssi_to_db_i/iq_rssi_reg_reg is absorbed into DSP iq_rssi_to_db_i/sum_p1p2_reg.
 DSP Report: register iq_rssi_to_db_i/p2_reg is absorbed into DSP iq_rssi_to_db_i/sum_p1p2_reg.
-DSP Report: register iq_rssi_to_db_i/sum_p1p2_reg is absorbed into DSP iq_rssi_to_db_i/sum_p1p2_reg.
+DSP Report: register C is absorbed into DSP iq_rssi_to_db_i/sum_p1p2_reg.
 DSP Report: register iq_rssi_to_db_i/sum_p1p2_reg is absorbed into DSP iq_rssi_to_db_i/sum_p1p2_reg.
 DSP Report: register iq_rssi_to_db_i/mult_p2_reg is absorbed into DSP iq_rssi_to_db_i/sum_p1p2_reg.
 DSP Report: operator iq_rssi_to_db_i/sum_p1p20 is absorbed into DSP iq_rssi_to_db_i/sum_p1p2_reg.
 DSP Report: operator iq_rssi_to_db_i/mult_p20 is absorbed into DSP iq_rssi_to_db_i/sum_p1p2_reg.
+INFO: [Synth 8-5546] ROM "tsf_pulse_1M" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_AWPROT[1]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_AWPROT[0]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_ARPROT[2]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design xpu_s_axi has unconnected port S_AXI_ARPROT[0]
+WARNING: [Synth 8-3331] design time_slice_gen has unconnected port beacon_start_tx
 WARNING: [Synth 8-3331] design pkt_filter_ctl has unconnected port filter_cfg[3]
 WARNING: [Synth 8-3331] design pkt_filter_ctl has unconnected port filter_cfg[2]
 WARNING: [Synth 8-3331] design pkt_filter_ctl has unconnected port filter_cfg[0]
@@ -610,13 +850,25 @@ WARNING: [Synth 8-3331] design pkt_filter_ctl has unconnected port FC_DI_valid
 WARNING: [Synth 8-3331] design tx_control has unconnected port signal_rate[6]
 WARNING: [Synth 8-3331] design tx_control has unconnected port signal_rate[5]
 WARNING: [Synth 8-3331] design tx_control has unconnected port signal_rate[4]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port signal_rate[6]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port signal_rate[5]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port signal_rate[4]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[11]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[10]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[9]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[8]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[7]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[6]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[5]
+WARNING: [Synth 8-3331] design csma_ca has unconnected port cw_min[4]
 WARNING: [Synth 8-3331] design xpu has unconnected port tx_iq_fifo_rden
 WARNING: [Synth 8-3331] design xpu has unconnected port short_preamble_detected
 WARNING: [Synth 8-3331] design xpu has unconnected port long_preamble_detected
 WARNING: [Synth 8-3331] design xpu has unconnected port legacy_sig_stb
 INFO: [Synth 8-3886] merging instance 'rssi_i/iq_rssi_to_db_i/p1_reg[0]' (FDRE) to 'rssi_i/iq_rssi_to_db_i/p1_reg[2]'
-INFO: [Synth 8-3886] merging instance 'tx_control_i/num_data_ofdm_symbol_reg_tmp0__3' (FDR) to 'tx_control_i/num_data_ofdm_symbol_reg_tmp_reg[2]'
-INFO: [Synth 8-3886] merging instance 'tx_control_i/num_data_ofdm_symbol_reg_tmp0__2' (FDR) to 'tx_control_i/num_data_ofdm_symbol_reg_tmp_reg[2]'
+INFO: [Synth 8-3886] merging instance 'tx_control_i/B[0]' (FDR) to 'tx_control_i/num_data_ofdm_symbol_reg_tmp_reg[2]'
+INFO: [Synth 8-3886] merging instance 'tx_control_i/B[1]' (FDR) to 'tx_control_i/num_data_ofdm_symbol_reg_tmp_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (csma_ca_i/\nav_reset_timeout_top_after_rts_reg[10] )
 INFO: [Synth 8-3886] merging instance 'rssi_i/iq_rssi_to_db_i/p3_reg[25]' (FDRE) to 'rssi_i/iq_rssi_to_db_i/p3_reg[27]'
 INFO: [Synth 8-3886] merging instance 'rssi_i/iq_rssi_to_db_i/p3_reg[26]' (FDRE) to 'rssi_i/iq_rssi_to_db_i/p3_reg[27]'
 INFO: [Synth 8-3886] merging instance 'rssi_i/iq_rssi_to_db_i/p3_reg[27]' (FDRE) to 'rssi_i/iq_rssi_to_db_i/p3_reg[20]'
@@ -736,7 +988,6 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (xpu_s_axi
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (xpu_s_axi_i/\slv_reg45_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (xpu_s_axi_i/\slv_reg44_reg[4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (xpu_s_axi_i/\slv_reg33_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (xpu_s_axi_i/\slv_reg32_reg[4] )
 INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3886] merging instance 'tx_control_i/FC_type_new_reg[0]' (FDRE) to 'tx_control_i/FC_subtype_new_reg[2]'
 INFO: [Synth 8-3886] merging instance 'tx_control_i/FC_subtype_new_reg[2]' (FDRE) to 'tx_control_i/FC_subtype_new_reg[3]'
@@ -755,7 +1006,7 @@ INFO: [Synth 8-3886] merging instance 'xpu_s_axi_i/slv_reg63_reg[28]' (FDR) to '
 INFO: [Synth 8-3886] merging instance 'xpu_s_axi_i/slv_reg63_reg[29]' (FDR) to 'xpu_s_axi_i/slv_reg63_reg[30]'
 INFO: [Synth 8-3886] merging instance 'xpu_s_axi_i/slv_reg63_reg[30]' (FDR) to 'xpu_s_axi_i/slv_reg63_reg[31]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7979 ; free virtual = 186303
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1989.270 ; gain = 597.211 ; free physical = 40088 ; free virtual = 187397
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -766,6 +1017,7 @@ ROM:
 |Module Name     | RTL Object                              | Depth x Width | Implemented As | 
 +----------------+-----------------------------------------+---------------+----------------+
 |n_sym_len14_pkt | num_data_ofdm_symbol                    | 32x3          | LUT            | 
+|csma_ca         | n_sym_ackcts_pkt_i/num_data_ofdm_symbol | 32x3          | LUT            | 
 |tx_control      | n_sym_len14_pkt_i0/num_data_ofdm_symbol | 32x3          | LUT            | 
 |tx_control      | n_sym_len14_pkt_i1/num_data_ofdm_symbol | 32x3          | LUT            | 
 +----------------+-----------------------------------------+---------------+----------------+
@@ -798,13 +1050,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7824 ; free virtual = 186147
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1989.270 ; gain = 597.211 ; free physical = 39934 ; free virtual = 187244
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7822 ; free virtual = 186146
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 1989.270 ; gain = 597.211 ; free physical = 39932 ; free virtual = 187241
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -817,7 +1069,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-3886] merging instance 'rssi_i/iq_rssi_to_db_i/p3_reg[16]' (FDRE) to 'rssi_i/iq_rssi_to_db_i/num_shfit_bit_reg[2]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7820 ; free virtual = 186144
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1990.480 ; gain = 598.422 ; free physical = 39928 ; free virtual = 187237
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -841,7 +1093,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7820 ; free virtual = 186144
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1990.480 ; gain = 598.422 ; free physical = 39926 ; free virtual = 187235
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -854,7 +1106,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7820 ; free virtual = 186144
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1990.480 ; gain = 598.422 ; free physical = 39926 ; free virtual = 187235
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -866,25 +1118,40 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7820 ; free virtual = 186144
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1990.480 ; gain = 598.422 ; free physical = 39926 ; free virtual = 187235
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7820 ; free virtual = 186144
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1990.480 ; gain = 598.422 ; free physical = 39926 ; free virtual = 187235
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7820 ; free virtual = 186144
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1990.480 ; gain = 598.422 ; free physical = 39926 ; free virtual = 187235
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7820 ; free virtual = 186144
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1990.480 ; gain = 598.422 ; free physical = 39926 ; free virtual = 187235
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+---------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                        | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+---------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|xpu         | csma_ca_i/random_number_reg[20] | 5      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|xpu         | csma_ca_i/random_number_reg[11] | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++------------+---------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -907,32 +1174,33 @@ Report Cell Usage:
 |2     |mv_avg128_fir_compiler_0_0          |     1|
 |3     |mv_avg32_fir_compiler_0_0           |     1|
 |4     |BUFG                                |     1|
-|5     |CARRY4                              |   123|
+|5     |CARRY4                              |   215|
 |6     |DSP48E1_1                           |     1|
 |7     |DSP48E1_2                           |     1|
 |8     |DSP48E1_3                           |     5|
-|9     |LUT1                                |    48|
-|10    |LUT2                                |   304|
-|11    |LUT3                                |   165|
-|12    |LUT4                                |   209|
-|13    |LUT5                                |   274|
-|14    |LUT6                                |   664|
-|15    |MUXF7                               |    64|
-|16    |FDRE                                |  1624|
-|17    |FDSE                                |     3|
-|18    |IBUF                                |   220|
-|19    |OBUF                                |   284|
+|9     |LUT1                                |    75|
+|10    |LUT2                                |   376|
+|11    |LUT3                                |   250|
+|12    |LUT4                                |   462|
+|13    |LUT5                                |   325|
+|14    |LUT6                                |   769|
+|15    |MUXF7                               |    65|
+|16    |SRL16E                              |     2|
+|17    |FDRE                                |  1938|
+|18    |FDSE                                |    14|
+|19    |IBUF                                |   221|
+|20    |OBUF                                |   287|
 +------+------------------------------------+------+
 
 Report Instance Areas: 
 +------+-------------------------+-----------------+------+
 |      |Instance                 |Module           |Cells |
 +------+-------------------------+-----------------+------+
-|1     |top                      |                 |  4077|
-|2     |  tsf_timer_i            |tsf_timer        |   165|
-|3     |  phy_rx_parse_i         |phy_rx_parse     |   328|
+|1     |top                      |                 |  5094|
+|2     |  csma_ca_i              |csma_ca          |   280|
+|3     |  phy_rx_parse_i         |phy_rx_parse     |   405|
 |4     |  pkt_filter_ctl_i       |pkt_filter_ctl   |   164|
-|5     |  rssi_i                 |rssi             |   646|
+|5     |  rssi_i                 |rssi             |   647|
 |6     |    fifo8_delay64_i      |fifo8_delay64    |    51|
 |7     |      fifo8_1clk_dep64_i |fifo8_1clk_dep64 |    37|
 |8     |    iq_abs_avg_i         |iq_abs_avg       |   198|
@@ -940,34 +1208,36 @@ Report Instance Areas:
 |10    |        mv_avg128_i      |mv_avg128        |    74|
 |11    |      mv_avg32_i         |mv_avg32         |    34|
 |12    |    iq_rssi_to_db_i      |iq_rssi_to_db    |   367|
-|13    |  tx_control_i           |tx_control       |   685|
-|14    |  tx_on_detection_i      |tx_on_detection  |    50|
-|15    |  xpu_s_axi_i            |xpu_s_axi        |  1528|
+|13    |  time_slice_gen_i       |time_slice_gen   |   403|
+|14    |  tsf_timer_i            |tsf_timer        |   197|
+|15    |  tx_control_i           |tx_control       |   688|
+|16    |  tx_on_detection_i      |tx_on_detection  |    50|
+|17    |  xpu_s_axi_i            |xpu_s_axi        |  1745|
 +------+-------------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7820 ; free virtual = 186144
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1990.480 ; gain = 598.422 ; free physical = 39926 ; free virtual = 187235
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2130.895 ; gain = 234.340 ; free physical = 7884 ; free virtual = 186207
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 2130.895 ; gain = 424.934 ; free physical = 7884 ; free virtual = 186207
+Synthesis finished with 0 errors, 0 critical warnings and 31 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1990.480 ; gain = 153.836 ; free physical = 39989 ; free virtual = 187299
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1990.488 ; gain = 598.422 ; free physical = 39989 ; free virtual = 187299
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 194 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 287 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2147.809 ; gain = 0.000 ; free physical = 7828 ; free virtual = 186151
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2022.496 ; gain = 0.000 ; free physical = 39928 ; free virtual = 187238
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-218 Infos, 61 Warnings, 0 Critical Warnings and 0 Errors encountered.
+278 Infos, 188 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2147.809 ; gain = 729.309 ; free physical = 7934 ; free virtual = 186258
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2022.496 ; gain = 638.441 ; free physical = 39994 ; free virtual = 187303
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2147.809 ; gain = 0.000 ; free physical = 7934 ; free virtual = 186258
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2022.496 ; gain = 0.000 ; free physical = 39994 ; free virtual = 187303
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/xpu/xpu.runs/synth_1/xpu.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file xpu_utilization_synth.rpt -pb xpu_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Oct 16 21:36:24 2021...
+INFO: [Common 17-206] Exiting Vivado at Mon Jun 20 20:37:53 2022...

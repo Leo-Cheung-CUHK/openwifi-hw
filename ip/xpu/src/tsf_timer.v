@@ -21,6 +21,8 @@
     reg [7:0] counter_1M;
     reg tsf_load_control_reg;
 
+    wire load_indicator; 
+    assign load_indicator = (tsf_load_control==0 && tsf_load_control_reg==1);
     always @( posedge clk )
     begin
         if ( rstn == 0 ) begin
@@ -30,14 +32,14 @@
             tsf_pulse_1M <= 0;
         end 
         else begin
-            tsf_load_control_reg <= tsf_load_control;
-            if (counter_1M == `COUNT_TOP_1M || (tsf_load_control==0 && tsf_load_control_reg==1)) begin
+
+            if (counter_1M == `COUNT_TOP_1M || load_indicator == 1) begin
                 counter_1M <= 0;
             end else begin
                 counter_1M <= counter_1M + 1'b1;
             end
 
-            if (tsf_load_control==0 && tsf_load_control_reg==1) begin
+            if (load_indicator == 1) begin
                 tsf_pulse_1M <= 0;
                 tsf_runtime_val <= tsf_load_val;
             end else begin
@@ -47,6 +49,7 @@
                 else 
                     tsf_pulse_1M <= 0;
             end
+            tsf_load_control_reg <= tsf_load_control;
         end
     end    
 endmodule

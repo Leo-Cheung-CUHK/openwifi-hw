@@ -1,7 +1,7 @@
-Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Fri Oct 15 20:51:27 2021
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Wed May 18 14:46:51 2022
 | Host         : leo running 64-bit Ubuntu 18.04.5 LTS
 | Command      : report_utilization -file tx_intf_utilization_synth.rpt -pb tx_intf_utilization_synth.pb
 | Design       : tx_intf
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  810 |     0 |    218600 |  0.37 |
-|   LUT as Logic          |  810 |     0 |    218600 |  0.37 |
+| Slice LUTs*             | 1074 |     0 |    218600 |  0.49 |
+|   LUT as Logic          | 1074 |     0 |    218600 |  0.49 |
 |   LUT as Memory         |    0 |     0 |     70400 |  0.00 |
-| Slice Registers         | 1033 |     0 |    437200 |  0.24 |
-|   Register as Flip Flop | 1033 |     0 |    437200 |  0.24 |
+| Slice Registers         | 1055 |     0 |    437200 |  0.24 |
+|   Register as Flip Flop | 1055 |     0 |    437200 |  0.24 |
 |   Register as Latch     |    0 |     0 |    437200 |  0.00 |
 | F7 Muxes                |   64 |     0 |    109300 |  0.06 |
 | F8 Muxes                |    0 |     0 |     54650 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 1033  |          Yes |       Reset |            - |
+| 1055  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -92,7 +92,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+--------+
 |          Site Type          | Used | Fixed | Available |  Util% |
 +-----------------------------+------+-------+-----------+--------+
-| Bonded IOB                  |  760 |     0 |       362 | 209.94 |
+| Bonded IOB                  |  763 |     0 |       362 | 210.77 |
 | Bonded IPADs                |    0 |     0 |        50 |   0.00 |
 | Bonded OPADs                |    0 |     0 |        32 |   0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |   0.00 |
@@ -154,16 +154,16 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1033 |        Flop & Latch |
-| IBUF     |  437 |                  IO |
-| LUT4     |  387 |                 LUT |
+| FDRE     | 1055 |        Flop & Latch |
+| IBUF     |  440 |                  IO |
+| LUT5     |  422 |                 LUT |
 | OBUF     |  323 |                  IO |
-| LUT6     |  264 |                 LUT |
-| LUT5     |  111 |                 LUT |
-| LUT2     |   97 |                 LUT |
-| LUT3     |   91 |                 LUT |
-| CARRY4   |   65 |          CarryLogic |
+| LUT6     |  311 |                 LUT |
+| LUT4     |  289 |                 LUT |
+| LUT3     |  110 |                 LUT |
+| CARRY4   |   69 |          CarryLogic |
 | MUXF7    |   64 |               MuxFx |
+| LUT2     |   59 |                 LUT |
 | LUT1     |   42 |                 LUT |
 | BUFG     |    4 |               Clock |
 | DSP48E1  |    3 |    Block Arithmetic |
@@ -177,9 +177,9 @@ Table of Contents
 +---------------------------------------+------+
 |                Ref Name               | Used |
 +---------------------------------------+------+
-| fifo64_1clk_dep64_fifo_generator_0_0  |    2 |
+| fifo64_1clk_dep64_fifo_generator_0_0  |    6 |
+| fifo64_1clk_dep4k_fifo_generator_0_0  |    3 |
 | fifo64_1clk_dep512_fifo_generator_0_0 |    1 |
-| fifo64_1clk_dep4k_fifo_generator_0_0  |    1 |
 | fifo32_2clk_dep32_fifo_generator_0_0  |    1 |
 | fifo32_1clk_dep64_fifo_generator_0_0  |    1 |
 | fifo32_1clk_dep512_fifo_generator_0_0 |    1 |

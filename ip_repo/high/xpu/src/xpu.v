@@ -77,6 +77,9 @@
         input  wire long_preamble_detected,
         input  wire legacy_sig_stb,
 
+        output wire high_tx_allowed0,
+        output wire high_tx_allowed1,
+        output wire high_tx_allowed2,
 		// Ports of Axi Slave Bus Interface S00_AXI
 		input  wire s00_axi_aclk,
 		input  wire s00_axi_aresetn,
@@ -229,6 +232,15 @@
     wire [6:0] sifs_time;
     wire [6:0] phy_rx_start_delay_time;
 
+    wire slice_en0; // session 0
+    wire slice_en1; // session 1
+    wire slice_en2; // session 2
+    wire backoff_done; // CSMA Backoff
+
+    wire is_beacon_rx;
+    wire beacon_end_rx;
+
+    wire [47:0] AP_mac_addr;
     ////////////////////////////////    ////////////////////////////////    ////////////////////////////////
     ////////////////////////////////    ////////////////////////////////    ////////////////////////////////
 
@@ -255,7 +267,7 @@
 	assign block_rx_dma_to_ps = (block_rx_dma_to_ps_internal&(~slv_reg1[2]));	
 
     assign mac_addr = {slv_reg31[15:0], slv_reg30};
-	
+
 	// assign slv_reg50 = {high_tx_allowed_internal1, high_tx_allowed_internal0, 4'h0,ack_tx_flag,demod_is_ongoing,tx_rf_is_ongoing,tx_bb_is_ongoing}; // we should use ack_tx_flag to disable tx interrupt to linux!
 	// assign slv_reg51[4:0] = tx_status;
 
@@ -290,6 +302,13 @@
 
     assign slv_reg63 = 32'hf016055a;//version -- internet git commit revision
 
+    assign high_tx_allowed0 = ( slv_reg1[4] ==0?slice_en0:slv_reg1[1] );
+	assign high_tx_allowed1 = ( slv_reg1[12]==0?slice_en1:slv_reg1[8] );
+	assign high_tx_allowed2 = ( slv_reg1[20]==0?(backoff_done && slice_en2):slv_reg1[16]);
+
+    assign is_beacon_rx  = ( (FC_type==2'b00) && (FC_subtype==4'b1000) && (addr2[23:8] == mac_addr[23:8]) )?1:0;
+    assign beacon_end_rx = ( (fcs_valid ==1) && (is_beacon_rx == 1) ) ? 1 : 0;
+
     tx_on_detection # (
     ) tx_on_detection_i (
         .clk(s00_axi_aclk),
@@ -299,8 +318,6 @@
         .phy_tx_started(phy_tx_started),
         .phy_tx_done(phy_tx_done),
 	    .tx_iq_fifo_empty(tx_iq_fifo_empty),
-
-        // .tsf_pulse_1M(tsf_pulse_1M),
         
         .tx_bb_is_ongoing(tx_bb_is_ongoing),
         .tx_rf_is_ongoing(tx_rf_is_ongoing),
@@ -323,6 +340,47 @@
         .ch_idle(ch_idle)
     );
     
+    csma_ca # (
+        .RSSI_HALF_DB_WIDTH(RSSI_HALF_DB_WIDTH)
+    ) csma_ca_i (
+        .clk(s00_axi_aclk),
+        .rstn(s00_axi_aresetn&(~slv_reg0[6])),
+        
+        .tsf_pulse_1M(tsf_pulse_1M),
+
+        .pkt_header_valid(pkt_header_valid),
+        .pkt_header_valid_strobe(pkt_header_valid_strobe),
+        .signal_rate(pkt_rate),
+        .signal_len(pkt_len),
+        .fcs_in_strobe(fcs_in_strobe),
+        .fcs_valid(fcs_valid),
+
+        .nav_enable(~slv_reg19[31]),
+        .difs_enable(~slv_reg19[30]),
+        .eifs_enable(~slv_reg19[29]),
+        .cw_min(slv_reg19[11:0]),
+        //.cw_max(slv_reg19[23:12]),
+        .preamble_sig_time(preamble_sig_time),
+        .ofdm_symbol_time(ofdm_symbol_time),
+        .slot_time(slot_time),
+        .sifs_time(sifs_time),
+        .phy_rx_start_delay_time(phy_rx_start_delay_time),
+
+        .addr1_valid(addr1_valid),
+        .addr1(addr1),
+        .self_mac_addr(mac_addr),
+
+        .FC_DI_valid(FC_DI_valid),
+        .FC_type(FC_type),
+        .FC_subtype(FC_subtype),
+        .duration(duration),
+
+        .random_seed({ddc_q[2],ddc_i[0]}),
+        .ch_idle(ch_idle),
+
+        .backoff_done(backoff_done)
+    );
+
     // TODO: Need a register to know the subtype of request and response message to avoid ACK transmission
     tx_control # ( 
         .RSSI_HALF_DB_WIDTH(RSSI_HALF_DB_WIDTH),
@@ -461,6 +519,28 @@
         .rssi_half_db(rssi_half_db),
         .rssi_half_db_valid(rssi_half_db_valid)
     );
+
+	time_slice_gen #(
+        .TIMER_WIDTH(TSF_TIMER_WIDTH)
+	) time_slice_gen_i (
+        .clk(s00_axi_aclk),
+        .rstn(s00_axi_aresetn&(~slv_reg0[7])),
+
+        .tsf_runtime_val(tsf_runtime_val),
+        .beacon_end_rx(beacon_end_rx),
+
+        .slv_reg_wren_signal(slv_reg_wren_signal),
+        .count_total_slice_idx(slv_reg20[26:25]),
+        .count_total          (slv_reg20[24:0]),
+        .count_start_slice_idx(slv_reg21[26:25]),
+        .count_start          (slv_reg21[24:0]),
+        .count_end_slice_idx  (slv_reg22[26:25]),
+        .count_end            (slv_reg22[24:0]),
+
+        .slice_en0(slice_en0),
+        .slice_en1(slice_en1),
+        .slice_en2(slice_en2)
+	);
 
     // 200 MHz TSF timer - outputs tsf_runtime_val
 	tsf_timer # (

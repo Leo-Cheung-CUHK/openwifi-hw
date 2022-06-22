@@ -15,6 +15,10 @@
         input wire tx_end_from_acc,
         input wire tx_try_complete,
 
+        input wire high_tx_allowed0,
+        input wire high_tx_allowed1,
+        input wire high_tx_allowed2,
+        
 	    // to ps interrupt
 	    output reg tx_itrpt0,
          output reg tx_itrpt1
@@ -37,6 +41,15 @@
                    end
           3'b100 : begin
                         tx_itrpt0 = tx_try_complete;
+                   end
+          3'b101 : begin
+                        tx_itrpt0 = high_tx_allowed0;
+                   end
+          3'b110 : begin
+                        tx_itrpt0 = high_tx_allowed1;
+                   end
+          3'b111 : begin
+                        tx_itrpt0 = high_tx_allowed2;
                    end
           default: begin
                         tx_itrpt0 = 0;

@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -50,9 +50,9 @@
 // IP VLNV: xilinx.com:ip:sc_sc2axi:1.0
 // IP Revision: 7
 
-(* X_CORE_INFO = "sc_sc2axi_v1_0_7_top,Vivado 2019.1" *)
+(* X_CORE_INFO = "sc_sc2axi_v1_0_7_top,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "bd_c0fd_m00s2a_0,sc_sc2axi_v1_0_7_top,{}" *)
-(* CORE_GENERATION_INFO = "bd_c0fd_m00s2a_0,sc_sc2axi_v1_0_7_top,{x_ipProduct=Vivado 2019.1,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_sc2axi,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_AXI_ADDR_WIDTH=30,C_AXI_ID_WIDTH=1,C_AXI_RDATA_WIDTH=64,C_AXI_WDATA_WIDTH=64,C_SC_ADDR_WIDTH=30,C_SC_ID_WIDTH=1,C_SC_RDATA_WIDTH=64,C_SC_WDATA_WIDTH=64,C_SC_RUSER_BITS_PER_BYTE=0,C_SC_WUSER_BITS_PER_BYTE=0,C_SC_ARUSER_WIDTH=0,C_SC_AWUSER_WIDTH=0,C_SC_BUSER_WIDTH=0,C_MSC_ROUTE_WIDTH=1,C_SSC_ROUTE_WI\
+(* CORE_GENERATION_INFO = "bd_c0fd_m00s2a_0,sc_sc2axi_v1_0_7_top,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=sc_sc2axi,x_ipVersion=1.0,x_ipCoreRevision=7,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_AXI_ADDR_WIDTH=30,C_AXI_ID_WIDTH=1,C_AXI_RDATA_WIDTH=64,C_AXI_WDATA_WIDTH=64,C_SC_ADDR_WIDTH=30,C_SC_ID_WIDTH=1,C_SC_RDATA_WIDTH=64,C_SC_WDATA_WIDTH=64,C_SC_RUSER_BITS_PER_BYTE=0,C_SC_WUSER_BITS_PER_BYTE=0,C_SC_ARUSER_WIDTH=0,C_SC_AWUSER_WIDTH=0,C_SC_BUSER_WIDTH=0,C_MSC_ROUTE_WIDTH=1,C_SSC_ROUTE_WI\
 DTH=1,C_AWPAYLD_WIDTH=136,C_ARPAYLD_WIDTH=136,C_WPAYLD_WIDTH=88,C_RPAYLD_WIDTH=83,C_BPAYLD_WIDTH=5}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module bd_c0fd_m00s2a_0 (

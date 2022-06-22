@@ -96,3 +96,6 @@ create_clock -period 4.000 -name rx_clk [get_ports rx_clk_in_p]
 
 
 
+
+
+

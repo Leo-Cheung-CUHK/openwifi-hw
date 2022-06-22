@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:ip:sc_si_converter:1.0
-// IP Revision: 8
+// IP Revision: 7
 
 `timescale 1ns/1ps
 
@@ -59,7 +59,6 @@ module bd_c0fd_s00sic_0 (
   s_axi_arid,
   s_axi_araddr,
   s_axi_arlen,
-  s_axi_arsize,
   s_axi_arlock,
   s_axi_arcache,
   s_axi_arprot,
@@ -105,8 +104,6 @@ input wire [0 : 0] s_axi_arid;
 input wire [29 : 0] s_axi_araddr;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARLEN" *)
 input wire [7 : 0] s_axi_arlen;
-(* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARSIZE" *)
-input wire [2 : 0] s_axi_arsize;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARLOCK" *)
 input wire [0 : 0] s_axi_arlock;
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARCACHE" *)
@@ -174,7 +171,7 @@ TE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *)
 output wire m_axi_rready;
 
-  sc_si_converter_v1_0_8_top #(
+  sc_si_converter_v1_0_7_top #(
     .C_LIMIT_WRITE_LENGTH(0),
     .C_LIMIT_READ_LENGTH(0),
     .C_WRITE_WATERMARK(0),
@@ -236,7 +233,7 @@ output wire m_axi_rready;
     .s_axi_arid(s_axi_arid),
     .s_axi_araddr(s_axi_araddr),
     .s_axi_arlen(s_axi_arlen),
-    .s_axi_arsize(s_axi_arsize),
+    .s_axi_arsize(3'H0),
     .s_axi_arburst(2'H1),
     .s_axi_arlock(s_axi_arlock),
     .s_axi_arcache(s_axi_arcache),

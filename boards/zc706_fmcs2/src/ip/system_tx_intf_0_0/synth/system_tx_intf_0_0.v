@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -50,7 +50,7 @@
 // IP VLNV: user.org:user:tx_intf:1.0
 // IP Revision: 2
 
-(* X_CORE_INFO = "tx_intf,Vivado 2019.1" *)
+(* X_CORE_INFO = "tx_intf,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "system_tx_intf_0_0,tx_intf,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
@@ -79,6 +79,9 @@ module system_tx_intf_0_0 (
   douta,
   tx_iq_fifo_empty,
   tx_iq_fifo_rden,
+  high_tx_allowed0,
+  high_tx_allowed1,
+  high_tx_allowed2,
   tx_bb_is_ongoing,
   ack_tx_flag,
   wea_from_xpu,
@@ -160,6 +163,9 @@ input wire [47 : 0] mac_addr;
 output wire [63 : 0] douta;
 output wire tx_iq_fifo_empty;
 output wire tx_iq_fifo_rden;
+input wire high_tx_allowed0;
+input wire high_tx_allowed1;
+input wire high_tx_allowed2;
 input wire tx_bb_is_ongoing;
 input wire ack_tx_flag;
 input wire wea_from_xpu;
@@ -295,6 +301,9 @@ input wire [63 : 0] tsf_runtime_val;
     .douta(douta),
     .tx_iq_fifo_empty(tx_iq_fifo_empty),
     .tx_iq_fifo_rden(tx_iq_fifo_rden),
+    .high_tx_allowed0(high_tx_allowed0),
+    .high_tx_allowed1(high_tx_allowed1),
+    .high_tx_allowed2(high_tx_allowed2),
     .tx_bb_is_ongoing(tx_bb_is_ongoing),
     .ack_tx_flag(ack_tx_flag),
     .wea_from_xpu(wea_from_xpu),

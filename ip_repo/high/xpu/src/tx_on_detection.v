@@ -16,7 +16,6 @@
         input wire phy_tx_done,
 	    input wire tx_iq_fifo_empty,
 
-        // input wire tsf_pulse_1M, // for debug
         output wire tx_bb_is_ongoing,
         output reg  tx_rf_is_ongoing,
         output wire pulse_tx_bb_start,

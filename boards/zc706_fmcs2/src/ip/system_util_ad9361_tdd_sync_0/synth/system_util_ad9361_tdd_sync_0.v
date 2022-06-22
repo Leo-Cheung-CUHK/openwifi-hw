@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -50,7 +50,7 @@
 // IP VLNV: analog.com:user:util_tdd_sync:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "util_tdd_sync,Vivado 2019.1" *)
+(* X_CORE_INFO = "util_tdd_sync,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "system_util_ad9361_tdd_sync_0,util_tdd_sync,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

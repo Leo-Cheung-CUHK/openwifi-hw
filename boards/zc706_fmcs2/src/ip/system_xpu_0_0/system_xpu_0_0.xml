@@ -567,22 +567,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 16 13:40:44 UTC 2021</spirit:value>
+            <spirit:value>Mon Jun 20 12:39:42 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1354dd70</spirit:value>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:view>
-      <spirit:view>
-        <spirit:name>xilinx_synthesisconstraints</spirit:name>
-        <spirit:displayName>Synthesis Constraints</spirit:displayName>
-        <spirit:envIdentifier>:vivado.xilinx.com:synthesis.constraints</spirit:envIdentifier>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1354dd70</spirit:value>
+            <spirit:value>9:ccfbd82a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -598,11 +587,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 16 13:40:44 UTC 2021</spirit:value>
+            <spirit:value>Mon Jun 20 12:39:42 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:1354dd70</spirit:value>
+            <spirit:value>9:ccfbd82a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -617,11 +606,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 16 13:40:44 UTC 2021</spirit:value>
+            <spirit:value>Mon Jun 20 12:39:42 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b6115605</spirit:value>
+            <spirit:value>9:67dd8d3f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -637,11 +626,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Sat Oct 16 13:40:44 UTC 2021</spirit:value>
+            <spirit:value>Mon Jun 20 12:39:42 UTC 2022</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:b6115605</spirit:value>
+            <spirit:value>9:67dd8d3f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1335,6 +1324,45 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
+        <spirit:name>high_tx_allowed0</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>high_tx_allowed1</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>high_tx_allowed2</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>s00_axi_aclk</spirit:name>
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
@@ -1741,12 +1769,12 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/clock_speed.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/clock_speed.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/board_def.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/board_def.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
@@ -1763,71 +1791,79 @@
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/cca.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/cca.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/dc_rm.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/csma_ca.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/fifo8_1clk_dep64.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/dc_rm.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/fifo8_delay64.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/fifo8_1clk_dep64.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/iq_abs_avg.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/fifo8_delay64.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/iq_rssi_to_db.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/iq_abs_avg.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/mv_avg128.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/iq_rssi_to_db.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/mv_avg32.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/mv_avg128.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/n_sym_len14_pkt.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/mv_avg32.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/phy_rx_parse.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/n_sym_len14_pkt.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/pkt_filter_ctl.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/phy_rx_parse.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/rssi.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/pkt_filter_ctl.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/tsf_timer.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/rssi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/tx_control.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/time_slice_gen.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/tx_on_detection.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/tsf_timer.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/xpu_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/tx_control.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/xpu.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/tx_on_detection.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/b3f3/src/xpu_s_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/b3f3/src/xpu.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -1842,12 +1878,12 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/clock_speed.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/clock_speed.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/board_def.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/board_def.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
@@ -1864,71 +1900,79 @@
         <spirit:userFileType>xci</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/cca.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/cca.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/dc_rm.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/csma_ca.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/fifo8_1clk_dep64.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/dc_rm.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/fifo8_delay64.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/fifo8_1clk_dep64.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/iq_abs_avg.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/fifo8_delay64.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/iq_rssi_to_db.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/iq_abs_avg.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/mv_avg128.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/iq_rssi_to_db.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/mv_avg32.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/mv_avg128.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/n_sym_len14_pkt.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/mv_avg32.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/phy_rx_parse.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/n_sym_len14_pkt.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/pkt_filter_ctl.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/phy_rx_parse.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/rssi.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/pkt_filter_ctl.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/tsf_timer.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/rssi.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/tx_control.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/time_slice_gen.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/tx_on_detection.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/tsf_timer.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/xpu_s_axi.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/tx_control.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>../../ipshared/fcd9/src/xpu.v</spirit:name>
+        <spirit:name>../../ipshared/b3f3/src/tx_on_detection.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/b3f3/src/xpu_s_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../ipshared/b3f3/src/xpu.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
@@ -2008,11 +2052,11 @@
       </xilinx:xpmLibraries>
       <xilinx:coreRevision>2</xilinx:coreRevision>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@1768ee56_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d8d2355_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fd9f07_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@17c6342e_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d514c49_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@459a1c35_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c51dbd9_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f961ff_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7969c858_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@625b01d9_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
       </xilinx:tags>
       <xilinx:configElementInfos>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S00_AXI.ADDR_WIDTH" xilinx:valueSource="auto" xilinx:valuePermission="bd"/>
@@ -2046,11 +2090,11 @@
       </xilinx:configElementInfos>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
-      <xilinx:xilinxVersion>2019.1</xilinx:xilinxVersion>
+      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="9add38af"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="871c369d"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="b1eae0f4"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="f7414fde"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6bdaa749"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="dee42f56"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="8af0eff1"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="542ed757"/>
     </xilinx:packagingInfo>

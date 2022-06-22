@@ -57,6 +57,10 @@
         output wire tx_iq_fifo_empty,
         output wire tx_iq_fifo_rden,
 
+        input wire high_tx_allowed0,
+        input wire high_tx_allowed1, 
+        input wire high_tx_allowed2,
+        
         input wire tx_bb_is_ongoing,
         input wire ack_tx_flag,
         input wire wea_from_xpu,
@@ -179,15 +183,23 @@
     wire tx_iq_intf_acc_ask_data_from_s_axis;
     wire acc_ask_data_from_s_axis;
     wire s_axis_emptyn_to_acc;
-    wire empty_dmg_from_s_axis;
-    wire empty_tsf_from_s_axis;
 
-    wire [(MAX_BIT_NUM_DMA_SYMBOL-1) : 0] s_axis_fifo_data_count;
+    wire empty_dmg_from_s_axis_0;
+    wire empty_dmg_from_s_axis_1;
+    wire empty_dmg_from_s_axis_2;
+
+    wire [(MAX_BIT_NUM_DMA_SYMBOL-1) : 0] s_axis_fifo_data_count_0;
+    wire [(MAX_BIT_NUM_DMA_SYMBOL-1) : 0] s_axis_fifo_data_count_1;
+    wire [(MAX_BIT_NUM_DMA_SYMBOL-1) : 0] s_axis_fifo_data_count_2;
+
+    wire [1:0] tx_queue_idx;
+
     wire [1:0] linux_prio;
     wire [9:0] tx_pkt_sn;
     // wire [15:0] tx_pkt_num_dma_byte;
-
-    wire [6:0] num_dma_symbol_fifo_data_count;
+    wire [6:0] num_dma_symbol_fifo_data_count_0;
+    wire [6:0] num_dma_symbol_fifo_data_count_1;
+    wire [6:0] num_dma_symbol_fifo_data_count_2;
 
     wire [(C_M00_AXIS_TDATA_WIDTH-1):0] data_loopback;
     wire data_loopback_valid;
@@ -224,8 +236,10 @@
 
 	assign phy_tx_auto_start_mode = slv_reg2[3];
 	assign phy_tx_auto_start_num_dma_symbol_th = slv_reg2[13:4];
-
-    assign slv_reg21[0] = (s_axis_fifo_data_count>slv_reg11[(MAX_BIT_NUM_DMA_SYMBOL-1):0]?1:0);
+    
+    assign slv_reg21[0] = (s_axis_fifo_data_count_0>slv_reg11[(MAX_BIT_NUM_DMA_SYMBOL-1):0]?1:0);
+    assign slv_reg21[1] = (s_axis_fifo_data_count_1>slv_reg11[(MAX_BIT_NUM_DMA_SYMBOL-1):0]?1:0);
+    assign slv_reg21[2] = (s_axis_fifo_data_count_2>slv_reg11[(MAX_BIT_NUM_DMA_SYMBOL-1):0]?1:0);
 
     assign acc_ask_data_from_s_axis=(src_indication==1?tx_iq_intf_acc_ask_data_from_s_axis:tx_bit_intf_acc_ask_data_from_s_axis);  //The ack-data flag can be from acc or loopback
 
@@ -234,8 +248,10 @@
     assign tx_itrpt1 = (slv_reg14[17]==0?(slv_reg14[8]?tx_itrpt1_internal: (tx_itrpt1_internal&(~ack_tx_flag)) ):0); // slv_reg14[17] = 1 slv_reg14[8] = 1 --> tx_itrpt1 = tx_itrpt1_internal&(~ack_tx_flag) //the ack is not return
 
     // assign slv_reg24[13:2] = tx_pkt_sn;
-    assign slv_reg24[6:0]   = num_dma_symbol_fifo_data_count;
-    
+    assign slv_reg24[6:0]   = num_dma_symbol_fifo_data_count_0;
+    assign slv_reg24[14:8]  = num_dma_symbol_fifo_data_count_1;
+    assign slv_reg24[22:16] = num_dma_symbol_fifo_data_count_2;
+
     dac_intf # (
         .IQ_DATA_WIDTH(IQ_DATA_WIDTH),
         .DAC_PACK_DATA_WIDTH(DAC_PACK_DATA_WIDTH)
@@ -331,14 +347,18 @@
         .data_from_s_axis(s_axis_data_to_acc),
         .dmg_from_s_axis(s_axis_dmg_to_acc),
         .tsf_from_s_axis(s_axis_tsf_to_acc),
+        .tx_queue_idx(tx_queue_idx),
 
         .ask_data_from_s_axis(tx_bit_intf_acc_ask_data_from_s_axis),
         .ask_dmg_from_s_axis(tx_bit_intf_acc_ask_dmg_from_s_axis),
         .ask_tsf_from_s_axis(tx_bit_intf_acc_ask_tsf_from_s_axis),
 
         .emptyn_data_from_s_axis(s_axis_emptyn_to_acc),
-        .empty_dmg_from_s_axis(empty_dmg_from_s_axis),
         
+        .empty_dmg_from_s_axis_0(empty_dmg_from_s_axis_0),
+        .empty_dmg_from_s_axis_1(empty_dmg_from_s_axis_1),
+        .empty_dmg_from_s_axis_2(empty_dmg_from_s_axis_2),
+
         // src indication
         .auto_start_mode(phy_tx_auto_start_mode),
         .num_dma_symbol_th(phy_tx_auto_start_num_dma_symbol_th),
@@ -353,6 +373,9 @@
         .start_retrans(start_retrans),
 
         .tsf_runtime_val(tsf_runtime_val),
+        .high_tx_allowed0(high_tx_allowed0),
+        .high_tx_allowed1(high_tx_allowed1),
+        .high_tx_allowed2(high_tx_allowed2),
 
         .tx_bb_is_ongoing(tx_bb_is_ongoing),
         .ack_tx_flag(ack_tx_flag),
@@ -383,7 +406,11 @@
         .tx_start_from_acc(tx_start_from_acc),
         .tx_end_from_acc(tx_end_from_acc),
         .tx_try_complete(tx_try_complete),
-        
+
+        .high_tx_allowed0(high_tx_allowed0),
+        .high_tx_allowed1(high_tx_allowed1),
+        .high_tx_allowed2(high_tx_allowed2),
+
 	    // to ps interrupt (output)
 	    .tx_itrpt0(tx_itrpt0_internal),
         .tx_itrpt1(tx_itrpt1_internal)
@@ -401,6 +428,7 @@
         .tx_status(tx_status),
         .linux_prio(linux_prio),
         .tx_pkt_sn(tx_pkt_sn),
+		.tx_queue_idx(tx_queue_idx),
 
         // output
         .tx_status_out(slv_reg22[18:0])
@@ -487,20 +515,29 @@
 				
         .cts_toself_config(slv_reg4),
         .num_dma_symbol_total(slv_reg8),
-        .tsf_config({slv_reg17,slv_reg18}),
+        .tsf_config({slv_reg17,slv_reg18}),  // tsf timestamp
 
-        .num_dma_symbol_fifo_data_count(num_dma_symbol_fifo_data_count), 
+		.tx_queue_idx_indication_from_ps(slv_reg8[19:18]), 
+		.tx_queue_idx(tx_queue_idx),
+
+        .num_dma_symbol_fifo_data_count_0(num_dma_symbol_fifo_data_count_0), 
+        .num_dma_symbol_fifo_data_count_1(num_dma_symbol_fifo_data_count_1),
+        .num_dma_symbol_fifo_data_count_2(num_dma_symbol_fifo_data_count_2), 
 
 		.endless_mode(slv_reg5[8]),
-		.data_count(s_axis_fifo_data_count),
+		.data_count_0(s_axis_fifo_data_count_0),
+		.data_count_1(s_axis_fifo_data_count_1),
+		.data_count_2(s_axis_fifo_data_count_2),
 
         .DATA_TO_ACC(s_axis_data_to_acc), // output
         .DMG_TO_ACC(s_axis_dmg_to_acc),
         .TSF_TO_ACC(s_axis_tsf_to_acc), 
 
         .EMPTYN_TO_ACC(s_axis_emptyn_to_acc), // FIFO empty indicator 
-        .EMPTY_DMG_TO_ACC(empty_dmg_from_s_axis), 
-        .EMPTY_TSF_TO_ACC(empty_tsf_from_s_axis), 
+
+        .empty_to_acc_0(empty_dmg_from_s_axis_0),
+        .empty_to_acc_1(empty_dmg_from_s_axis_1),
+        .empty_to_acc_2(empty_dmg_from_s_axis_2),
 
         .ACC_ASK_DATA(acc_ask_data_from_s_axis&(~slv_reg10[0])),
         .ACC_ASK_DMG(tx_bit_intf_acc_ask_dmg_from_s_axis),
@@ -551,5 +588,4 @@
         .data_count(m_axis_fifo_data_count),
         .FULLN_TO_ACC(fulln_from_m_axis_to_pl)
 	);
-
 	endmodule

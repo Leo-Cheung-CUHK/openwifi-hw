@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -50,7 +50,7 @@
 // IP VLNV: analog.com:user:axi_sysid:1.0
 // IP Revision: 1
 
-(* X_CORE_INFO = "sys_id,Vivado 2019.1" *)
+(* X_CORE_INFO = "sys_id,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "system_axi_sysid_0_0,sys_id,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)

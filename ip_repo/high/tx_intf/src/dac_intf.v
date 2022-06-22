@@ -53,8 +53,8 @@
 
     // If there is no data in the FIFO here, then we pad zero into the dac
     assign dac_data_internal_1 =  (EMPTY_internal==1? 0 : dac_data_internal);
-    //assign dac_data_internal_after_sel = (ant_flag_in_rf_domain?{dac_data_internal_1,32'd0}:{32'd0,dac_data_internal_1});
-    assign dac_data_internal_after_sel = (ant_flag_in_rf_domain?{dac_data_internal_1,dac_data_internal_1}:{dac_data_internal_1,dac_data_internal_1});
+    assign dac_data_internal_after_sel = (ant_flag_in_rf_domain?{dac_data_internal_1,32'd0}:{32'd0,dac_data_internal_1});
+    //assign dac_data_internal_after_sel = (ant_flag_in_rf_domain?{dac_data_internal_1,dac_data_internal_1}:{dac_data_internal_1,dac_data_internal_1});
 
     assign dac_data  = ((src_sel_in_rf_domain==1'b0)?dma_data:dac_data_internal_after_sel);
     //assign dac_valid = ((src_sel_in_rf_domain==1'b0)?dma_valid:(!EMPTY_internal));

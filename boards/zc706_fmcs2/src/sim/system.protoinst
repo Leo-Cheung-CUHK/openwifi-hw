@@ -1622,7 +1622,6 @@
 				"/openwifi_ip/M00_AXI": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
-						"ACLK": { "actual": "m_axi_mm2s_aclk"},
 						"ARADDR": { "actual": "M00_AXI_araddr"},
 						"ARBURST": { "actual": "M00_AXI_arburst"},
 						"ARCACHE": { "actual": "M00_AXI_arcache"},
@@ -1666,7 +1665,6 @@
 				"/openwifi_ip/M00_AXI1": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
-						"ACLK": { "actual": "m_axi_mm2s_aclk"},
 						"ARADDR": { "actual": "M00_AXI1_araddr"},
 						"ARBURST": { "actual": "M00_AXI1_arburst"},
 						"ARCACHE": { "actual": "M00_AXI1_arcache"},
@@ -1710,7 +1708,6 @@
 				"/openwifi_ip/S00_AXI": {
 					"interface": "xilinx.com:interface:aximm:1.0",
 					"ports": {
-						"ACLK": { "actual": "m_axi_mm2s_aclk"},
 						"ARADDR": { "actual": "S00_AXI_araddr"},
 						"ARBURST": { "actual": "S00_AXI_arburst"},
 						"ARCACHE": { "actual": "S00_AXI_arcache"},

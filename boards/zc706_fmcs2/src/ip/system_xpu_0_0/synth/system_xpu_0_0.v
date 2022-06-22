@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2022 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -50,7 +50,7 @@
 // IP VLNV: user.org:user:xpu:1.0
 // IP Revision: 2
 
-(* X_CORE_INFO = "xpu,Vivado 2019.1" *)
+(* X_CORE_INFO = "xpu,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "system_xpu_0_0,xpu,{}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
@@ -102,6 +102,9 @@ module system_xpu_0_0 (
   short_preamble_detected,
   long_preamble_detected,
   legacy_sig_stb,
+  high_tx_allowed0,
+  high_tx_allowed1,
+  high_tx_allowed2,
   s00_axi_aclk,
   s00_axi_aresetn,
   s00_axi_awaddr,
@@ -172,6 +175,9 @@ output wire [7 : 0] channel;
 input wire short_preamble_detected;
 input wire long_preamble_detected;
 input wire legacy_sig_stb;
+output wire high_tx_allowed0;
+output wire high_tx_allowed1;
+output wire high_tx_allowed2;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME s00_axi_aclk, ASSOCIATED_BUSIF s00_axi, ASSOCIATED_RESET s00_axi_aresetn, FREQ_HZ 200000000, PHASE 0.000, CLK_DOMAIN system_sys_ps7_0_FCLK_CLK2, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 s00_axi_aclk CLK" *)
 input wire s00_axi_aclk;
@@ -278,6 +284,9 @@ input wire s00_axi_rready;
     .short_preamble_detected(short_preamble_detected),
     .long_preamble_detected(long_preamble_detected),
     .legacy_sig_stb(legacy_sig_stb),
+    .high_tx_allowed0(high_tx_allowed0),
+    .high_tx_allowed1(high_tx_allowed1),
+    .high_tx_allowed2(high_tx_allowed2),
     .s00_axi_aclk(s00_axi_aclk),
     .s00_axi_aresetn(s00_axi_aresetn),
     .s00_axi_awaddr(s00_axi_awaddr),

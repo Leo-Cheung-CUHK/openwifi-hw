@@ -43,10 +43,7 @@
     input wire [1:0] random_seed,
     input wire ch_idle,
 
-    input wire slice_en0,
-    input wire slice_en1,
-    input wire slice_en2,
-    input wire slice_en3
+    output wire backoff_done
 	);
 
     localparam [1:0]  BACKOFF_CH_BUSY =      2'b00,
@@ -90,7 +87,6 @@
     reg [31:0] random_number = 32'h0b00a001;
     reg [12:0] backoff_timer;
     reg [11:0] backoff_wait_timer;
-    wire backoff_done;
 
     assign is_pspoll = (((FC_type==2'b01) && (FC_subtype==4'b1010))?1:0);
     assign is_rts    = (((FC_type==2'b01) && (FC_subtype==4'b1011) && (signal_len==20))?1:0);//20 is the length of rts frame

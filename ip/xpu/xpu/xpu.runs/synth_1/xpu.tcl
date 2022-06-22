@@ -17,9 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param tcl.collectionResultDisplayLimit 0
 set_param xicom.use_bs_reader 1
-set_param chipscope.maxJobs 6
+set_param tcl.collectionResultDisplayLimit 0
 set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7z045ffg900-2
 
@@ -39,6 +38,7 @@ set_property ip_output_repo /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/cca.v
+  /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/csma_ca.v
   /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/dc_rm.v
   /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/common/fifo8_1clk_dep64/src/fifo8_1clk_dep64.v
   /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/fifo8_delay64.v
@@ -50,6 +50,7 @@ read_verilog -library xil_defaultlib {
   /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/phy_rx_parse.v
   /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/pkt_filter_ctl.v
   /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/rssi.v
+  /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/time_slice_gen.v
   /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tsf_timer.v
   /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_control.v
   /home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip/xpu/src/tx_on_detection.v

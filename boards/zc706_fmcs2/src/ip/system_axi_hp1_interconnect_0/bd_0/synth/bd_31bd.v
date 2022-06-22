@@ -1,4 +1,4 @@
-//Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+//Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Command: generate_target bd_31bd.bd
 //Design : bd_31bd
@@ -839,7 +839,6 @@ module s00_entry_pipeline_imp_12BBSXA
   wire [2:0]s00_transaction_regulator_M_AXI_AWPROT;
   wire [3:0]s00_transaction_regulator_M_AXI_AWQOS;
   wire s00_transaction_regulator_M_AXI_AWREADY;
-  wire [2:0]s00_transaction_regulator_M_AXI_AWSIZE;
   wire [1023:0]s00_transaction_regulator_M_AXI_AWUSER;
   wire s00_transaction_regulator_M_AXI_AWVALID;
   wire [0:0]s00_transaction_regulator_M_AXI_BID;
@@ -987,7 +986,6 @@ module s00_entry_pipeline_imp_12BBSXA
         .s_axi_awprot(s00_transaction_regulator_M_AXI_AWPROT),
         .s_axi_awqos(s00_transaction_regulator_M_AXI_AWQOS),
         .s_axi_awready(s00_transaction_regulator_M_AXI_AWREADY),
-        .s_axi_awsize(s00_transaction_regulator_M_AXI_AWSIZE),
         .s_axi_awuser(s00_transaction_regulator_M_AXI_AWUSER),
         .s_axi_awvalid(s00_transaction_regulator_M_AXI_AWVALID),
         .s_axi_bid(s00_transaction_regulator_M_AXI_BID),
@@ -1012,7 +1010,6 @@ module s00_entry_pipeline_imp_12BBSXA
         .m_axi_awprot(s00_transaction_regulator_M_AXI_AWPROT),
         .m_axi_awqos(s00_transaction_regulator_M_AXI_AWQOS),
         .m_axi_awready(s00_transaction_regulator_M_AXI_AWREADY),
-        .m_axi_awsize(s00_transaction_regulator_M_AXI_AWSIZE),
         .m_axi_awuser(s00_transaction_regulator_M_AXI_AWUSER),
         .m_axi_awvalid(s00_transaction_regulator_M_AXI_AWVALID),
         .m_axi_bid(s00_transaction_regulator_M_AXI_BID),
