@@ -1793,13 +1793,13 @@
         <xilinx:xpmLibrary>XPM_MEMORY</xilinx:xpmLibrary>
       </xilinx:xpmLibraries>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-06-20T12:38:51Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2023-01-16T03:45:17Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@459a1c35_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c51dbd9_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f961ff_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@7969c858_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
-        <xilinx:tag xilinx:name="ui.data.coregen.dd@625b01d9_ARCHIVE_LOCATION">/home/leo/Documents/workarea/JIT/openwifi-hw-inc/ip_repo/high/xpu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e6cab7c_ARCHIVE_LOCATION">/home/leo/Documents/workarea/openwifi-hw/ip_repo/high/xpu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36328787_ARCHIVE_LOCATION">/home/leo/Documents/workarea/openwifi-hw/ip_repo/high/xpu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36ff253b_ARCHIVE_LOCATION">/home/leo/Documents/workarea/openwifi-hw/ip_repo/high/xpu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35c5bdb0_ARCHIVE_LOCATION">/home/leo/Documents/workarea/openwifi-hw/ip_repo/high/xpu</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@610d3406_ARCHIVE_LOCATION">/home/leo/Documents/workarea/openwifi-hw/ip_repo/high/xpu</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>

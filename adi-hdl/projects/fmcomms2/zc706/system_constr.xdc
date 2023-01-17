@@ -81,21 +81,3 @@ set_property -dict {PACKAGE_PIN AC18 IOSTANDARD LVCMOS25} [get_ports gpio_muxout
 create_clock -period 4.000 -name rx_clk [get_ports rx_clk_in_p]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

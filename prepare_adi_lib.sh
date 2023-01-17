@@ -18,8 +18,8 @@ home_dir=$(pwd)
 
 set -x
 
-git submodule init adi-hdl
-git submodule update adi-hdl
+# git submodule init adi-hdl
+# git submodule update adi-hdl
 cd ./adi-hdl/library
 # git reset --hard 2019_r1
 git reset --hard f61d9707eb0a62533efd6facab59ab2444da94c9

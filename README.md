@@ -18,8 +18,11 @@ Openwifi code has dual licenses. AGPLv3 is the opensource license. For non-opens
 - **zcu102_fmcs2** (Xilinx ZCU102 dev board + FMCOMMS2/3/4)
 
 **Build FPGA:** (Xilinx Vivado (also SDK and HLS) 2018.3 is needed. Example instructions are verified on Ubuntu 18)
-
+* First, set up valid environment variables by modifying "setup.sh":
 * In Linux, prepare Analgo Devices HDL library (only run once):
+- ***Git Clone HDL Library from [adi-hdl @ f61d970](https://github.com/analogdevicesinc/hdl.git)***
+- ***Rename Folder Name from original "HDL" to "adi-hdl"***
+- ***Then:***
 
 ```
 export XILINX_DIR=your_Xilinx_directory
@@ -49,7 +52,9 @@ File --> Launch SDK --> OK, then close SDK
 * In Linux:
 ```
 cd openwifi-hw/boards
-./sdk_update.sh board_name
+./sdk_update.sh $BOARD_NAME $OPENWIFI_DIR
+
+* Update Git repository:
 git commit -a -m "new fpga img for openwifi (or comments you want to make)"
 git push
 (Above make sure you can pull this new FPGA from openwifi submodule directory: openwifi-hw)

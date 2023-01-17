@@ -69,21 +69,3 @@ set_property -dict {PACKAGE_PIN J14 IOSTANDARD LVCMOS15} [get_ports {gpio_bd[14]
 create_clock -period 40.000 -name spi0_clk [get_pins -hier */EMIOSPI0SCLKO]
 create_clock -period 40.000 -name spi1_clk [get_pins -hier */EMIOSPI1SCLKO]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
