@@ -1,5 +1,5 @@
 # JIT-HW
-This repository includes Hardware/FPGA design. To be used with [openwifi driver and software repository](https://github.com/Leo-Cheung-CUHK/openwifi-JIT). This repository is based on the original [openwifi-HW](https://github.com/open-sdr/openwifi-hw). This readme only describes the new features provided in JIT-HW. To see more detail about the original design of openwifi-HW, please check the README_Openwifi.md.
+This repository includes Hardware/FPGA design. To be used with [openwifi driver and software repository](https://github.com/Leo-Cheung-CUHK/openwifi-JIT). This repository is based on the original [openwifi-HW](https://github.com/open-sdr/openwifi-hw). This readme only describes the new features provided in this version. To see more detail about the installation of this version, please check the README_for_Installation.md.
 
 # New Feature
 ## Multi-Queue design
